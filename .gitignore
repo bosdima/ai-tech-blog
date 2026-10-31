@@ -183,3 +183,4 @@ articles.json
 temp/
 uploads/
 data/
+.vercel
