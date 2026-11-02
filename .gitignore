@@ -184,3 +184,4 @@ temp/
 uploads/
 data/
 .vercel
+.env*

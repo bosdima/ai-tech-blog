@@ -27,10 +27,74 @@
         .article-date { color: #666; font-size: 0.9rem; margin-bottom: 0.5rem; }
         .article-title { font-size: 1.3rem; color: #333; margin-bottom: 1rem; }
         .article-excerpt { color: #666; line-height: 1.6; }
-        .read-more { color: #667eea; text-decoration: none; font-weight: bold; display: inline-block; margin-top: 1rem; }
+        .read-more { color: #667eea; text-decoration: none; font-weight: bold; display: inline-block; margin-top: 1rem; cursor: pointer; }
         .sidebar { background: #f8f9fa; padding: 2rem; border-radius: 10px; margin-top: 2rem; }
         .monetization { background: #e3f2fd; padding: 1rem; border-radius: 8px; margin: 1rem 0; }
         footer { background: #333; color: white; text-align: center; padding: 2rem 0; margin-top: 3rem; }
+        
+        /* Модальное окно для статей */
+        .article-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            margin: 20px;
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #666;
+        }
+
+        .close:hover {
+            color: #333;
+        }
+
+        .article-content {
+            margin: 20px 0;
+            line-height: 1.8;
+            color: #444;
+        }
+
+        .monetization-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .monetization-item:last-child {
+            border-bottom: none;
+        }
+
+        .commission {
+            background: #28a745;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+        }
     </style>
 </head>
 <body>
@@ -124,9 +188,63 @@
                     <div class="article-date">${article.date}</div>
                     <h2 class="article-title">${article.title}</h2>
                     <p class="article-excerpt">${article.excerpt}</p>
-                    <a href="#" class="read-more">Читать далее →</a>
+                    <a href="#" class="read-more" data-article-id="${article.id}">Читать далее →</a>
                 </article>
             `).join('');
+            
+            // Добавляем обработчики для ссылок "Читать далее"
+            document.querySelectorAll('.read-more').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const articleId = this.getAttribute('data-article-id');
+                    showArticle(articleId);
+                });
+            });
+        }
+
+        // Показать полную статью
+        function showArticle(articleId) {
+            fetch(`/api/articles/${articleId}`)
+                .then(response => response.json())
+                .then(article => {
+                    const modal = document.createElement('div');
+                    modal.className = 'article-modal';
+                    modal.innerHTML = `
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <div class="article-date">${article.date}</div>
+                            <h1 class="article-title">${article.title}</h1>
+                            <div class="article-content">${article.content}</div>
+                            ${article.monetization.length > 0 ? `
+                                <div class="monetization">
+                                    <h3>Рекомендуемые курсы и инструменты:</h3>
+                                    ${article.monetization.map(item => `
+                                        <div class="monetization-item">
+                                            <a href="${item.url}" target="_blank">${item.name}</a>
+                                            <span class="commission">${item.commission}% комиссия</span>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            ` : ''}
+                        </div>
+                    `;
+                    document.body.appendChild(modal);
+                    
+                    // Закрытие модального окна
+                    modal.querySelector('.close').addEventListener('click', () => {
+                        modal.remove();
+                    });
+                    
+                    // Закрытие по клику вне модального окна
+                    modal.addEventListener('click', (e) => {
+                        if (e.target === modal) {
+                            modal.remove();
+                        }
+                    });
+                })
+                .catch(error => {
+                    console.error('Ошибка загрузки статьи:', error);
+                });
         }
 
         // Автоматическая проверка обновлений

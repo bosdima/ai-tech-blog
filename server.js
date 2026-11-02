@@ -76,13 +76,17 @@ function generateAIContent() {
         'Обработка естественного языка',
         'Робототехника',
         'Квантовые вычисления и ИИ',
-        'Этика искусственного интеллекта'
+        'Этика искусственного интеллекта',
+        'Генеративный ИИ',
+        'ИИ в бизнесе',
+        'Будущее машинного обучения',
+        'Нейросети для создания контента'
     ];
     
     const newArticles = topics.map((topic, index) => ({
         id: Date.now() + index,
-        title: `${topic}: последние достижения`,
-        excerpt: `Обзор последних разработок в области ${topic}. Анализ трендов и прогнозы развития.`,
+        title: `${topic}: последние достижения 2026`,
+        excerpt: `Обзор последних разработок в области ${topic}. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.`,
         content: generateArticleContent(topic),
         date: new Date().toLocaleDateString('ru-RU'),
         tags: [topic.toLowerCase()],
@@ -95,6 +99,7 @@ function generateAIContent() {
     fs.writeFileSync(path.join(__dirname, 'articles.json'), JSON.stringify(articles, null, 2));
     
     console.log(`Сгенерировано ${newArticles.length} новых статей`);
+    console.log(`Последняя статья от: ${newArticles[0].date}`);
 }
 
 // Функция генерации контента статьи
@@ -121,6 +126,21 @@ function getMonetizationLinks(topic) {
     
     return relevantLinks.slice(0, 2); // Максимум 2 ссылки на статью
 }
+
+// API для получения одной статьи
+app.get('/api/articles/:id', (req, res) => {
+    try {
+        const articles = JSON.parse(fs.readFileSync('articles.json', 'utf8'));
+        const article = articles.find(a => a.id == req.params.id);
+        if (article) {
+            res.json(article);
+        } else {
+            res.status(404).json({ error: 'Статья не найдена' });
+        }
+    } catch (error) {
+        res.status(500).json({ error: 'Ошибка загрузки статьи' });
+    }
+});
 
 // API для получения статей
 app.get('/api/articles', (req, res) => {
