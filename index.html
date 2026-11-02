@@ -174,21 +174,29 @@
                 </article>
             `).join('');
             
-            // Добавляем обработчики для ссылок "Читать далее"
-            document.querySelectorAll('.read-more').forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const articleId = this.getAttribute('data-article-id');
-                    showArticle(articleId);
+            // Добавляем обработчики для ссылок "Читать далее" с небольшой задержкой
+            setTimeout(() => {
+                document.querySelectorAll('.read-more').forEach(link => {
+                    link.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const articleId = this.getAttribute('data-article-id');
+                        showArticle(articleId);
+                    });
                 });
-            });
+            }, 100);
         }
 
         // Показать полную статью
         function showArticle(articleId) {
+            console.log('Попытка открыть статью с ID:', articleId);
+            
             fetch(`/api/articles/${articleId}`)
-                .then(response => response.json())
+                .then(response => {
+                    console.log('Ответ API:', response.status);
+                    return response.json();
+                })
                 .then(article => {
+                    console.log('Получена статья:', article);
                     const modal = document.createElement('div');
                     modal.className = 'article-modal';
                     modal.innerHTML = `
@@ -197,7 +205,7 @@
                             <div class="article-date">${article.date}</div>
                             <h1 class="article-title">${article.title}</h1>
                             <div class="article-content">${article.content}</div>
-                            ${article.monetization.length > 0 ? `
+                            ${article.monetization && article.monetization.length > 0 ? `
                                 <div class="monetization">
                                     <h3>Рекомендуемые курсы и инструменты:</h3>
                                     ${article.monetization.map(item => `
@@ -226,6 +234,7 @@
                 })
                 .catch(error => {
                     console.error('Ошибка загрузки статьи:', error);
+                    alert('Ошибка при загрузке статьи. Пожалуйста, попробуйте позже.');
                 });
         }
 
