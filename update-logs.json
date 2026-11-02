@@ -10,5 +10,17 @@
     "status": "error",
     "message": "Ошибка обновления AI Tech Blog",
     "error": "Сайт не доступен"
+  },
+  {
+    "timestamp": "2026-11-02T09:44:56.776Z",
+    "status": "error",
+    "message": "Ошибка обновления AI Tech Blog",
+    "error": "Сайт не доступен"
+  },
+  {
+    "timestamp": "2026-11-02T09:46:49.988Z",
+    "status": "critical_error",
+    "message": "Критическая ошибка при обновлении",
+    "error": "spawn npx ENOENT"
   }
 ]
