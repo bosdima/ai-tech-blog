@@ -1,0 +1,387 @@
+const fs = require('fs');
+const path = require('path');
+
+// Генерация статической версии сайта
+console.log('Генерация статической версии AI Tech Блог...');
+
+// Чтение статей
+const articlesPath = path.join(__dirname, 'articles.json');
+let articles = [];
+
+if (fs.existsSync(articlesPath)) {
+    articles = JSON.parse(fs.readFileSync(articlesPath, 'utf8'));
+}
+
+// Генерация HTML для главной страницы
+const generateHomePage = () => {
+    const articlesHtml = articles.map(article => `
+        <article class="article-card">
+            <div class="article-date">${article.date}</div>
+            <h2>${article.title}</h2>
+            <p class="article-excerpt">${article.excerpt}</p>
+            <button class="read-more" onclick="showArticle('${article.id}')">Читать далее →</button>
+        </article>
+    `).join('');
+
+    return `<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Tech Блог - Новости и технологии искусственного интеллекта</title>
+    <meta name="description" content="Автоматический блог о технологиях ИИ, нейросетях и искусственном интеллекте. Последние новости, обзоры и практические руководства.">
+    <meta name="keywords" content="искусственный интеллект, нейросети, машинное обучение, ИИ технологии, нейронные сети, AI, tech, blog">
+    <meta name="author" content="AI Tech Team">
+    <meta name="robots" content="index, follow">
+    
+    <!-- AdSense Code -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3628466575286373"
+     crossorigin="anonymous"></script>
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            line-height: 1.6; 
+            color: #333; 
+            background: #f8f9fa;
+        }
+        .container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 20px; 
+        }
+        header { 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+            color: white; 
+            padding: 2rem 0; 
+            margin-bottom: 2rem; 
+            text-align: center;
+        }
+        h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+        .subtitle { font-size: 1.2rem; opacity: 0.9; }
+        
+        /* Рекламный баннер */
+        .ad-banner {
+            background: #fff;
+            padding: 10px;
+            margin: 20px 0;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .ad-banner ins {
+            display: block;
+            width: 100%;
+            height: 90px;
+        }
+        
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .article-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .article-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .article-date {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .article-card h2 {
+            color: #333;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .article-excerpt {
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        
+        .read-more {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: opacity 0.3s ease;
+        }
+        
+        .read-more:hover {
+            opacity: 0.9;
+        }
+        
+        .sidebar {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-left: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .sidebar h3 {
+            color: #333;
+            margin-bottom: 1rem;
+        }
+        
+        .sidebar ul {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+        
+        .sidebar li {
+            padding: 0.5rem 0;
+            color: #666;
+        }
+        
+        .monetization {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+        
+        .monetization h4 {
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+        
+        .monetization p {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .monetization a {
+            color: #1976d2;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .ad-block {
+            margin: 20px 0;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .ad-block ins {
+            display: block;
+            width: 300px;
+            height: 250px;
+            margin: 0 auto;
+        }
+        
+        .main-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+        
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        /* Модальное окно для статьи */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+        
+        .modal-content {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            margin: 20px auto;
+        }
+        
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #666;
+        }
+        
+        .close:hover {
+            color: #333;
+        }
+        
+        .article-content {
+            margin: 20px 0;
+            line-height: 1.8;
+            color: #444;
+        }
+        
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .articles-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar {
+                margin-left: 0;
+                margin-top: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>AI Tech Блог</h1>
+            <p class="subtitle">Автоматизированный источник новостей и технологий искусственного интеллекта</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Рекламный баннер 728x90 -->
+        <div class="ad-banner">
+            <ins class="adsbygoogle"
+                 style="display:block; width:100%; height:90px;"
+                 data-ad-client="ca-pub-3628466575286373"
+                 data-ad-slot="1234567890"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <div class="main-content">
+            <div class="articles-grid">
+                ${articlesHtml}
+            </div>
+            
+            <div class="sidebar">
+                <h3>Популярные темы</h3>
+                <ul>
+                    <li>Нейросети</li>
+                    <li>Глубокое обучение</li>
+                    <li>Computer Vision</li>
+                    <li>NLP</li>
+                    <li>Робототехника</li>
+                </ul>
+
+                <div class="monetization">
+                    <h4>🎯 Партнерские программы</h4>
+                    <p>Рекомендуемые сервисы и инструменты для работы с ИИ</p>
+                    <a href="#" style="color: #1976d2; text-decoration: none;">Смотреть предложения →</a>
+                </div>
+
+                <div class="monetization">
+                    <h4>📚 Книги и курсы</h4>
+                    <p>Образовательные материалы по ИИ и технологиям</p>
+                    <a href="#" style="color: #1976d2; text-decoration: none;">Каталог ресурсов →</a>
+                </div>
+
+                <!-- Рекламный блок 300x250 -->
+                <div class="ad-block">
+                    <ins class="adsbygoogle"
+                         style="display:block; width:300px; height:250px;"
+                         data-ad-client="ca-pub-3628466575286373"
+                         data-ad-slot="0987654321"
+                         data-ad-format="auto"
+                         data-full-width-responsive="true"></ins>
+                    <script>
+                         (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 AI Tech Блог. Автоматическая генерация контента.</p>
+        </div>
+    </footer>
+
+    <!-- Модальное окно для статей -->
+    <div id="articleModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modalArticleContent"></div>
+        </div>
+    </div>
+
+    <script>
+        // Функция показа статьи
+        function showArticle(articleId) {
+            const article = articles.find(a => a.id == articleId);
+            if (article) {
+                document.getElementById('modalArticleContent').innerHTML = \`
+                    <div class="article-date">\${article.date}</div>
+                    <h2>\${article.title}</h2>
+                    <div class="article-content">\${article.content}</div>
+                    <div class="monetization">
+                        <h4>🎯 Партнерские программы</h4>
+                        \${article.monetization.map(link => \`
+                            <p><a href="\${link.url}" target="_blank">\${link.name} (\${link.commission})</a></p>
+                        \`).join('')}
+                    </div>
+                \`;
+                document.getElementById('articleModal').style.display = 'block';
+            }
+        }
+
+        // Закрытие модального окна
+        document.querySelector('.close').onclick = function() {
+            document.getElementById('articleModal').style.display = 'none';
+        }
+
+        // Закрытие по клику вне окна
+        window.onclick = function(event) {
+            const modal = document.getElementById('articleModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>`;
+};
+
+// Создаем статическую страницу
+const staticHtml = generateHomePage();
+
+// Сохраняем статическую страницу
+fs.writeFileSync(path.join(__dirname, 'index-static.html'), staticHtml);
+
+console.log('✅ Статическая версия сайта сгенерирована: index-static.html');
+console.log('🚀 Эта версия будет работать 24/7 на любом хостинге!');
