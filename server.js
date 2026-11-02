@@ -743,6 +743,11 @@ app.get('/api/articles/:id', (req, res) => {
     }
 });
 
+// Обслуживание статических файлов
+app.get('/ads.txt', (req, res) => {
+    res.sendFile(path.join(__dirname, 'ads.txt'));
+});
+
 // API для получения статей
 app.get('/api/articles', (req, res) => {
     try {
