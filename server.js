@@ -102,7 +102,583 @@ function generateAIContent() {
     console.log(`Последняя статья от: ${newArticles[0].date}`);
 }
 
-// Функция генерации контента статьи
+// Функция генерации статической версии
+function generateStaticVersion() {
+    console.log('Генерация статической версии сайта...');
+    
+    // Чтение текущих статей
+    const articlesPath = path.join(__dirname, 'articles.json');
+    let articles = [];
+
+    if (fs.existsSync(articlesPath)) {
+        articles = JSON.parse(fs.readFileSync(articlesPath, 'utf8'));
+    }
+
+    // Генерация HTML для главной страницы
+    const generateHomePage = () => {
+        const articlesHtml = articles.map(article => `
+        <article class="article-card">
+            <div class="article-date">${article.date}</div>
+            <h2>${article.title}</h2>
+            <p class="article-excerpt">${article.excerpt}</p>
+            <button class="read-more" onclick="showArticle('${article.id}')">Читать далее →</button>
+        </article>
+    `).join('');
+
+        return `<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Tech Блог - Новости и технологии искусственного интеллекта</title>
+    <meta name="description" content="Автоматический блог о технологиях ИИ, нейросетях и искусственном интеллекте. Последние новости, обзоры и практические руководства.">
+    <meta name="keywords" content="искусственный интеллект, нейросети, машинное обучение, ИИ технологии, нейронные сети, AI, tech, blog">
+    <meta name="author" content="AI Tech Team">
+    <meta name="robots" content="index, follow">
+    
+    <!-- AdSense Code -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3628466575286373"
+     crossorigin="anonymous"></script>
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            line-height: 1.6; 
+            color: #333; 
+            background: #f8f9fa;
+        }
+        .container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 20px; 
+        }
+        header { 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+            color: white; 
+            padding: 2rem 0; 
+            margin-bottom: 2rem; 
+            text-align: center;
+        }
+        h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+        .subtitle { font-size: 1.2rem; opacity: 0.9; }
+        
+        /* Рекламный баннер */
+        .ad-banner {
+            background: #fff;
+            padding: 10px;
+            margin: 20px 0;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .ad-banner ins {
+            display: block;
+            width: 100%;
+            height: 90px;
+        }
+        
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .article-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .article-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .article-date {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .article-card h2 {
+            color: #333;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .article-excerpt {
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        
+        .read-more {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: opacity 0.3s ease;
+        }
+        
+        .read-more:hover {
+            opacity: 0.9;
+        }
+        
+        .sidebar {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-left: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .sidebar h3 {
+            color: #333;
+            margin-bottom: 1rem;
+        }
+        
+        .sidebar ul {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+        
+        .sidebar li {
+            padding: 0.5rem 0;
+            color: #666;
+        }
+        
+        .monetization {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+        
+        .monetization h4 {
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+        
+        .monetization p {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .monetization a {
+            color: #1976d2;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .ad-block {
+            margin: 20px 0;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .ad-block ins {
+            display: block;
+            width: 300px;
+            height: 250px;
+            margin: 0 auto;
+        }
+        
+        .main-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+        
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        /* Модальное окно для статьи */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+        
+        .modal-content {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            margin: 20px auto;
+        }
+        
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #666;
+        }
+        
+        .close:hover {
+            color: #333;
+        }
+        
+        .article-content {
+            margin: 20px 0;
+            line-height: 1.8;
+            color: #444;
+        }
+        
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .articles-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar {
+                margin-left: 0;
+                margin-top: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>AI Tech Блог</h1>
+            <p class="subtitle">Автоматизированный источник новостей и технологий искусственного интеллекта</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Рекламный баннер 728x90 -->
+        <div class="ad-banner">
+            <ins class="adsbygoogle"
+                 style="display:block; width:100%; height:90px;"
+                 data-ad-client="ca-pub-3628466575286373"
+                 data-ad-slot="1234567890"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <div class="main-content">
+            <div class="articles-grid">
+                ${articlesHtml}
+            </div>
+            
+            <div class="sidebar">
+                <h3>Популярные темы</h3>
+                <ul>
+                    <li>Нейросети</li>
+                    <li>Глубокое обучение</li>
+                    <li>Computer Vision</li>
+                    <li>NLP</li>
+                    <li>Робототехника</li>
+                </ul>
+
+                <div class="monetization">
+                    <h4>🎯 Партнерские программы</h4>
+                    <p>Рекомендуемые сервисы и инструменты для работы с ИИ</p>
+                    <a href="#" style="color: #1976d2; text-decoration: none;">Смотреть предложения →</a>
+                </div>
+
+                <div class="monetization">
+                    <h4>📚 Книги и курсы</h4>
+                    <p>Образовательные материалы по ИИ и технологиям</p>
+                    <a href="#" style="color: #1976d2; text-decoration: none;">Каталог ресурсов →</a>
+                </div>
+
+                <!-- Рекламный блок 300x250 -->
+                <div class="ad-block">
+                    <ins class="adsbygoogle"
+                         style="display:block; width:300px; height:250px;"
+                         data-ad-client="ca-pub-3628466575286373"
+                         data-ad-slot="0987654321"
+                         data-ad-format="auto"
+                         data-full-width-responsive="true"></ins>
+                    <script>
+                         (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 AI Tech Блог. Автоматическая генерация контента.</p>
+        </div>
+    </footer>
+
+    <!-- Модальное окно для статей -->
+    <div id="articleModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modalArticleContent"></div>
+        </div>
+    </div>
+
+    <script>
+        // Функция показа статьи
+        function showArticle(articleId) {
+            const article = articles.find(a => a.id == articleId);
+            if (article) {
+                document.getElementById('modalArticleContent').innerHTML = \`
+                    <div class="article-date">\${article.date}</div>
+                    <h2>\${article.title}</h2>
+                    <div class="article-content">\${article.content}</div>
+                    <div class="monetization">
+                        <h4>🎯 Партнерские программы</h4>
+                        \${article.monetization.map(link => \`
+                            <p><a href="\${link.url}" target="_blank">\${link.name} (\${link.commission})</a></p>
+                        \`).join('')}
+                    </div>
+                \`;
+                document.getElementById('articleModal').style.display = 'block';
+            }
+        }
+
+        // Закрытие модального окна
+        document.querySelector('.close').onclick = function() {
+            document.getElementById('articleModal').style.display = 'none';
+        }
+
+        // Закрытие по клику вне окна
+        window.onclick = function(event) {
+            const modal = document.getElementById('articleModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>`;
+    };
+
+    // Создаем статическую страницу
+    const staticHtml = generateHomePage();
+
+    // Сохраняем статическую страницу
+    fs.writeFileSync(path.join(__dirname, 'index-static.html'), staticHtml);
+
+    console.log('✅ Статическая версия сайта сгенерирована: index-static.html');
+}
+
+// Функция обновления контента и статической версии
+function updateContentAndStatic() {
+    console.log('🚀 Запуск полного обновления контента и статической версии...');
+    
+    // 1. Генерируем новые статьи
+    console.log('📝 Генерация новых статей...');
+    generateNewArticles();
+    
+    // 2. Генерируем статическую версию
+    console.log('🔄 Создание статической версии...');
+    generateStaticVersion();
+    
+    // 3. Коммитим изменения
+    console.log('💾 Сохраняем изменения...');
+    const { spawn } = require('child_process');
+    const git = spawn('git', ['add', '.']);
+    git.on('close', (code) => {
+        if (code === 0) {
+            const commit = spawn('git', ['commit', '-m', `Auto-update: ${new Date().toISOString()}`]);
+            commit.on('close', (code) => {
+                if (code === 0) {
+                    console.log('✅ Обновление завершено!');
+                    console.log('🌐 Запускаем развертывание на Vercel...');
+                    
+                    // Запускаем развертывание
+                    const vercel = spawn('npx', ['vercel', '--prod'], {
+                        stdio: 'inherit',
+                        cwd: __dirname
+                    });
+                    vercel.on('close', (code) => {
+                        if (code === 0) {
+                            console.log('🎉 Развертывание на Vercel завершено!');
+                        } else {
+                            console.log('⚠️  Ошибка при развертывании');
+                        }
+                    });
+                } else {
+                    console.log('⚠️  Ошибка при коммите');
+                }
+            });
+        } else {
+            console.log('⚠️  Ошибка при добавлении файлов');
+        }
+    });
+}
+
+// Функция генерации новых статей
+function generateNewArticles() {
+    const topics = [
+        'Новые архитектуры нейросетей',
+        'ИИ в медицине', 
+        'Автonomousные системы',
+        'Компьютерное зрение',
+        'Обработка естественного языка',
+        'Робототехника',
+        'Квантовые вычисления и ИИ',
+        'Этика искусственного интеллекта',
+        'Генеративный ИИ',
+        'ИИ в бизнесе',
+        'Будущее машинного обучения',
+        'Нейросети для создания контента'
+    ];
+
+    const generateArticleContent = (topic) => {
+        const fullArticles = {
+            'Новые архитектуры нейросетей': `
+В этой статье мы рассмотрим последние достижения в области новых архитектур нейросетей. Современные технологии позволяют достигать невероятных результатов в обработке данных и машинном обучении.
+
+## Введение
+Нейронные сети прошли долгий путь от простых перцептронов до сложных трансформерных архитектур. В 2026 году мы наблюдаем революционный прорыв в области глубокого обучения.
+
+## Основные архитектуры
+### 1. Трансформеры
+Трансформерные модели доминируют в обработке естественного языка. Их способность учитывать контекст и обрабатывать длинные последовательности делает их незаменимыми в современных ИИ-системах.
+
+### 2. ConvNeXT
+ConvNeXT объединяет преимущества сверточных нейронных сетей с архитектурой трансформеров, обеспечивая высокую точность в задачах компьютерного зрения.
+
+### 3. Vision Transformers
+Vision Transformers показывают впечатляющие результаты в классификации изображений, превосходя традиционные CNN в некоторых задачах.
+
+## Применение в реальном мире
+Эти архитектуры находят применение в:
+- Медицинской диагностике
+- Автономных системах
+- Финансовом анализе
+- Создании контента
+
+## Будущее развития
+Эксперты прогнозируют дальнейшую оптимизацию этих архитектур с упором на энергоэффективность и скорость обработки.
+
+## Заключение
+Новые архитектуры нейросетей открывают неограниченные возможности для развития искусственного интеллекта в ближайшие годы.
+        `,
+        'ИИ в медицине': `
+В этой статье мы рассмотрим последние достижения в области искусственного интеллекта в медицине. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы внедрения.
+
+## Введение
+Искусственный интеллектrevolutionize медицину, делая диагностику более точной, а лечение - более персонализированным. В 2026 году ИИ стал неотъемлемой частью современной медицинской практики.
+
+## Диагностика заболеваний
+### Ранняя диагностика рака
+ИИ-системы способны обнаруживать рак на ранних стадиях с точностью до 95%, что значительно улучшает прогнозы лечения.
+
+### Анализ медицинских изображений
+Нейронные сети анализируют КТ, МРТ и рентгеновские снимки с точностью, превышающей человеческие возможности.
+
+## Персонализированное лечение
+### Геномный анализ
+ИИ помогает анализировать генетические данные пациента для подбора индивидуальных схем лечения.
+
+### Прогнозирование развития заболеваний
+Машинное обучение предсказывает развитие хронических заболеваний на основе истории болезни пациента.
+
+## Хирургические роботы
+Хирургические системы на основе ИИ выполняют операции с микронной точностью, минимизируя риски для пациента.
+
+## Телемедицина
+ИИ-ассистированная телемедицина делает медицинскую помощь доступной для жителей отдаленных регионов.
+
+## Этические аспекты
+Использование ИИ в медицине raises важные вопросы о конфиденциальности данных и ответственности за ошибки.
+
+## Заключение
+ИИ в медицине открывает новые горизонты для улучшения качества медицинской помощи и спасения жизней.
+        `
+        // ... остальные темы можно добавить аналогично
+    };
+
+    return fullArticles[topic] || `Обзор последних разработок в области ${topic}. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы внедрения ИИ-технологий в различных отраслях экономики. Современные достижения и перспективы развития в 2026 году.`;
+}
+
+const getMonetizationLinks = (topic) => {
+    const links = [];
+    
+    // Общие партнерские ссылки
+    if (topic.includes('ИИ') || topic.includes('нейросет') || topic.includes('машинное обучение')) {
+        links.push({
+            name: 'Coursera',
+            url: 'https://www.coursera.org',
+            commission: '15-45%'
+        });
+        links.push({
+            name: 'Udacity',
+            url: 'https://www.udacity.com',
+            commission: '20%'
+        });
+        links.push({
+            name: 'OpenAI',
+            url: 'https://openai.com',
+            commission: '20%'
+        });
+    }
+    
+    return links;
+};
+
+// Чтение текущих статей
+const articlesPath = path.join(__dirname, 'articles.json');
+let articles = [];
+
+if (fs.existsSync(articlesPath)) {
+    articles = JSON.parse(fs.readFileSync(articlesPath, 'utf8'));
+}
+
+// Генерация новых статей
+const newArticles = topics.map((topic, index) => ({
+    id: Date.now() + index,
+    title: `${topic}: последние достижения 2026`,
+    excerpt: `Обзор последних разработок в области ${topic}. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.`,
+    content: generateArticleContent(topic),
+    date: new Date().toLocaleDateString('ru-RU'),
+    tags: [topic.toLowerCase()],
+    monetization: getMonetizationLinks(topic)
+}));
+
+// Обновляем статьи
+articles = [...articles, ...newArticles];
+
+// Сохраняем в файл
+fs.writeFileSync(articlesPath, JSON.stringify(articles, null, 2));
+
+console.log(`✅ Обновлено ${newArticles.length} новых статей`);
+}
+
+// Экспортируем функции
+module.exports = {
+    generateStaticVersion,
+    updateContentAndStatic,
+    generateNewArticles
+};
 function generateArticleContent(topic) {
     const fullArticles = {
         'Новые архитектуры нейросетей': `
