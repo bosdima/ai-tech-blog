@@ -158,12 +158,18 @@ app.get('/api/monetization', (req, res) => {
 });
 
 app.get('/api/stats', (req, res) => {
-    const stats = {
-        totalArticles: articles.length,
-        lastUpdate: new Date().toISOString(),
-        sourcesCount: AI_NEWS_SOURCES.length
-    };
-    res.json(stats);
+    try {
+        const articles = JSON.parse(fs.readFileSync('articles.json', 'utf8'));
+        const stats = {
+            totalArticles: articles.length,
+            lastUpdate: new Date().toISOString(),
+            sourcesCount: AI_NEWS_SOURCES.length,
+            latestArticle: articles[articles.length - 1].date
+        };
+        res.json(stats);
+    } catch (error) {
+        res.status(500).json({ error: 'Ошибка загрузки статистики' });
+    }
 });
 
 // Запуск парсинга по расписанию (каждые 2 часа)
