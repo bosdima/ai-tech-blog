@@ -122,9 +122,15 @@ function getMonetizationLinks(topic) {
     return relevantLinks.slice(0, 2); // Максимум 2 ссылки на статью
 }
 
-// API эндпоинты
+// API для получения статей
 app.get('/api/articles', (req, res) => {
-    res.json(articles);
+    try {
+        const articles = JSON.parse(fs.readFileSync('articles.json', 'utf8'));
+        res.json(articles);
+    } catch (error) {
+        console.error('Ошибка загрузки статей:', error);
+        res.status(500).json({ error: 'Ошибка загрузки статей' });
+    }
 });
 
 app.get('/api/monetization', (req, res) => {
