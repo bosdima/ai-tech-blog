@@ -2,15 +2,11 @@
   "version": 2,
   "builds": [
     {
-      "src": "static-server.js",
+      "src": "server.js",
       "use": "@vercel/node"
     }
   ],
   "routes": [
-    {
-      "src": "/ads.txt",
-      "dest": "static-server.js"
-    },
     {
       "src": "/(.*)",
       "dest": "server.js"

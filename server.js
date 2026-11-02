@@ -743,8 +743,10 @@ app.get('/api/articles/:id', (req, res) => {
     }
 });
 
-// Обслуживание статических файлов
-app.use(express.static(__dirname));
+// Обслуживание ads.txt
+app.get('/ads.txt', (req, res) => {
+    res.send('google.com, pub-3628466575286373');
+});
 
 // API для получения статей
 app.get('/api/articles', (req, res) => {
