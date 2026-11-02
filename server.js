@@ -513,7 +513,7 @@ function updateContentAndStatic() {
                     console.log('🌐 Запускаем развертывание на Vercel...');
                     
                     // Запускаем развертывание
-                    const vercel = spawn('npx', ['vercel', '--prod'], {
+                    const vercel = spawn('C:\\Users\\Admin\\AppData\\Local\\hermes\\tools\\node-26.12.1-win32-x64\\npx.exe', ['vercel', '--prod'], {
                         stdio: 'inherit',
                         cwd: __dirname
                     });
