@@ -109,33 +109,7 @@
 
     <div class="container">
         <div class="articles-grid">
-            <article class="article-card">
-                <div class="article-date">29 октября 2026</div>
-                <h2 class="article-title">Новые технологии в нейросетях 2026</h2>
-                <p class="article-excerpt">Исследуем последние достижения в области глубокого обучения и нейронных сетей, которые меняют мир технологий...</p>
-                <a href="#" class="read-more">Читать далее →</a>
-            </article>
-
-            <article class="article-card">
-                <div class="article-date">29 октября 2026</div>
-                <h2 class="article-title">Искусственный интеллект в бизнесе</h2>
-                <p class="article-excerpt">Как компании внедряют ИИ для оптимизации процессов и повышения эффективности. Практические кейсы...</p>
-                <a href="#" class="read-more">Читать далее →</a>
-            </article>
-
-            <article class="article-card">
-                <div class="article-date">29 октября 2026</div>
-                <h2 class="article-title">Будущее машинного обучения</h2>
-                <p class="article-excerpt">Прогнозы развития ML технологий на ближайшие годы. Новые алгоритмы и подходы к обучению...</p>
-                <a href="#" class="read-more">Читать далее →</a>
-            </article>
-
-            <article class="article-card">
-                <div class="article-date">29 октября 2026</div>
-                <h2 class="article-title">Генеративный ИИ: революция в контенте</h2>
-                <p class="article-excerpt">Как генеративные модели создают тексты, изображения и музыку. Технологии и возможности...</p>
-                <a href="#" class="read-more">Читать далее →</a>
-            </article>
+            <!-- Статьи будут загружены через JavaScript -->
         </div>
 
         <div class="sidebar">
@@ -169,6 +143,11 @@
     </footer>
 
     <script>
+        // Немедленная загрузка контента при загрузке страницы
+        document.addEventListener('DOMContentLoaded', function() {
+            loadContent();
+        });
+
         // Автоматическая загрузка контента
         async function loadContent() {
             try {
@@ -177,6 +156,9 @@
                 updateArticles(articles);
             } catch (error) {
                 console.log('Ошибка загрузки:', error);
+                // Показываем ошибку вместо статей
+                const articlesGrid = document.querySelector('.articles-grid');
+                articlesGrid.innerHTML = '<p>Ошибка загрузки статей. Пожалуйста, попробуйте позже.</p>';
             }
         }
 
