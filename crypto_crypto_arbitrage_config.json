@@ -1,0 +1,78 @@
+{
+  "crypto_crypto_arbitrage_agent": {
+    "name": "Crypto-to-Crypto Arbitrage Agent",
+    "version": "1.0.0",
+    "description": "Automated crypto-to-crypto arbitrage without bank involvement",
+    
+    "target_exchanges": {
+      "bybit_spot": {
+        "url": "https://www.bybit.com/app/trade/spot",
+        "pairs": ["BTC/USDT", "ETH/USDT", "BNB/USDT", "XRP/USDT"],
+        "fee": 0.001,
+        "min_order_size": 0.001
+      },
+      "kucoin_spot": {
+        "url": "https://www.kucoin.com/trade-spot",
+        "pairs": ["BTC/USDT", "ETH/USDT", "SOL/USDT", "ADA/USDT"],
+        "fee": 0.001,
+        "min_order_size": 0.001
+      },
+      "binance_spot": {
+        "url": "https://www.binance.com/trade",
+        "pairs": ["BTC/USDT", "ETH/USDT", "DOT/USDT", "MATIC/USDT"],
+        "fee": 0.00075,
+        "min_order_size": 0.001
+      }
+    },
+    
+    "arbitrage_strategies": {
+      "inter_exchange": {
+        "description": "Arbitrage between different exchanges",
+        "min_profit_threshold": 0.005,
+        "max_slippage": 0.002,
+        "time_limit": 300
+      },
+      "triangular": {
+        "description": "Triangular arbitrage within one exchange",
+        "min_profit_threshold": 0.003,
+        "max_slippage": 0.001,
+        "time_limit": 180
+      }
+    },
+    
+    "agent_settings": {
+      "timeout": 30,
+      "retries": 3,
+      "delay_between_requests": 1,
+      "max_concurrent_requests": 5,
+      "user_agents": [
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
+      ]
+    },
+    
+    "risk_management": {
+      "max_position_size": 0.1,
+      "max_daily_loss": 0.05,
+      "stop_loss": 0.02,
+      "take_profit": 0.03,
+      "max_drawdown": 0.1
+    },
+    
+    "output_settings": {
+      "save_results": true,
+      "generate_reports": true,
+      "alert_thresholds": {
+        "arbitrage_opportunity": 0.01,
+        "price_anomaly": 0.05,
+        "volume_spike": 2.0
+      }
+    },
+    
+    "logging": {
+      "level": "INFO",
+      "file_path": "crypto_crypto_arbitrage_logs.txt",
+      "max_file_size": "10MB",
+      "backup_count": 5
+    }
+  }
+}

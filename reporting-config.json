@@ -1,0 +1,20 @@
+{
+  "telegram": {
+    "enabled": false,
+    "botToken": "",
+    "chatId": "",
+    "testMode": false
+  },
+  "reporting": {
+    "dailyReport": true,
+    "weeklySummary": false,
+    "monthlyAnalysis": false,
+    "checkAds": true,
+    "checkRevenue": true
+  },
+  "schedule": {
+    "dailyTime": "09:00",
+    "weeklyDay": "monday",
+    "monthlyDate": 1
+  }
+}

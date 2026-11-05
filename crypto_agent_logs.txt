@@ -1,0 +1,39 @@
+2026-11-03 21:20:38,607 - crypto_agent - INFO - Starting crypto agent monitoring cycle...
+2026-11-03 21:20:38,607 - crypto_agent - INFO - Monitoring P2P platforms...
+2026-11-03 21:20:41,345 - crypto_agent - WARNING - Request failed (attempt 1): 404 Client Error: Not Found for url: https://www.kucoin.com/p2p?lang=en_US&
+2026-11-03 21:20:43,056 - crypto_agent - WARNING - Request failed (attempt 2): 404 Client Error: Not Found for url: https://www.kucoin.com/p2p?lang=en_US&
+2026-11-03 21:20:45,768 - crypto_agent - WARNING - Request failed (attempt 3): 404 Client Error: Not Found for url: https://www.kucoin.com/p2p?lang=en_US&
+2026-11-03 21:20:45,768 - crypto_agent - ERROR - Request failed after 3 attempts
+2026-11-03 21:20:46,278 - crypto_agent - WARNING - Request failed (attempt 1): HTTPSConnectionPool(host='localcryptos.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("HTTPSConnection(host='localcryptos.com', port=443): Failed to resolve 'localcryptos.com' ([Errno 11001] getaddrinfo failed)"))
+2026-11-03 21:20:47,280 - crypto_agent - WARNING - Request failed (attempt 2): HTTPSConnectionPool(host='localcryptos.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("HTTPSConnection(host='localcryptos.com', port=443): Failed to resolve 'localcryptos.com' ([Errno 11001] getaddrinfo failed)"))
+2026-11-03 21:20:49,283 - crypto_agent - WARNING - Request failed (attempt 3): HTTPSConnectionPool(host='localcryptos.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("HTTPSConnection(host='localcryptos.com', port=443): Failed to resolve 'localcryptos.com' ([Errno 11001] getaddrinfo failed)"))
+2026-11-03 21:20:49,283 - crypto_agent - ERROR - Request failed after 3 attempts
+2026-11-03 21:20:49,283 - crypto_agent - INFO - Found 0 P2P arbitrage opportunities
+2026-11-03 21:20:49,283 - crypto_agent - INFO - Monitoring DeFi protocols...
+2026-11-03 21:20:52,797 - crypto_agent - INFO - Found 0 DeFi yield opportunities
+2026-11-03 21:20:52,797 - crypto_agent - INFO - Searching freelance opportunities...
+2026-11-03 21:20:53,772 - crypto_agent - WARNING - Request failed (attempt 1): 403 Client Error: Forbidden for url: https://www.upwork.com/
+2026-11-03 21:20:55,528 - crypto_agent - WARNING - Request failed (attempt 2): 403 Client Error: Forbidden for url: https://www.upwork.com/
+2026-11-03 21:20:58,335 - crypto_agent - WARNING - Request failed (attempt 3): 403 Client Error: Forbidden for url: https://www.upwork.com/
+2026-11-03 21:20:58,335 - crypto_agent - ERROR - Request failed after 3 attempts
+2026-11-03 21:21:00,069 - crypto_agent - WARNING - Request failed (attempt 1): 403 Client Error: Forbidden for url: https://www.fiverr.com/
+2026-11-03 21:21:01,341 - crypto_agent - WARNING - Request failed (attempt 2): 403 Client Error: Forbidden for url: https://www.fiverr.com/
+2026-11-03 21:21:03,606 - crypto_agent - WARNING - Request failed (attempt 3): 403 Client Error: Forbidden for url: https://www.fiverr.com/
+2026-11-03 21:21:03,606 - crypto_agent - ERROR - Request failed after 3 attempts
+2026-11-03 21:21:03,607 - crypto_agent - INFO - Found 0 freelance opportunities
+2026-11-03 21:21:03,611 - crypto_agent - INFO - Results saved to crypto_agent_results_20261103_212103.json
+2026-11-03 21:21:03,611 - crypto_agent - INFO - Alerts saved to crypto_agent_alerts_20261103_212103.txt
+2026-11-03 21:21:03,611 - crypto_agent - INFO - Monitoring cycle completed successfully
+2026-11-03 21:22:46,332 - crypto_agent_demo - INFO - Starting crypto agent monitoring cycle...
+2026-11-03 21:22:46,333 - crypto_agent_demo - INFO - Monitoring P2P platforms...
+2026-11-03 21:22:46,333 - crypto_agent_demo - INFO - Found 1 P2P arbitrage opportunities
+2026-11-03 21:22:46,333 - crypto_agent_demo - INFO - Monitoring DeFi protocols...
+2026-11-03 21:22:46,333 - crypto_agent_demo - INFO - Found 3 DeFi yield opportunities
+2026-11-03 21:22:46,333 - crypto_agent_demo - INFO - Searching freelance opportunities...
+2026-11-03 21:22:46,333 - crypto_agent_demo - INFO - Found 2 freelance opportunities
+2026-11-03 21:22:46,335 - crypto_agent_demo - INFO - Results saved to crypto_agent_results_20261103_212246.json
+2026-11-03 21:22:46,335 - crypto_agent_demo - INFO - Alerts saved to crypto_agent_alerts_20261103_212246.txt
+2026-11-03 21:22:46,335 - crypto_agent_demo - INFO - ALERTS:
+2026-11-03 21:22:46,335 - crypto_agent_demo - INFO - p2p_arbitrage: 1 alerts
+2026-11-03 21:22:46,336 - crypto_agent_demo - INFO -   - bybit: 5.28% profit potential
+2026-11-03 21:22:46,336 - crypto_agent_demo - INFO - Monitoring cycle completed successfully

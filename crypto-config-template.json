@@ -1,0 +1,12 @@
+{
+  "enabledPlatforms": ["p2p", "freelance", "content"],
+  "targetEarnings": 5000,
+  "currencies": ["USDT", "USDC", "ETH"],
+  "wallets": {
+    "usdt": "0xВАШ_АДРЕС_USDT",
+    "usdc": "0xВАШ_АДРЕС_USDC", 
+    "eth": "0xВАШ_АДРЕС_ETH"
+  },
+  "autoConvert": false,
+  "payoutThreshold": 100
+}

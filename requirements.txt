@@ -1,0 +1,37 @@
+# Crypto Agent Requirements
+# Automated web agent for cryptocurrency earning
+
+# Core dependencies
+requests>=2.31.0
+beautifulsoup4>=4.12.0
+selenium>=4.15.0
+lxml>=4.9.0
+
+# Data processing
+pandas>=2.1.0
+numpy>=1.24.0
+jsonschema>=4.19.0
+
+# Web automation
+webdriver-manager>=4.0.0
+fake-useragent>=1.4.0
+
+# Async support
+aiohttp>=3.8.0
+asyncio>=3.4.3
+
+# Configuration
+python-dotenv>=1.0.0
+PyYAML>=6.0.1
+
+# Logging and monitoring
+loguru>=0.7.0
+
+# Date and time
+python-dateutil>=2.8.2
+
+# Optional dependencies for enhanced functionality
+# Uncomment if needed:
+# selenium-wire>=0.11.0
+# playwright>=1.39.0
+# playwright-stealth>=1.0.6

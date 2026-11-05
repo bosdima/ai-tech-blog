@@ -1,0 +1,85 @@
+{
+  "opportunities": [],
+  "executed_trades": [],
+  "prices": {
+    "bybit_spot": [
+      {
+        "pair": "BTC/USDT",
+        "price": 25000,
+        "volume_24h": 4472027.6517903935,
+        "timestamp": "2026-11-04T10:05:20.247436"
+      },
+      {
+        "pair": "ETH/USDT",
+        "price": 1250,
+        "volume_24h": 1777159.9620966683,
+        "timestamp": "2026-11-04T10:05:20.247454"
+      },
+      {
+        "pair": "BNB/USDT",
+        "price": 300,
+        "volume_24h": 2998102.8453442305,
+        "timestamp": "2026-11-04T10:05:20.247459"
+      },
+      {
+        "pair": "XRP/USDT",
+        "price": 0.6,
+        "volume_24h": 2211857.5451547764,
+        "timestamp": "2026-11-04T10:05:20.247463"
+      }
+    ],
+    "kucoin_spot": [
+      {
+        "pair": "BTC/USDT",
+        "price": 25000,
+        "volume_24h": 4741867.35575933,
+        "timestamp": "2026-11-04T10:05:20.247468"
+      },
+      {
+        "pair": "ETH/USDT",
+        "price": 1250,
+        "volume_24h": 4803629.067513123,
+        "timestamp": "2026-11-04T10:05:20.247471"
+      },
+      {
+        "pair": "SOL/USDT",
+        "price": 100,
+        "volume_24h": 3835638.7019733186,
+        "timestamp": "2026-11-04T10:05:20.247474"
+      },
+      {
+        "pair": "ADA/USDT",
+        "price": 0.5,
+        "volume_24h": 4027676.853746023,
+        "timestamp": "2026-11-04T10:05:20.247477"
+      }
+    ],
+    "binance_spot": [
+      {
+        "pair": "BTC/USDT",
+        "price": 25000,
+        "volume_24h": 4447117.141040804,
+        "timestamp": "2026-11-04T10:05:20.247481"
+      },
+      {
+        "pair": "ETH/USDT",
+        "price": 1250,
+        "volume_24h": 4847009.897740493,
+        "timestamp": "2026-11-04T10:05:20.247484"
+      },
+      {
+        "pair": "DOT/USDT",
+        "price": 7,
+        "volume_24h": 4376217.292192955,
+        "timestamp": "2026-11-04T10:05:20.247489"
+      },
+      {
+        "pair": "MATIC/USDT",
+        "price": 0.9,
+        "volume_24h": 2195926.683225452,
+        "timestamp": "2026-11-04T10:05:20.247493"
+      }
+    ]
+  },
+  "errors": []
+}

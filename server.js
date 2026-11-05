@@ -16,6 +16,82 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
 
+// Крипто-страница
+app.get('/crypto', (req, res) => {
+    res.sendFile(path.join(__dirname, 'crypto-blog.html'));
+});
+
+// API для получения статей
+app.get('/api/articles', (req, res) => {
+    try {
+        // Загружаем крипто-статьи
+        const cryptoArticles = require('./articles-crypto.json');
+        res.json(cryptoArticles);
+    } catch (error) {
+        console.error('Ошибка при загрузке крипто-статей:', error);
+        res.status(500).json({ error: 'Ошибка при загрузке статей' });
+    }
+});
+
+// API для получения статей (оригинальные)
+app.get('/api/original-articles', (req, res) => {
+    try {
+        const originalArticles = require('./articles.json');
+        res.json(originalArticles);
+    } catch (error) {
+        console.error('Ошибка при загрузке оригинальных статей:', error);
+        res.status(500).json({ error: 'Ошибка при загрузке статей' });
+    }
+});
+
+// API для получения всех статей
+app.get('/api/all-articles', (req, res) => {
+    try {
+        const cryptoArticles = require('./articles-crypto.json');
+        const originalArticles = require('./articles.json');
+        const allArticles = [...cryptoArticles, ...originalArticles];
+        res.json(allArticles);
+    } catch (error) {
+        console.error('Ошибка при загрузке статей:', error);
+        res.status(500).json({ error: 'Ошибка при загрузке статей' });
+    }
+});
+
+// API для получения статьи по ID
+app.get('/api/articles/:id', (req, res) => {
+    try {
+        const articleId = req.params.id;
+        let article = null;
+        
+        // Ищем в крипто-статьях
+        try {
+            const cryptoArticles = require('./articles-crypto.json');
+            article = cryptoArticles.find(a => a.id == articleId);
+        } catch (error) {
+            console.error('Ошибка при загрузке крипто-статей:', error);
+        }
+        
+        // Если не нашли, ищем в оригинальных статьях
+        if (!article) {
+            try {
+                const originalArticles = require('./articles.json');
+                article = originalArticles.find(a => a.id == articleId);
+            } catch (error) {
+                console.error('Ошибка при загрузке оригинальных статей:', error);
+            }
+        }
+        
+        if (article) {
+            res.json(article);
+        } else {
+            res.status(404).json({ error: 'Статья не найдена' });
+        }
+    } catch (error) {
+        console.error('Ошибка при получении статьи:', error);
+        res.status(500).json({ error: 'Ошибка при получении статьи' });
+    }
+});
+
 // Конфигурация
 const AI_NEWS_SOURCES = [
     'https://habr.com/hub/neural_networks/',
@@ -673,12 +749,6 @@ fs.writeFileSync(articlesPath, JSON.stringify(articles, null, 2));
 console.log(`✅ Обновлено ${newArticles.length} новых статей`);
 }
 
-// Экспортируем функции
-module.exports = {
-    generateStaticVersion,
-    updateContentAndStatic,
-    generateNewArticles
-};
 function generateArticleContent(topic) {
     const fullArticles = {
         'Новые архитектуры нейросетей': `
@@ -1360,13 +1430,22 @@ cron.schedule('0 */2 * * *', () => {
     parseNews();
 });
 
-// Запуск сервера
-app.listen(PORT, () => {
-    console.log(`AI Tech Блог запущен на порту ${PORT}`);
-    
-    // Первоначальный парсинг при запуске
-    parseNews();
-});
+// Запуск сервера (только при локальном запуске)
+if (require.main === module) {
+    app.listen(PORT, () => {
+        console.log(`AI Tech Блог запущен на порту ${PORT}`);
+
+        // Первоначальный парсинг при запуске
+        parseNews();
+    });
+}
+
+// Экспорт приложения для Vercel serverless
+module.exports = app;
+module.exports.parseNews = parseNews;
+module.exports.generateStaticVersion = generateStaticVersion;
+module.exports.updateContentAndStatic = updateContentAndStatic;
+module.exports.generateNewArticles = generateNewArticles;
 
 // Обработка ошибок
 process.on('uncaughtException', (error) => {

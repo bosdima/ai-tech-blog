@@ -22,5 +22,87 @@
     "status": "critical_error",
     "message": "Критическая ошибка при обновлении",
     "error": "spawn npx ENOENT"
+  },
+  {
+    "timestamp": "2026-11-02T10:40:45.707Z",
+    "status": "success",
+    "message": "AI Tech Blog обновлен успешно"
+  },
+  {
+    "timestamp": "2026-11-02T10:54:38.923Z",
+    "status": "success",
+    "message": "AI Tech Blog обновлен успешно"
+  },
+  {
+    "timestamp": "2026-11-03T17:08:58.428Z",
+    "status": "critical_error",
+    "message": "Критическая ошибка при обновлении",
+    "error": "updateContentAndStatic is not a function"
+  },
+  {
+    "timestamp": "2026-11-03T17:11:17.816Z",
+    "status": "critical_error",
+    "message": "Критическая ошибка при обновлении",
+    "error": "spawn npx ENOENT"
+  },
+  {
+    "timestamp": "2026-11-03T17:12:33.454Z",
+    "status": "success",
+    "message": "AI Tech Blog обновлен успешно",
+    "error": null
+  },
+  {
+    "timestamp": "2026-11-03T19:22:18.109Z",
+    "status": "success",
+    "message": "AI Tech Blog обновлен успешно",
+    "error": null
+  },
+  {
+    "timestamp": "2026-11-04T05:54:57.995Z",
+    "status": "error",
+    "message": "Ошибка обновления AI Tech Blog",
+    "error": null
+  },
+  {
+    "timestamp": "2026-11-04T07:58:11.305Z",
+    "status": "success",
+    "message": "AI Tech Blog обновлен успешно",
+    "error": null
+  },
+  {
+    "timestamp": "2026-11-04T10:07:05.470Z",
+    "status": "success",
+    "message": "AI Tech Blog обновлен успешно",
+    "error": null
+  },
+  {
+    "timestamp": "2026-11-04T12:22:44.440Z",
+    "status": "success",
+    "message": "AI Tech Blog обновлен успешно",
+    "error": null
+  },
+  {
+    "timestamp": "2026-11-04T14:25:51.612Z",
+    "status": "error",
+    "message": "Ошибка обновления AI Tech Blog",
+    "error": null
+  },
+  {
+    "timestamp": "2026-11-04T16:33:24.052Z",
+    "status": "error",
+    "message": "Ошибка обновления AI Tech Blog",
+    "error": null
+  },
+  {
+    "timestamp": "2026-11-04T18:41:05.454Z",
+    "status": "error",
+    "message": "Ошибка обновления AI Tech Blog",
+    "error": null
+  },
+  {
+    "timestamp": "2026-11-05T16:37:08.369Z",
+    "status": "success",
+    "message": "AI Tech Blog обновлен успешно",
+    "error": null
   }
 ]

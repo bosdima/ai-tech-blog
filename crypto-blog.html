@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Tech Блог - Криптовалютный заработок</title>
+    <meta name="description" content="Автоматический блог о технологиях ИИ, нейросетях и криптовалюте. Последние новости, обзоры и практические руководства.">
+    <meta name="keywords" content="искусственный интеллект, нейросети, машинное обучение, ИИ технологии, нейронные сети, AI, tech, blog, криптовалюта, заработок">
+    <meta name="author" content="AI Tech Team">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="AI Tech Блог - Криптовалютный заработок">
+    <meta property="og:description" content="Лучшие новости и статьи о технологиях ИИ и криптовалюте">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ai-tech-blog-steel.vercel.app">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 2rem 0; margin-bottom: 2rem; }
+        .header-content { text-align: center; }
+        h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .subtitle { font-size: 1.2rem; opacity: 0.9; }
+        .articles-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin-bottom: 3rem; }
+        .article-card { background: white; border-radius: 10px; padding: 1.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s ease; }
+        .article-card:hover { transform: translateY(-5px); }
+        .article-date { color: #666; font-size: 0.9rem; margin-bottom: 0.5rem; }
+        .article-title { font-size: 1.3rem; color: #333; margin-bottom: 1rem; }
+        .article-excerpt { color: #666; line-height: 1.6; }
+        .read-more { color: #667eea; text-decoration: none; font-weight: bold; display: inline-block; margin-top: 1rem; cursor: pointer; }
+        .tag { background: #667eea; color: white; padding: 4px 8px; border-radius: 12px; font-size: 0.8rem; margin-right: 5px; margin-bottom: 5px; display: inline-block; }
+        .monetization { background: #e3f2fd; padding: 1rem; border-radius: 8px; margin: 1rem 0; }
+        .monetization-item { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid #eee; }
+        .monetization-item:last-child { border-bottom: none; }
+        footer { background: #333; color: white; text-align: center; padding: 2rem 0; margin-top: 3rem; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1>AI Tech Блог</h1>
+                <p class="subtitle">Автоматизированный источник новостей и технологий ИИ с криптовалютным заработком</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="articles-grid" id="articles-grid">
+            <!-- Статьи будут загружены через JavaScript -->
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 AI Tech Блог. Автоматическая генерация контента.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Немедленная загрузка контента при загрузке страницы
+        document.addEventListener('DOMContentLoaded', function() {
+            loadCryptoArticles();
+        });
+
+        // Загрузка крипто-статей
+        async function loadCryptoArticles() {
+            try {
+                const response = await fetch('/api/articles');
+                const articles = await response.json();
+                displayArticles(articles);
+                console.log('Загружено крипто-статей:', articles.length);
+            } catch (error) {
+                console.error('Ошибка загрузки крипто-статей:', error);
+                const articlesGrid = document.getElementById('articles-grid');
+                articlesGrid.innerHTML = '<p>Ошибка загрузки статей. Пожалуйста, попробуйте позже.</p>';
+            }
+        }
+
+        // Отображение статей
+        function displayArticles(articles) {
+            const articlesGrid = document.getElementById('articles-grid');
+            articlesGrid.innerHTML = '';
+
+            articles.forEach(article => {
+                const articleCard = document.createElement('div');
+                articleCard.className = 'article-card';
+                articleCard.innerHTML = `
+                    <div class="article-date">${article.date}</div>
+                    <h2 class="article-title">${article.title}</h2>
+                    <p class="article-excerpt">${article.excerpt}</p>
+                    <div class="article-tags">
+                        ${article.tags ? article.tags.map(tag => `<span class="tag">${tag}</span>`).join('') : ''}
+                    </div>
+                    ${article.monetization && article.monetization.length > 0 ? `
+                        <div class="monetization">
+                            <h4>💰 Монетизация:</h4>
+                            ${article.monetization.map(item => `
+                                <div class="monetization-item">
+                                    <span>${item.type}</span>
+                                    <span>${item.currency} ${item.amount}</span>
+                                </div>
+                            `).join('')}
+                        </div>
+                    ` : ''}
+                    <a href="#" class="read-more" onclick="showArticle('${article.id}')">Читать далее →</a>
+                `;
+                articlesGrid.appendChild(articleCard);
+            });
+        }
+
+        // Показать полную статью
+        function showArticle(articleId) {
+            console.log('Попытка открыть статью с ID:', articleId);
+            
+            fetch(`/api/articles/${articleId}`)
+                .then(response => {
+                    console.log('Ответ API:', response.status);
+                    return response.json();
+                })
+                .then(article => {
+                    console.log('Получена статья:', article);
+                    const modal = document.createElement('div');
+                    modal.style.cssText = `
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: rgba(0, 0, 0, 0.8);
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        z-index: 1000;
+                    `;
+                    modal.innerHTML = `
+                        <div style="
+                            background: white;
+                            border-radius: 15px;
+                            padding: 30px;
+                            max-width: 800px;
+                            max-height: 90vh;
+                            overflow-y: auto;
+                            position: relative;
+                            margin: 20px;
+                        ">
+                            <span style="
+                                position: absolute;
+                                top: 15px;
+                                right: 20px;
+                                font-size: 2rem;
+                                cursor: pointer;
+                                color: #666;
+                            " onclick="this.parentElement.parentElement.remove()">&times;</span>
+                            <div style="margin: 20px 0; line-height: 1.8; color: #444;">
+                                ${article.content.replace(/\n/g, '<br>')}
+                            </div>
+                        </div>
+                    `;
+                    document.body.appendChild(modal);
+                    
+                    // Закрытие по клику вне модального окна
+                    modal.addEventListener('click', (e) => {
+                        if (e.target === modal) {
+                            modal.remove();
+                        }
+                    });
+                })
+                .catch(error => {
+                    console.error('Ошибка загрузки статьи:', error);
+                    alert('Ошибка при загрузке статьи. Пожалуйста, попробуйте позже.');
+                });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+# Crypto Agent Input Data
+# Format: fixed_param=variable_start;variable_end;type
+# Types: numeric, alphanumeric, random
+
+# P2P Trading Parameters
+crypto=USDT;USDC;ETH;BTC;alphanumeric
+payment_method=bank_transfer;cash_deposit;alipay;wechat;alphanumeric
+amount_min=100;10000;numeric
+amount_max=1000;50000;numeric
+
+# DeFi Protocol Parameters
+apy_target=0.05;0.20;numeric
+gas_fee=10;100;numeric
+liquidity=1000;100000;numeric
+
+# Freelance Parameters
+budget_min=50;1000;numeric
+budget_max=100;10000;numeric
+project_score=0.7;1.0;numeric
+
+# Arbitrage Parameters
+min_profit=0.01;0.10;numeric
+max_spread=0.02;0.08;numeric
+trading_volume=100;10000;numeric
+
+# Time Parameters
+check_interval=60;300;numeric  # minutes between checks
+alert_threshold=0.02;0.15;numeric
+
+# Risk Parameters
+max_loss=0.01;0.05;numeric
+position_size=100;1000;numeric
+
+# Platform Parameters
+platform_weight=bybit;kucoin;localcryptos;random
+protocol_weight=aave;uniswap;curve;random
+freelance_weight=upwork;toptal;fiverr;random
+
+# Search Parameters
+search_depth=1;10;numeric
+result_limit=5;50;numeric
+retry_count=1;5;numeric

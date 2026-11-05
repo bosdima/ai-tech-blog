@@ -1,0 +1,49 @@
+name: Update AI Tech Blog
+
+on:
+  schedule:
+    # Каждые 2 часа
+    - cron: '0 */2 * * *'
+  workflow_dispatch:
+
+jobs:
+  update-blog:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm install
+      
+    - name: Generate new articles
+      run: node generate-articles.js
+      
+    - name: Update articles
+      run: |
+        cp articles-new.json articles.json
+        
+    - name: Build static site
+      run: |
+        node build-static.js
+        
+    - name: Commit and push changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add .
+        git diff --staged --quiet || git commit -m "🤖 Auto-update: $(date '+%Y-%m-%d %H:%M:%S')"
+        git push
+        
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./

@@ -1,0 +1,108 @@
+{
+  "bybit_dex_arbitrage_agent": {
+    "name": "Bybit to DEX Arbitrage Agent",
+    "version": "1.0.0",
+    "description": "Arbitrage between Bybit and DEX platforms without bank involvement",
+    
+    "bybit_settings": {
+      "url": "https://www.bybit.com/app/trade/spot",
+      "pairs": ["BTC/USDT", "ETH/USDT", "BNB/USDT", "XRP/USDT"],
+      "fee": 0.001,
+      "min_order_size": 0.001
+    },
+    
+    "dex_platforms": {
+      "uniswap_v3": {
+        "url": "https://app.uniswap.org",
+        "pairs": ["BTC/USDT", "ETH/USDT", "USDC/USDT"],
+        "fee": 0.003,
+        "gas_limit": 300000,
+        "chain": "ethereum"
+      },
+      "pancakeswap_v3": {
+        "url": "https://pancakeswap.finance",
+        "pairs": ["BTC/USDT", "ETH/USDT", "BNB/USDT"],
+        "fee": 0.0025,
+        "gas_limit": 250000,
+        "chain": "binance_smart_chain"
+      },
+      "curve_finance": {
+        "url": "https://curve.fi",
+        "pairs": ["USDT/USDC", "DAI/USDC", "crvUSD/USDC"],
+        "fee": 0.0004,
+        "gas_limit": 200000,
+        "chain": "ethereum"
+      },
+      "sushiswap": {
+        "url": "https://app.sushi.com",
+        "pairs": ["BTC/USDT", "ETH/USDT", "USDC/USDT"],
+        "fee": 0.003,
+        "gas_limit": 300000,
+        "chain": "ethereum"
+      }
+    },
+    
+    "arbitrage_strategies": {
+      "bybit_to_uniswap": {
+        "description": "Arbitrage between Bybit and Uniswap",
+        "min_profit_threshold": 0.005,
+        "max_slippage": 0.002,
+        "time_limit": 300
+      },
+      "bybit_to_pancakeswap": {
+        "description": "Arbitrage between Bybit and PancakeSwap",
+        "min_profit_threshold": 0.004,
+        "max_slippage": 0.002,
+        "time_limit": 300
+      },
+      "bybit_to_curve": {
+        "description": "Arbitrage between Bybit and Curve Finance",
+        "min_profit_threshold": 0.002,
+        "max_slippage": 0.001,
+        "time_limit": 180
+      },
+      "bybit_to_sushiswap": {
+        "description": "Arbitrage between Bybit and SushiSwap",
+        "min_profit_threshold": 0.005,
+        "max_slippage": 0.002,
+        "time_limit": 300
+      }
+    },
+    
+    "agent_settings": {
+      "timeout": 30,
+      "retries": 3,
+      "delay_between_requests": 1,
+      "max_concurrent_requests": 5,
+      "user_agents": [
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
+      ]
+    },
+    
+    "risk_management": {
+      "max_position_size": 0.05,
+      "max_daily_loss": 0.03,
+      "stop_loss": 0.02,
+      "take_profit": 0.03,
+      "max_drawdown": 0.1,
+      "max_gas_price": 50
+    },
+    
+    "output_settings": {
+      "save_results": true,
+      "generate_reports": true,
+      "alert_thresholds": {
+        "arbitrage_opportunity": 0.01,
+        "price_anomaly": 0.05,
+        "gas_price_spike": 100
+      }
+    },
+    
+    "logging": {
+      "level": "INFO",
+      "file_path": "bybit_dex_arbitrage_logs.txt",
+      "max_file_size": "10MB",
+      "backup_count": 5
+    }
+  }
+}

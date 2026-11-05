@@ -1,0 +1,63 @@
+[
+  {
+    "date": "2026-11-02T11:04:25.949Z",
+    "dateFormatted": "02.11.2026",
+    "time": "14:04:25",
+    "visits": {
+      "today": {
+        "visitors": 70,
+        "sessions": 84,
+        "pageviews": 175,
+        "bounceRate": 58,
+        "avgDuration": 161,
+        "date": "02.11.2026"
+      },
+      "yesterday": {
+        "visitors": 63,
+        "sessions": 51,
+        "pageviews": 219,
+        "bounceRate": 49,
+        "avgDuration": 165,
+        "date": "01.11.2026"
+      },
+      "monthly": {
+        "visitors": 2100,
+        "sessions": 2520,
+        "pageviews": 5250,
+        "bounceRate": 45,
+        "avgDuration": 104,
+        "date": "Последние 30 дней"
+      },
+      "trend": {
+        "direction": "up",
+        "percentage": 73.6,
+        "today": 125,
+        "yesterday": 72
+      }
+    },
+    "ads": {
+      "adsTxt": true,
+      "adsense": true,
+      "affiliates": true,
+      "overall": true,
+      "timestamp": "2026-11-02T11:04:25.947Z"
+    },
+    "revenue": {
+      "daily": 12,
+      "monthly": 80,
+      "yearly": 1460,
+      "cpm": 1,
+      "ctr": 1
+    },
+    "summary": {
+      "visitors": "👥 70 сегодня",
+      "sessions": "🎯 84 сессий",
+      "pages": "📄 175 просмотров",
+      "duration": "⏱️ 161с среднее время",
+      "bounceRate": "🔄 58% отказов",
+      "revenue": "💰 $12 сегодня",
+      "trend": "📈 125 (73.6%)",
+      "ads": "✅ Реклама работает"
+    }
+  }
+]

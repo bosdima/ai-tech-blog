@@ -18,7 +18,11 @@ async function autoUpdate() {
         
         // 4. Развертываем на Vercel
         console.log('🌐 Развертывание на Vercel...');
-        await deployToVercel();
+        try {
+            await deployToVercel();
+        } catch (deployError) {
+            console.log('⚠️  Ошибка развертывания, но контент обновлен:', deployError.message);
+        }
        // 5. Проверяем статус после обновления
        console.log('🔍 Проверка статуса после обновления...');
        const statusAfter = await checkWebsiteStatus();

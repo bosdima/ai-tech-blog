@@ -1,0 +1,19 @@
+{
+  "platforms": {
+    "reddit": true,
+    "linkedin": true,
+    "seo": true,
+    "twitter": true,
+    "facebook": true
+  },
+  "frequencies": {
+    "daily": "08:00",
+    "weekly": "10:00",
+    "monthly": "15:00"
+  },
+  "content": {
+    "articlesPerPost": 1,
+    "maxPostsPerDay": 5,
+    "includeImages": true
+  }
+}

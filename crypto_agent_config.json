@@ -1,0 +1,175 @@
+{
+  "crypto_earning_agent": {
+    "name": "Crypto Earning Automated Agent",
+    "version": "1.0.0",
+    "description": "Automated web agent for cryptocurrency earning through P2P trading, DeFi investments, and international freelance",
+    
+    "target_sites": {
+      "p2p_platforms": {
+        "bybit": {
+          "url": "https://www.bybit.com/p2p",
+          "form_fields": {
+            "crypto": "USDT",
+            "payment_method": "bank_transfer",
+            "amount_min": "100",
+            "amount_max": "10000"
+          },
+          "success_criteria": {
+            "keywords": ["price", "rate", "available", "trading"],
+            "min_results": 5
+          }
+        },
+        "kucoin": {
+          "url": "https://www.kucoin.com/p2p",
+          "form_fields": {
+            "crypto": "USDT",
+            "currency": "RUB",
+            "type": "buy"
+          },
+          "success_criteria": {
+            "keywords": ["price", "rate", "available", "trading"],
+            "min_results": 5
+          }
+        },
+        "localcryptos": {
+          "url": "https://localcryptos.com",
+          "form_fields": {
+            "crypto": "USDT",
+            "currency": "RUB",
+            "payment": "bank_transfer"
+          },
+          "success_criteria": {
+            "keywords": ["price", "rate", "available", "trading"],
+            "min_results": 3
+          }
+        }
+      },
+      
+      "defi_protocols": {
+        "aave": {
+          "url": "https://app.aave.com",
+          "form_fields": {
+            "token": "USDT",
+            "amount": "1000"
+          },
+          "success_criteria": {
+            "keywords": ["apy", "rate", "yield", "earn"],
+            "min_rate": 0.05
+          }
+        },
+        "uniswap": {
+          "url": "https://app.uniswap.org",
+          "form_fields": {
+            "token0": "USDT",
+            "token1": "ETH",
+            "liquidity": "1000"
+          },
+          "success_criteria": {
+            "keywords": ["fee", "apy", "rate", "yield"],
+            "min_rate": 0.02
+          }
+        },
+        "curve": {
+          "url": "https://curve.fi",
+          "form_fields": {
+            "token": "USDT",
+            "amount": "1000"
+          },
+          "success_criteria": {
+            "keywords": ["apy", "rate", "yield", "earn"],
+            "min_rate": 0.03
+          }
+        }
+      },
+      
+      "freelance_platforms": {
+        "upwork": {
+          "url": "https://www.upwork.com",
+          "form_fields": {
+            "search": "crypto",
+            "budget_min": "50",
+            "budget_max": "5000"
+          },
+          "success_criteria": {
+            "keywords": ["project", "job", "opportunity", "freelance"],
+            "min_results": 10
+          }
+        },
+        "toptal": {
+          "url": "https://www.toptal.com",
+          "form_fields": {
+            "search": "blockchain",
+            "type": "project"
+          },
+          "success_criteria": {
+            "keywords": ["project", "job", "opportunity", "freelance"],
+            "min_results": 5
+          }
+        },
+        "fiverr": {
+          "url": "https://www.fiverr.com",
+          "form_fields": {
+            "search": "crypto",
+            "category": "programming"
+          },
+          "success_criteria": {
+            "keywords": ["gig", "service", "opportunity", "freelance"],
+            "min_results": 15
+          }
+        }
+      }
+    },
+    
+    "agent_settings": {
+      "timeout": 30,
+      "retries": 3,
+      "delay_between_requests": 2,
+      "user_agents": [
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+        "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
+      ],
+      "proxy_list": [],
+      "headless_mode": true
+    },
+    
+    "arbitrage_settings": {
+      "min_profit_threshold": 0.02,
+      "max_spread": 0.05,
+      "arbitrage_coins": ["USDT", "USDC", "ETH", "BTC"],
+      "exchanges": ["bybit", "kucoin", "localcryptos"]
+    },
+    
+    "defi_settings": {
+      "min_apy_threshold": 0.05,
+      "max_gas_fee": 50,
+      "rebalance_frequency": "daily",
+      "supported_protocols": ["aave", "uniswap", "curve"]
+    },
+    
+    "freelance_settings": {
+      "min_budget_threshold": 100,
+      "max_projects_per_day": 20,
+      "auto_apply_threshold": 0.8,
+      "supported_categories": ["crypto", "blockchain", "programming", "writing"]
+    },
+    
+    "output_settings": {
+      "save_results": true,
+      "generate_reports": true,
+      "report_frequency": "daily",
+      "alert_thresholds": {
+        "p2p_arbitrage": 0.03,
+        "defi_yield": 0.1,
+        "freelance_opportunity": 5
+      }
+    },
+    
+    "logging": {
+      "level": "INFO",
+      "file_path": "crypto_agent_logs.txt",
+      "max_file_size": "10MB",
+      "backup_count": 5
+    }
+  }
+}

@@ -1,0 +1,217 @@
+{
+  "opportunities": [
+    {
+      "type": "bybit_to_uniswap",
+      "pair": "BTC/USDT",
+      "buy_platform": "bybit",
+      "sell_platform": "uniswap_v3",
+      "buy_price": 24996.794452278547,
+      "sell_price": 25017.634928670177,
+      "profit_percentage": 0.0008337259575989333,
+      "estimated_profit_usd": 0.20840476391629636,
+      "volume": 0.01,
+      "gas_cost_usd": 30.847237622602183,
+      "net_profit_usd": -30.638832858685888,
+      "timestamp": "2026-11-04T10:26:40.539887"
+    },
+    {
+      "type": "bybit_to_uniswap",
+      "pair": "ETH/USDT",
+      "buy_platform": "bybit",
+      "sell_platform": "uniswap_v3",
+      "buy_price": 1248.9816884737593,
+      "sell_price": 1250.1169210801881,
+      "profit_percentage": 0.0009089265414420226,
+      "estimated_profit_usd": 0.11352326064288719,
+      "volume": 0.1,
+      "gas_cost_usd": 28.103693660002133,
+      "net_profit_usd": -27.990170399359247,
+      "timestamp": "2026-11-04T10:26:40.539906"
+    },
+    {
+      "type": "bybit_to_pancakeswap",
+      "pair": "BTC/USDT",
+      "buy_platform": "bybit",
+      "sell_platform": "pancakeswap_v3",
+      "buy_price": 24996.794452278547,
+      "sell_price": 25012.002222210645,
+      "profit_percentage": 0.0006083888060579613,
+      "estimated_profit_usd": 0.15207769932098017,
+      "volume": 0.01,
+      "gas_cost_usd": 3.7216303785446865,
+      "net_profit_usd": -3.5695526792237064,
+      "timestamp": "2026-11-04T10:26:40.539919"
+    },
+    {
+      "type": "bybit_to_pancakeswap",
+      "pair": "ETH/USDT",
+      "buy_platform": "bybit",
+      "sell_platform": "pancakeswap_v3",
+      "buy_price": 1248.9816884737593,
+      "sell_price": 1249.656301799946,
+      "profit_percentage": 0.0005401306779854731,
+      "estimated_profit_usd": 0.06746133261867726,
+      "volume": 0.1,
+      "gas_cost_usd": 3.528626945589167,
+      "net_profit_usd": -3.4611656129704897,
+      "timestamp": "2026-11-04T10:26:40.539929"
+    },
+    {
+      "type": "bybit_to_pancakeswap",
+      "pair": "BNB/USDT",
+      "buy_platform": "bybit",
+      "sell_platform": "pancakeswap_v3",
+      "buy_price": 299.7765388260772,
+      "sell_price": 300.1618300847578,
+      "profit_percentage": 0.00128526154911715,
+      "estimated_profit_usd": 0.38529125868058145,
+      "volume": 1.0,
+      "gas_cost_usd": 3.894381993320563,
+      "net_profit_usd": -3.5090907346399813,
+      "timestamp": "2026-11-04T10:26:40.539937"
+    },
+    {
+      "type": "bybit_to_sushiswap",
+      "pair": "BTC/USDT",
+      "buy_platform": "bybit",
+      "sell_platform": "sushiswap",
+      "buy_price": 24996.794452278547,
+      "sell_price": 25030.642799729623,
+      "profit_percentage": 0.0013541075242945971,
+      "estimated_profit_usd": 0.3384834745107583,
+      "volume": 0.01,
+      "gas_cost_usd": 37.67219855480568,
+      "net_profit_usd": -37.33371508029492,
+      "timestamp": "2026-11-04T10:26:40.539952"
+    },
+    {
+      "type": "bybit_to_sushiswap",
+      "pair": "ETH/USDT",
+      "buy_platform": "bybit",
+      "sell_platform": "sushiswap",
+      "buy_price": 1248.9816884737593,
+      "sell_price": 1251.0301001173016,
+      "profit_percentage": 0.0016400653928284805,
+      "estimated_profit_usd": 0.2048411643542295,
+      "volume": 0.1,
+      "gas_cost_usd": 43.47579301200786,
+      "net_profit_usd": -43.270951847653635,
+      "timestamp": "2026-11-04T10:26:40.539961"
+    }
+  ],
+  "executed_trades": [],
+  "prices": {
+    "bybit": [
+      {
+        "pair": "BTC/USDT",
+        "price": 24996.794452278547,
+        "volume_24h": 3414266.9422876122,
+        "timestamp": "2026-11-04T10:26:40.539581"
+      },
+      {
+        "pair": "ETH/USDT",
+        "price": 1248.9816884737593,
+        "volume_24h": 3570090.392857566,
+        "timestamp": "2026-11-04T10:26:40.539596"
+      },
+      {
+        "pair": "BNB/USDT",
+        "price": 299.7765388260772,
+        "volume_24h": 4029969.596100562,
+        "timestamp": "2026-11-04T10:26:40.539603"
+      },
+      {
+        "pair": "XRP/USDT",
+        "price": 0.599480518554715,
+        "volume_24h": 2089819.8983170376,
+        "timestamp": "2026-11-04T10:26:40.539608"
+      }
+    ],
+    "uniswap_v3": [
+      {
+        "pair": "BTC/USDT",
+        "price": 25017.634928670177,
+        "volume_24h": 1329296.7715191965,
+        "timestamp": "2026-11-04T10:26:40.539616"
+      },
+      {
+        "pair": "ETH/USDT",
+        "price": 1250.1169210801881,
+        "volume_24h": 934979.8421323387,
+        "timestamp": "2026-11-04T10:26:40.539622"
+      },
+      {
+        "pair": "USDC/USDT",
+        "price": 1.0014087475788775,
+        "volume_24h": 1917735.1023646512,
+        "timestamp": "2026-11-04T10:26:40.539626"
+      }
+    ],
+    "pancakeswap_v3": [
+      {
+        "pair": "BTC/USDT",
+        "price": 25012.002222210645,
+        "volume_24h": 1206035.8565740278,
+        "timestamp": "2026-11-04T10:26:40.539633"
+      },
+      {
+        "pair": "ETH/USDT",
+        "price": 1249.656301799946,
+        "volume_24h": 945128.7021786831,
+        "timestamp": "2026-11-04T10:26:40.539638"
+      },
+      {
+        "pair": "BNB/USDT",
+        "price": 300.1618300847578,
+        "volume_24h": 1019861.2260604816,
+        "timestamp": "2026-11-04T10:26:40.539642"
+      }
+    ],
+    "curve_finance": [
+      {
+        "pair": "USDT/USDC",
+        "price": 1.000080682827156,
+        "volume_24h": 145057.21099784866,
+        "timestamp": "2026-11-04T10:26:40.539648"
+      },
+      {
+        "pair": "DAI/USDC",
+        "price": 0.999900522395927,
+        "volume_24h": 463400.70383902645,
+        "timestamp": "2026-11-04T10:26:40.539655"
+      },
+      {
+        "pair": "crvUSD/USDC",
+        "price": 1.000087941704023,
+        "volume_24h": 168502.3081067988,
+        "timestamp": "2026-11-04T10:26:40.539659"
+      }
+    ],
+    "sushiswap": [
+      {
+        "pair": "BTC/USDT",
+        "price": 25030.642799729623,
+        "volume_24h": 443868.707395028,
+        "timestamp": "2026-11-04T10:26:40.539671"
+      },
+      {
+        "pair": "ETH/USDT",
+        "price": 1251.0301001173016,
+        "volume_24h": 575584.400649768,
+        "timestamp": "2026-11-04T10:26:40.539677"
+      },
+      {
+        "pair": "USDC/USDT",
+        "price": 1.0011543298013645,
+        "volume_24h": 986862.3109386874,
+        "timestamp": "2026-11-04T10:26:40.539681"
+      }
+    ]
+  },
+  "gas_prices": {
+    "ethereum": 40.72997066927511,
+    "binance_smart_chain": 12.19255445154324
+  },
+  "alerts": [],
+  "errors": []
+}

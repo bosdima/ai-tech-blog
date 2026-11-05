@@ -1,0 +1,28 @@
+{
+  "enabled": true,
+  "blogMonetization": {
+    "cryptoDonations": true,
+    "nftContent": true,
+    "subscription": true,
+    "affiliate": true
+  },
+  "platforms": {
+    "mirror": true,
+    "lens": true,
+    "audius": true,
+    "openSea": true,
+    "bybit": true,
+    "kucoin": true
+  },
+  "wallets": {
+    "usdt": "0x1234567890123456789012345678901234567890",
+    "usdc": "0x0987654321098765432109876543210987654321",
+    "eth": "0x1111111111111111111111111111111111111111"
+  },
+  "pricing": {
+    "articlePrice": 5,
+    "nftPrice": 50,
+    "subscriptionPrice": 20,
+    "affiliateCommission": 0.1
+  }
+}

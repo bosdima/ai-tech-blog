@@ -1,0 +1,16 @@
+{
+  "p2p_opportunities": [],
+  "defi_yields": [
+    "DeFiYield(protocol='aave', token='USDT', apy=0.07512534732807553, tvl=1043639.9392136437, timestamp=datetime.datetime(2026, 11, 3, 21, 22, 46, 333524))",
+    "DeFiYield(protocol='uniswap', token='ETH', apy=0.07512704438223736, tvl=498622.66494363296, timestamp=datetime.datetime(2026, 11, 3, 21, 22, 46, 333532))",
+    "DeFiYield(protocol='curve', token='USDC', apy=0.05425917972061124, tvl=316855.3329860451, timestamp=datetime.datetime(2026, 11, 3, 21, 22, 46, 333537))"
+  ],
+  "freelance_opportunities": [
+    "FreelanceOpportunity(platform='upwork', title='Blockchain Developer - Smart Contract Audit', budget=3643.2674778085616, requirements='Crypto/Blockchain development experience', match_score=0.9257272195558424, timestamp=datetime.datetime(2026, 11, 3, 21, 22, 46, 333825))",
+    "FreelanceOpportunity(platform='toptal', title='Cryptocurrency Trading Algorithm Developer', budget=5231.693362493807, requirements='High-end development skills', match_score=0.8261030447157616, timestamp=datetime.datetime(2026, 11, 3, 21, 22, 46, 333837))"
+  ],
+  "arbitrage_opportunities": [
+    "P2POpportunity(exchange='bybit', crypto='USDT', price=88.93584972455884, payment_method='bank_transfer', volume=1000, profit_potential=0.052833113165885834, timestamp=datetime.datetime(2026, 11, 3, 21, 22, 46, 333281))"
+  ],
+  "errors": []
+}
