@@ -26,10 +26,6 @@ jobs:
     - name: Generate new articles
       run: node generate-articles.js
       
-    - name: Update articles
-      run: |
-        cp articles-new.json articles.json
-        
     - name: Build static site
       run: |
         node build-static.js
