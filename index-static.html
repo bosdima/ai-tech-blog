@@ -3,334 +3,518 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Tech Blog - Новости и технологии искусственного интеллекта</title>
-    <meta name="description" content="Автоматический блог о технологиях ИИ, криптовалютах и инновациях 2026 года">
-    <meta name="keywords" content="ИИ, искусственный интеллект, технологии, криптовалюта, 2026">
-    <link rel="stylesheet" href="styles.css">
+    <title>AI Tech Блог - Новости и технологии искусственного интеллекта</title>
+    <meta name="description" content="Автоматический блог о технологиях ИИ, нейросетях и искусственном интеллекте. Последние новости, обзоры и практические руководства.">
+    <meta name="keywords" content="искусственный интеллект, нейросети, машинное обучение, ИИ технологии, нейронные сети, AI, tech, blog">
+    <meta name="author" content="AI Tech Team">
+    <meta name="robots" content="index, follow">
+    
+    <!-- AdSense Code -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3628466575286373"
+     crossorigin="anonymous"></script>
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            line-height: 1.6; 
+            color: #333; 
+            background: #f8f9fa;
+        }
+        .container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 20px; 
+        }
+        header { 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+            color: white; 
+            padding: 2rem 0; 
+            margin-bottom: 2rem; 
+            text-align: center;
+        }
+        h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+        .subtitle { font-size: 1.2rem; opacity: 0.9; }
+        
+        /* Рекламный баннер */
+        .ad-banner {
+            background: #fff;
+            padding: 10px;
+            margin: 20px 0;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .ad-banner ins {
+            display: block;
+            width: 100%;
+            height: 90px;
+        }
+        
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .article-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .article-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .article-date {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .article-card h2 {
+            color: #333;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .article-excerpt {
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        
+        .read-more {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: opacity 0.3s ease;
+        }
+        
+        .read-more:hover {
+            opacity: 0.9;
+        }
+        
+        .sidebar {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-left: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .sidebar h3 {
+            color: #333;
+            margin-bottom: 1rem;
+        }
+        
+        .sidebar ul {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+        
+        .sidebar li {
+            padding: 0.5rem 0;
+            color: #666;
+        }
+        
+        .monetization {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+        
+        .monetization h4 {
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+        
+        .monetization p {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .monetization a {
+            color: #1976d2;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .ad-block {
+            margin: 20px 0;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .ad-block ins {
+            display: block;
+            width: 300px;
+            height: 250px;
+            margin: 0 auto;
+        }
+        
+        .main-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+        
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        /* Модальное окно для статьи */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+        
+        .modal-content {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            margin: 20px auto;
+        }
+        
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #666;
+        }
+        
+        .close:hover {
+            color: #333;
+        }
+        
+        .article-content {
+            margin: 20px 0;
+            line-height: 1.8;
+            color: #444;
+        }
+        
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .articles-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar {
+                margin-left: 0;
+                margin-top: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header class="header">
+    <header>
         <div class="container">
-            <h1>🤖 AI Tech Blog</h1>
-            <p class="subtitle">Автоматический блог о технологиях и искусственном интеллекте</p>
-            <div class="stats">
-                <span class="stat">📄 12 статей</span>
-                <span class="stat">👁️ 8070 просмотров</span>
-                <span class="stat">❤️ 679 лайков</span>
-            </div>
+            <h1>AI Tech Блог</h1>
+            <p class="subtitle">Автоматизированный источник новостей и технологий искусственного интеллекта</p>
         </div>
     </header>
-    
-    <main class="main">
-        <div class="container">
-            <section class="featured">
-                <h2>🌟 Избранные статьи</h2>
-                <div class="featured-grid">
-                    
-                        <div class="featured-card">
-                            <img src="https://via.placeholder.com/400x200?text=%D0%98%D0%98%20%D0%B2%20%D0%B1%D0%B8%D0%B7%D0%BD%D0%B5%D1%81%D0%B5%3A%20%D0%BF%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BD%D0%B8%D0%B5%20%D0%B4%D0%BE%D1%81%D1%82%D0%B8%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F%202026" alt="ИИ в бизнесе: последние достижения 2026">
-                            <h3>ИИ в бизнесе: последние достижения 2026</h3>
-                            <p>Статья о ии в бизнесе: последние достижения 2026. Последние достижения в области искусственного интеллекта.</p>
-                            <a href="/article/0" class="btn">Читать</a>
-                        </div>
-                    
-                        <div class="featured-card">
-                            <img src="https://via.placeholder.com/400x200?text=%D0%91%D1%83%D0%B4%D1%83%D1%89%D0%B5%D0%B5%20%D0%BC%D0%B0%D1%88%D0%B8%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D1%8F%3A%20%D0%BF%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BD%D0%B8%D0%B5%20%D0%B4%D0%BE%D1%81%D1%82%D0%B8%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F%202026" alt="Будущее машинного обучения: последние достижения 2026">
-                            <h3>Будущее машинного обучения: последние достижения 2026</h3>
-                            <p>Статья о будущее машинного обучения: последние достижения 2026. Последние достижения в области искусственного интеллекта.</p>
-                            <a href="/article/1" class="btn">Читать</a>
-                        </div>
-                    
-                        <div class="featured-card">
-                            <img src="https://via.placeholder.com/400x200?text=%D0%9D%D0%B5%D0%B9%D1%80%D0%BE%D1%81%D0%B5%D1%82%D0%B8%20%D0%B4%D0%BB%D1%8F%20%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D1%8F%20%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%BD%D1%82%D0%B0%3A%20%D0%BF%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BD%D0%B8%D0%B5%20%D0%B4%D0%BE%D1%81%D1%82%D0%B8%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F%202026" alt="Нейросети для создания контента: последние достижения 2026">
-                            <h3>Нейросети для создания контента: последние достижения 2026</h3>
-                            <p>Статья о нейросети для создания контента: последние достижения 2026. Последние достижения в области искусственного интеллекта.</p>
-                            <a href="/article/2" class="btn">Читать</a>
-                        </div>
-                    
-                </div>
-            </section>
-            
-            <section class="all-articles">
-                <h2>📰 Все статьи</h2>
-                <div class="articles-grid">
-                    
-        <article class="article-card">
-            <div class="article-image">
-                <img src="https://via.placeholder.com/400x200?text=%D0%98%D0%98%20%D0%B2%20%D0%B1%D0%B8%D0%B7%D0%BD%D0%B5%D1%81%D0%B5%3A%20%D0%BF%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BD%D0%B8%D0%B5%20%D0%B4%D0%BE%D1%81%D1%82%D0%B8%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F%202026" alt="ИИ в бизнесе: последние достижения 2026">
-            </div>
-            <div class="article-content">
-                <div class="article-meta">
-                    <span class="article-date">2026-11-06</span>
-                    <span class="article-category">Технологии</span>
-                    <span class="article-badge">Избранное</span>
-                </div>
-                <h2 class="article-title">ИИ в бизнесе: последние достижения 2026</h2>
-                <p class="article-description">Статья о ии в бизнесе: последние достижения 2026. Последние достижения в области искусственного интеллекта.</p>
-                <div class="article-stats">
-                    <span>⏱️ 5 мин</span>
-                    <span>👁️ 196</span>
-                    <span>❤️ 48</span>
-                    <span>💬 31</span>
-                </div>
-                <a href="/article/0" class="article-link">Читать статью</a>
-            </div>
-        </article>
-    
-        <article class="article-card">
-            <div class="article-image">
-                <img src="https://via.placeholder.com/400x200?text=%D0%91%D1%83%D0%B4%D1%83%D1%89%D0%B5%D0%B5%20%D0%BC%D0%B0%D1%88%D0%B8%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D1%8F%3A%20%D0%BF%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BD%D0%B8%D0%B5%20%D0%B4%D0%BE%D1%81%D1%82%D0%B8%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F%202026" alt="Будущее машинного обучения: последние достижения 2026">
-            </div>
-            <div class="article-content">
-                <div class="article-meta">
-                    <span class="article-date">2026-11-06</span>
-                    <span class="article-category">Технологии</span>
-                    <span class="article-badge">Избранное</span>
-                </div>
-                <h2 class="article-title">Будущее машинного обучения: последние достижения 2026</h2>
-                <p class="article-description">Статья о будущее машинного обучения: последние достижения 2026. Последние достижения в области искусственного интеллекта.</p>
-                <div class="article-stats">
-                    <span>⏱️ 5 мин</span>
-                    <span>👁️ 666</span>
-                    <span>❤️ 44</span>
-                    <span>💬 52</span>
-                </div>
-                <a href="/article/1" class="article-link">Читать статью</a>
-            </div>
-        </article>
-    
-        <article class="article-card">
-            <div class="article-image">
-                <img src="https://via.placeholder.com/400x200?text=%D0%9D%D0%B5%D0%B9%D1%80%D0%BE%D1%81%D0%B5%D1%82%D0%B8%20%D0%B4%D0%BB%D1%8F%20%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D1%8F%20%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%BD%D1%82%D0%B0%3A%20%D0%BF%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BD%D0%B8%D0%B5%20%D0%B4%D0%BE%D1%81%D1%82%D0%B8%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F%202026" alt="Нейросети для создания контента: последние достижения 2026">
-            </div>
-            <div class="article-content">
-                <div class="article-meta">
-                    <span class="article-date">2026-11-06</span>
-                    <span class="article-category">Технологии</span>
-                    <span class="article-badge">Избранное</span>
-                </div>
-                <h2 class="article-title">Нейросети для создания контента: последние достижения 2026</h2>
-                <p class="article-description">Статья о нейросети для создания контента: последние достижения 2026. Последние достижения в области искусственного интеллекта.</p>
-                <div class="article-stats">
-                    <span>⏱️ 3 мин</span>
-                    <span>👁️ 1097</span>
-                    <span>❤️ 54</span>
-                    <span>💬 32</span>
-                </div>
-                <a href="/article/2" class="article-link">Читать статью</a>
-            </div>
-        </article>
-    
-        <article class="article-card">
-            <div class="article-image">
-                <img src="https://via.placeholder.com/400x200?text=%D0%9A%D0%B2%D0%B0%D0%BD%D1%82%D0%BE%D0%B2%D1%8B%D0%B5%20%D0%B2%D1%8B%D1%87%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F%20%D0%B8%20%D0%98%D0%98%3A%20%D0%BD%D0%BE%D0%B2%D1%8B%D0%B5%20%D0%BF%D0%B5%D1%80%D1%81%D0%BF%D0%B5%D0%BA%D1%82%D0%B8%D0%B2%D1%8B" alt="Квантовые вычисления и ИИ: новые перспективы">
-            </div>
-            <div class="article-content">
-                <div class="article-meta">
-                    <span class="article-date">2026-11-06</span>
-                    <span class="article-category">Технологии</span>
-                    
-                </div>
-                <h2 class="article-title">Квантовые вычисления и ИИ: новые перспективы</h2>
-                <p class="article-description">Статья о квантовые вычисления и ии: новые перспективы. Последние достижения в области искусственного интеллекта.</p>
-                <div class="article-stats">
-                    <span>⏱️ 4 мин</span>
-                    <span>👁️ 1054</span>
-                    <span>❤️ 103</span>
-                    <span>💬 29</span>
-                </div>
-                <a href="/article/3" class="article-link">Читать статью</a>
-            </div>
-        </article>
-    
-        <article class="article-card">
-            <div class="article-image">
-                <img src="https://via.placeholder.com/400x200?text=%D0%93%D0%BB%D1%83%D0%B1%D0%BE%D0%BA%D0%BE%D0%B5%20%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B2%20%D0%BC%D0%B5%D0%B4%D0%B8%D1%86%D0%B8%D0%BD%D0%B5%3A%20%D0%BF%D1%80%D0%BE%D1%80%D1%8B%D0%B2%D0%BD%D1%8B%D0%B5%20%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D0%B8" alt="Глубокое обучение в медицине: прорывные технологии">
-            </div>
-            <div class="article-content">
-                <div class="article-meta">
-                    <span class="article-date">2026-11-06</span>
-                    <span class="article-category">Технологии</span>
-                    
-                </div>
-                <h2 class="article-title">Глубокое обучение в медицине: прорывные технологии</h2>
-                <p class="article-description">Статья о глубокое обучение в медицине: прорывные технологии. Последние достижения в области искусственного интеллекта.</p>
-                <div class="article-stats">
-                    <span>⏱️ 5 мин</span>
-                    <span>👁️ 539</span>
-                    <span>❤️ 19</span>
-                    <span>💬 50</span>
-                </div>
-                <a href="/article/4" class="article-link">Читать статью</a>
-            </div>
-        </article>
-    
-        <article class="article-card">
-            <div class="article-image">
-                <img src="https://via.placeholder.com/400x200?text=%D0%90%D0%B2%D1%82%D0%BE%D0%BD%D0%BE%D0%BC%D0%BD%D1%8B%D0%B5%20%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B%3A%20%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D0%B8%20%D0%B1%D1%83%D0%B4%D1%83%D1%89%D0%B5%D0%B3%D0%BE" alt="Автономные системы: технологии будущего">
-            </div>
-            <div class="article-content">
-                <div class="article-meta">
-                    <span class="article-date">2026-11-06</span>
-                    <span class="article-category">Технологии</span>
-                    
-                </div>
-                <h2 class="article-title">Автономные системы: технологии будущего</h2>
-                <p class="article-description">Статья о автономные системы: технологии будущего. Последние достижения в области искусственного интеллекта.</p>
-                <div class="article-stats">
-                    <span>⏱️ 7 мин</span>
-                    <span>👁️ 673</span>
-                    <span>❤️ 63</span>
-                    <span>💬 41</span>
-                </div>
-                <a href="/article/5" class="article-link">Читать статью</a>
-            </div>
-        </article>
-    
-        <article class="article-card">
-            <div class="article-image">
-                <img src="https://via.placeholder.com/400x200?text=%D0%9A%D0%BE%D0%BC%D0%BF%D1%8C%D1%8E%D1%82%D0%B5%D1%80%D0%BD%D0%BE%D0%B5%20%D0%B7%D1%80%D0%B5%D0%BD%D0%B8%D0%B5%3A%20%D0%BD%D0%BE%D0%B2%D1%8B%D0%B5%20%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F%20%D0%B2%202026" alt="Компьютерное зрение: новые приложения в 2026">
-            </div>
-            <div class="article-content">
-                <div class="article-meta">
-                    <span class="article-date">2026-11-06</span>
-                    <span class="article-category">Технологии</span>
-                    
-                </div>
-                <h2 class="article-title">Компьютерное зрение: новые приложения в 2026</h2>
-                <p class="article-description">Статья о компьютерное зрение: новые приложения в 2026. Последние достижения в области искусственного интеллекта.</p>
-                <div class="article-stats">
-                    <span>⏱️ 5 мин</span>
-                    <span>👁️ 587</span>
-                    <span>❤️ 60</span>
-                    <span>💬 22</span>
-                </div>
-                <a href="/article/6" class="article-link">Читать статью</a>
-            </div>
-        </article>
-    
-        <article class="article-card">
-            <div class="article-image">
-                <img src="https://via.placeholder.com/400x200?text=%D0%9E%D0%B1%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0%20%D0%B5%D1%81%D1%82%D0%B5%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE%20%D1%8F%D0%B7%D1%8B%D0%BA%D0%B0%3A%20%D0%BF%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BD%D0%B8%D0%B5%20%D0%B4%D0%BE%D1%81%D1%82%D0%B8%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F" alt="Обработка естественного языка: последние достижения">
-            </div>
-            <div class="article-content">
-                <div class="article-meta">
-                    <span class="article-date">2026-11-06</span>
-                    <span class="article-category">Технологии</span>
-                    
-                </div>
-                <h2 class="article-title">Обработка естественного языка: последние достижения</h2>
-                <p class="article-description">Статья о обработка естественного языка: последние достижения. Последние достижения в области искусственного интеллекта.</p>
-                <div class="article-stats">
-                    <span>⏱️ 7 мин</span>
-                    <span>👁️ 773</span>
-                    <span>❤️ 13</span>
-                    <span>💬 45</span>
-                </div>
-                <a href="/article/7" class="article-link">Читать статью</a>
-            </div>
-        </article>
-    
-        <article class="article-card">
-            <div class="article-image">
-                <img src="https://via.placeholder.com/400x200?text=%D0%A0%D0%BE%D0%B1%D0%BE%D1%82%D0%BE%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D0%BA%D0%B0%20%D0%B8%20%D0%98%D0%98%3A%20%D1%81%D0%B8%D0%BD%D0%B5%D1%80%D0%B3%D0%B8%D1%8F%20%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D0%B9" alt="Робототехника и ИИ: синергия технологий">
-            </div>
-            <div class="article-content">
-                <div class="article-meta">
-                    <span class="article-date">2026-11-06</span>
-                    <span class="article-category">Технологии</span>
-                    
-                </div>
-                <h2 class="article-title">Робототехника и ИИ: синергия технологий</h2>
-                <p class="article-description">Статья о робототехника и ии: синергия технологий. Последние достижения в области искусственного интеллекта.</p>
-                <div class="article-stats">
-                    <span>⏱️ 3 мин</span>
-                    <span>👁️ 208</span>
-                    <span>❤️ 85</span>
-                    <span>💬 6</span>
-                </div>
-                <a href="/article/8" class="article-link">Читать статью</a>
-            </div>
-        </article>
-    
-        <article class="article-card">
-            <div class="article-image">
-                <img src="https://via.placeholder.com/400x200?text=%D0%91%D0%BB%D0%BE%D0%BA%D1%87%D0%B5%D0%B9%D0%BD%20%D0%B8%20%D0%98%D0%98%3A%20%D0%B8%D0%BD%D0%BD%D0%BE%D0%B2%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D0%B5%20%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D1%8F" alt="Блокчейн и ИИ: инновационные решения">
-            </div>
-            <div class="article-content">
-                <div class="article-meta">
-                    <span class="article-date">2026-11-06</span>
-                    <span class="article-category">Технологии</span>
-                    
-                </div>
-                <h2 class="article-title">Блокчейн и ИИ: инновационные решения</h2>
-                <p class="article-description">Статья о блокчейн и ии: инновационные решения. Последние достижения в области искусственного интеллекта.</p>
-                <div class="article-stats">
-                    <span>⏱️ 4 мин</span>
-                    <span>👁️ 423</span>
-                    <span>❤️ 97</span>
-                    <span>💬 7</span>
-                </div>
-                <a href="/article/9" class="article-link">Читать статью</a>
-            </div>
-        </article>
-    
-        <article class="article-card">
-            <div class="article-image">
-                <img src="https://via.placeholder.com/400x200?text=%D0%98%D0%98%20%D0%B2%20%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B8%3A%20%D0%BF%D0%B5%D1%80%D1%81%D0%BE%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9%20%D0%BF%D0%BE%D0%B4%D1%85%D0%BE%D0%B4" alt="ИИ в образовании: персонализированный подход">
-            </div>
-            <div class="article-content">
-                <div class="article-meta">
-                    <span class="article-date">2026-11-06</span>
-                    <span class="article-category">Технологии</span>
-                    
-                </div>
-                <h2 class="article-title">ИИ в образовании: персонализированный подход</h2>
-                <p class="article-description">Статья о ии в образовании: персонализированный подход. Последние достижения в области искусственного интеллекта.</p>
-                <div class="article-stats">
-                    <span>⏱️ 4 мин</span>
-                    <span>👁️ 992</span>
-                    <span>❤️ 51</span>
-                    <span>💬 7</span>
-                </div>
-                <a href="/article/10" class="article-link">Читать статью</a>
-            </div>
-        </article>
-    
-        <article class="article-card">
-            <div class="article-image">
-                <img src="https://via.placeholder.com/400x200?text=%D0%9A%D0%B8%D0%B1%D0%B5%D1%80%D0%B1%D0%B5%D0%B7%D0%BE%D0%BF%D0%B0%D1%81%D0%BD%D0%BE%D1%81%D1%82%D1%8C%20%D0%B8%20%D0%98%D0%98%3A%20%D0%BD%D0%BE%D0%B2%D1%8B%D0%B5%20%D0%B2%D1%8B%D0%B7%D0%BE%D0%B2%D1%8B" alt="Кибербезопасность и ИИ: новые вызовы">
-            </div>
-            <div class="article-content">
-                <div class="article-meta">
-                    <span class="article-date">2026-11-06</span>
-                    <span class="article-category">Технологии</span>
-                    
-                </div>
-                <h2 class="article-title">Кибербезопасность и ИИ: новые вызовы</h2>
-                <p class="article-description">Статья о кибербезопасность и ии: новые вызовы. Последние достижения в области искусственного интеллекта.</p>
-                <div class="article-stats">
-                    <span>⏱️ 7 мин</span>
-                    <span>👁️ 862</span>
-                    <span>❤️ 42</span>
-                    <span>💬 46</span>
-                </div>
-                <a href="/article/11" class="article-link">Читать статью</a>
-            </div>
-        </article>
-    
-                </div>
-            </section>
+
+    <div class="container">
+        <!-- Рекламный баннер 728x90 -->
+        <div class="ad-banner">
+            <ins class="adsbygoogle"
+                 style="display:block; width:100%; height:90px;"
+                 data-ad-client="ca-pub-3628466575286373"
+                 data-ad-slot="1234567890"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
         </div>
-    </main>
+
+        <div class="main-content">
+            <div class="articles-grid">
+                
+        <article class="article-card">
+            <div class="article-date">06.11.2026</div>
+            <h2>Новые архитектуры нейросетей: последние достижения 2026</h2>
+            <p class="article-excerpt">Обзор последних разработок в области Новые архитектуры нейросетей. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
+            <button class="read-more" onclick="showArticle('1793984410345')">Читать далее →</button>
+        </article>
     
-    <footer class="footer">
+        <article class="article-card">
+            <div class="article-date">06.11.2026</div>
+            <h2>ИИ в медицине: последние достижения 2026</h2>
+            <p class="article-excerpt">Обзор последних разработок в области ИИ в медицине. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
+            <button class="read-more" onclick="showArticle('1793984410388')">Читать далее →</button>
+        </article>
+    
+        <article class="article-card">
+            <div class="article-date">06.11.2026</div>
+            <h2>Автономные системы: последние достижения 2026</h2>
+            <p class="article-excerpt">Обзор последних разработок в области Автономные системы. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
+            <button class="read-more" onclick="showArticle('1793984410389')">Читать далее →</button>
+        </article>
+    
+        <article class="article-card">
+            <div class="article-date">06.11.2026</div>
+            <h2>Компьютерное зрение: последние достижения 2026</h2>
+            <p class="article-excerpt">Обзор последних разработок в области Компьютерное зрение. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
+            <button class="read-more" onclick="showArticle('1793984410390')">Читать далее →</button>
+        </article>
+    
+        <article class="article-card">
+            <div class="article-date">06.11.2026</div>
+            <h2>Обработка естественного языка: последние достижения 2026</h2>
+            <p class="article-excerpt">Обзор последних разработок в области Обработка естественного языка. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
+            <button class="read-more" onclick="showArticle('1793984410391')">Читать далее →</button>
+        </article>
+    
+        <article class="article-card">
+            <div class="article-date">06.11.2026</div>
+            <h2>Робототехника: последние достижения 2026</h2>
+            <p class="article-excerpt">Обзор последних разработок в области Робототехника. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
+            <button class="read-more" onclick="showArticle('1793984410392')">Читать далее →</button>
+        </article>
+    
+        <article class="article-card">
+            <div class="article-date">06.11.2026</div>
+            <h2>Квантовые вычисления и ИИ: последние достижения 2026</h2>
+            <p class="article-excerpt">Обзор последних разработок в области Квантовые вычисления и ИИ. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
+            <button class="read-more" onclick="showArticle('1793984410393')">Читать далее →</button>
+        </article>
+    
+        <article class="article-card">
+            <div class="article-date">06.11.2026</div>
+            <h2>Этика искусственного интеллекта: последние достижения 2026</h2>
+            <p class="article-excerpt">Обзор последних разработок в области Этика искусственного интеллекта. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
+            <button class="read-more" onclick="showArticle('1793984410394')">Читать далее →</button>
+        </article>
+    
+        <article class="article-card">
+            <div class="article-date">06.11.2026</div>
+            <h2>Генеративный ИИ: последние достижения 2026</h2>
+            <p class="article-excerpt">Обзор последних разработок в области Генеративный ИИ. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
+            <button class="read-more" onclick="showArticle('1793984410395')">Читать далее →</button>
+        </article>
+    
+        <article class="article-card">
+            <div class="article-date">06.11.2026</div>
+            <h2>ИИ в бизнесе: последние достижения 2026</h2>
+            <p class="article-excerpt">Обзор последних разработок в области ИИ в бизнесе. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
+            <button class="read-more" onclick="showArticle('1793984410396')">Читать далее →</button>
+        </article>
+    
+        <article class="article-card">
+            <div class="article-date">06.11.2026</div>
+            <h2>Будущее машинного обучения: последние достижения 2026</h2>
+            <p class="article-excerpt">Обзор последних разработок в области Будущее машинного обучения. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
+            <button class="read-more" onclick="showArticle('1793984410397')">Читать далее →</button>
+        </article>
+    
+        <article class="article-card">
+            <div class="article-date">06.11.2026</div>
+            <h2>Нейросети для создания контента: последние достижения 2026</h2>
+            <p class="article-excerpt">Обзор последних разработок в области Нейросети для создания контента. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
+            <button class="read-more" onclick="showArticle('1793984410398')">Читать далее →</button>
+        </article>
+    
+        <article class="article-card">
+            <div class="article-date">06.11.2026</div>
+            <h2>Новые архитектуры нейросетей: последние достижения 2026</h2>
+            <p class="article-excerpt">Обзор последних разработок в области Новые архитектуры нейросетей. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
+            <button class="read-more" onclick="showArticle('1793991194737')">Читать далее →</button>
+        </article>
+    
+        <article class="article-card">
+            <div class="article-date">06.11.2026</div>
+            <h2>ИИ в медицине: последние достижения 2026</h2>
+            <p class="article-excerpt">Обзор последних разработок в области ИИ в медицине. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
+            <button class="read-more" onclick="showArticle('1793991194766')">Читать далее →</button>
+        </article>
+    
+        <article class="article-card">
+            <div class="article-date">06.11.2026</div>
+            <h2>Автonomousные системы: последние достижения 2026</h2>
+            <p class="article-excerpt">Обзор последних разработок в области Автonomousные системы. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
+            <button class="read-more" onclick="showArticle('1793991194767')">Читать далее →</button>
+        </article>
+    
+        <article class="article-card">
+            <div class="article-date">06.11.2026</div>
+            <h2>Компьютерное зрение: последние достижения 2026</h2>
+            <p class="article-excerpt">Обзор последних разработок в области Компьютерное зрение. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
+            <button class="read-more" onclick="showArticle('1793991194768')">Читать далее →</button>
+        </article>
+    
+        <article class="article-card">
+            <div class="article-date">06.11.2026</div>
+            <h2>Обработка естественного языка: последние достижения 2026</h2>
+            <p class="article-excerpt">Обзор последних разработок в области Обработка естественного языка. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
+            <button class="read-more" onclick="showArticle('1793991194769')">Читать далее →</button>
+        </article>
+    
+        <article class="article-card">
+            <div class="article-date">06.11.2026</div>
+            <h2>Робототехника: последние достижения 2026</h2>
+            <p class="article-excerpt">Обзор последних разработок в области Робототехника. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
+            <button class="read-more" onclick="showArticle('1793991194770')">Читать далее →</button>
+        </article>
+    
+        <article class="article-card">
+            <div class="article-date">06.11.2026</div>
+            <h2>Квантовые вычисления и ИИ: последние достижения 2026</h2>
+            <p class="article-excerpt">Обзор последних разработок в области Квантовые вычисления и ИИ. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
+            <button class="read-more" onclick="showArticle('1793991194771')">Читать далее →</button>
+        </article>
+    
+        <article class="article-card">
+            <div class="article-date">06.11.2026</div>
+            <h2>Этика искусственного интеллекта: последние достижения 2026</h2>
+            <p class="article-excerpt">Обзор последних разработок в области Этика искусственного интеллекта. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
+            <button class="read-more" onclick="showArticle('1793991194772')">Читать далее →</button>
+        </article>
+    
+        <article class="article-card">
+            <div class="article-date">06.11.2026</div>
+            <h2>Генеративный ИИ: последние достижения 2026</h2>
+            <p class="article-excerpt">Обзор последних разработок в области Генеративный ИИ. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
+            <button class="read-more" onclick="showArticle('1793991194773')">Читать далее →</button>
+        </article>
+    
+        <article class="article-card">
+            <div class="article-date">06.11.2026</div>
+            <h2>ИИ в бизнесе: последние достижения 2026</h2>
+            <p class="article-excerpt">Обзор последних разработок в области ИИ в бизнесе. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
+            <button class="read-more" onclick="showArticle('1793991194774')">Читать далее →</button>
+        </article>
+    
+        <article class="article-card">
+            <div class="article-date">06.11.2026</div>
+            <h2>Будущее машинного обучения: последние достижения 2026</h2>
+            <p class="article-excerpt">Обзор последних разработок в области Будущее машинного обучения. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
+            <button class="read-more" onclick="showArticle('1793991194775')">Читать далее →</button>
+        </article>
+    
+        <article class="article-card">
+            <div class="article-date">06.11.2026</div>
+            <h2>Нейросети для создания контента: последние достижения 2026</h2>
+            <p class="article-excerpt">Обзор последних разработок в области Нейросети для создания контента. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
+            <button class="read-more" onclick="showArticle('1793991194776')">Читать далее →</button>
+        </article>
+    
+            </div>
+            
+            <div class="sidebar">
+                <h3>Популярные темы</h3>
+                <ul>
+                    <li>Нейросети</li>
+                    <li>Глубокое обучение</li>
+                    <li>Computer Vision</li>
+                    <li>NLP</li>
+                    <li>Робототехника</li>
+                </ul>
+
+                <div class="monetization">
+                    <h4>🎯 Партнерские программы</h4>
+                    <p>Рекомендуемые сервисы и инструменты для работы с ИИ</p>
+                    <a href="#" style="color: #1976d2; text-decoration: none;">Смотреть предложения →</a>
+                </div>
+
+                <div class="monetization">
+                    <h4>📚 Книги и курсы</h4>
+                    <p>Образовательные материалы по ИИ и технологиям</p>
+                    <a href="#" style="color: #1976d2; text-decoration: none;">Каталог ресурсов →</a>
+                </div>
+
+                <!-- Рекламный блок 300x250 -->
+                <div class="ad-block">
+                    <ins class="adsbygoogle"
+                         style="display:block; width:300px; height:250px;"
+                         data-ad-client="ca-pub-3628466575286373"
+                         data-ad-slot="0987654321"
+                         data-ad-format="auto"
+                         data-full-width-responsive="true"></ins>
+                    <script>
+                         (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
         <div class="container">
-            <p>&copy; 2026 AI Tech Blog. Автоматический заработок на технологиях.</p>
-            <p>Обновлено: 06.11.2026 19:59:13</p>
+            <p>&copy; 2026 AI Tech Блог. Автоматическая генерация контента.</p>
         </div>
     </footer>
-    
-    <script src="script.js"></script>
+
+    <!-- Модальное окно для статей -->
+    <div id="articleModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modalArticleContent"></div>
+        </div>
+    </div>
+
+    <script>
+        // Функция показа статьи
+        function showArticle(articleId) {
+            const article = articles.find(a => a.id == articleId);
+            if (article) {
+                document.getElementById('modalArticleContent').innerHTML = `
+                    <div class="article-date">${article.date}</div>
+                    <h2>${article.title}</h2>
+                    <div class="article-content">${article.content}</div>
+                    <div class="monetization">
+                        <h4>🎯 Партнерские программы</h4>
+                        ${article.monetization.map(link => `
+                            <p><a href="${link.url}" target="_blank">${link.name} (${link.commission})</a></p>
+                        `).join('')}
+                    </div>
+                `;
+                document.getElementById('articleModal').style.display = 'block';
+            }
+        }
+
+        // Закрытие модального окна
+        document.querySelector('.close').onclick = function() {
+            document.getElementById('articleModal').style.display = 'none';
+        }
+
+        // Закрытие по клику вне окна
+        window.onclick = function(event) {
+            const modal = document.getElementById('articleModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
 </body>
 </html>
