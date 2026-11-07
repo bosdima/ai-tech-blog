@@ -134,5 +134,11 @@
     "status": "success",
     "message": "AI Tech Blog обновлен успешно",
     "error": null
+  },
+  {
+    "timestamp": "2026-11-07T09:34:07.380Z",
+    "status": "error",
+    "message": "Ошибка обновления AI Tech Blog",
+    "error": null
   }
 ]
