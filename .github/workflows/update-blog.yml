@@ -18,34 +18,21 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: '18'
-        cache: 'npm'
         
-    - name: Install dependencies
-      run: npm install
-      
     - name: Generate new articles
-      run: node generate-articles.js
-      
-    - name: Build static site
       run: |
+        node generate-articles.js
         cp articles-new.json articles.json
+        
+    - name: Build site
+      run: |
         node build-static.js
         cp index-static.html index.html
         
-    - name: Commit and push changes
+    - name: Commit and push
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add .
-        if git diff --staged --quiet; then
-          echo "No changes to commit"
-        else
-          git commit -m "🤖 Auto-update: $(date '+%Y-%m-%d %H:%M:%S')"
-          git push
-        fi
-        
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./
+        git commit -m "🤖 Auto-update: $(date '+%Y-%m-%d %H:%M:%S')" || true
+        git push
