@@ -152,5 +152,23 @@
     "status": "success",
     "message": "AI Tech Blog обновлен успешно",
     "error": null
+  },
+  {
+    "timestamp": "2026-11-07T16:04:49.787Z",
+    "status": "error",
+    "message": "Ошибка обновления AI Tech Blog",
+    "error": "Таймаут запроса"
+  },
+  {
+    "timestamp": "2026-11-07T18:10:59.772Z",
+    "status": "success",
+    "message": "AI Tech Blog обновлен успешно",
+    "error": null
+  },
+  {
+    "timestamp": "2026-11-07T20:13:19.772Z",
+    "status": "success",
+    "message": "AI Tech Blog обновлен успешно",
+    "error": null
   }
 ]
