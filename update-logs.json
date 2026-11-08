@@ -176,5 +176,11 @@
     "status": "success",
     "message": "AI Tech Blog обновлен успешно",
     "error": null
+  },
+  {
+    "timestamp": "2026-11-08T08:40:22.820Z",
+    "status": "error",
+    "message": "Ошибка обновления AI Tech Blog",
+    "error": "Сайт не доступен"
   }
 ]
