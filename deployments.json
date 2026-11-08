@@ -1,0 +1,486 @@
+{
+  "contextName": "bosdima-7988",
+  "deployments": [
+    {
+      "url": "ai-tech-blog-ny8affc9u-bosdima-7988.vercel.app",
+      "name": "ai-tech-blog",
+      "state": "READY",
+      "target": "production",
+      "createdAt": 1793983685402,
+      "buildingAt": 1793983686853,
+      "ready": 1793983698071,
+      "creator": {
+        "uid": "qE0DemYK18Qie682pUmfioYf",
+        "username": "bosdima-7988"
+      },
+      "meta": {
+        "githubCommitAuthorName": "AI Tech Blog",
+        "githubCommitAuthorEmail": "ai-tech-blog@example.com",
+        "githubCommitMessage": "🚀 Добавлена возможность чтения статей полностью",
+        "githubCommitOrg": "bosdima",
+        "githubCommitRef": "main",
+        "githubCommitRepo": "ai-tech-blog",
+        "githubCommitSha": "64bc6cfbc1174191e62fd490a28bd81c291d3453",
+        "githubDeployment": "1",
+        "githubOrg": "bosdima",
+        "githubRepo": "ai-tech-blog",
+        "gitDirty": "1",
+        "gitRootDirectory": "",
+        "actor": "hermes-agent",
+        "lambdaRuntimeStats": "{\"nodejs\":1}"
+      }
+    },
+    {
+      "url": "ai-tech-blog-cp5edn693-bosdima-7988.vercel.app",
+      "name": "ai-tech-blog",
+      "state": "READY",
+      "target": "production",
+      "createdAt": 1793634442013,
+      "buildingAt": 1793634442973,
+      "ready": 1793634450602,
+      "creator": {
+        "uid": "qE0DemYK18Qie682pUmfioYf",
+        "username": "bosdima-7988"
+      },
+      "meta": {
+        "gitCommitAuthorName": "bosdima",
+        "gitCommitAuthorEmail": "ftp174@ya.ru",
+        "gitCommitMessage": "Auto-update: 2026-11-02T09:46:50.070Z",
+        "gitCommitRef": "static-version",
+        "gitCommitSha": "e253fdc0cc35cdfbe6f34521bf1b07a4ee8a6847",
+        "gitDirty": "1",
+        "gitRootDirectory": "",
+        "actor": "hermes-agent",
+        "lambdaRuntimeStats": "{\"nodejs\":1}"
+      }
+    },
+    {
+      "url": "ai-tech-blog-k8js4q6y7-bosdima-7988.vercel.app",
+      "name": "ai-tech-blog",
+      "state": "READY",
+      "target": "production",
+      "createdAt": 1793634323893,
+      "buildingAt": 1793634325280,
+      "ready": 1793634333825,
+      "creator": {
+        "uid": "qE0DemYK18Qie682pUmfioYf",
+        "username": "bosdima-7988"
+      },
+      "meta": {
+        "gitCommitAuthorName": "bosdima",
+        "gitCommitAuthorEmail": "ftp174@ya.ru",
+        "gitCommitMessage": "Auto-update: 2026-11-02T09:46:50.070Z",
+        "gitCommitRef": "static-version",
+        "gitCommitSha": "e253fdc0cc35cdfbe6f34521bf1b07a4ee8a6847",
+        "gitDirty": "1",
+        "gitRootDirectory": "",
+        "actor": "hermes-agent",
+        "lambdaRuntimeStats": "{\"nodejs\":1}"
+      }
+    },
+    {
+      "url": "ai-tech-blog-7fdw3hs12-bosdima-7988.vercel.app",
+      "name": "ai-tech-blog",
+      "state": "READY",
+      "target": "production",
+      "createdAt": 1793634271052,
+      "buildingAt": 1793634272087,
+      "ready": 1793634282188,
+      "creator": {
+        "uid": "qE0DemYK18Qie682pUmfioYf",
+        "username": "bosdima-7988"
+      },
+      "meta": {
+        "gitCommitAuthorName": "bosdima",
+        "gitCommitAuthorEmail": "ftp174@ya.ru",
+        "gitCommitMessage": "Auto-update: 2026-11-02T09:46:50.070Z",
+        "gitCommitRef": "static-version",
+        "gitCommitSha": "e253fdc0cc35cdfbe6f34521bf1b07a4ee8a6847",
+        "gitDirty": "1",
+        "gitRootDirectory": "",
+        "actor": "hermes-agent",
+        "lambdaRuntimeStats": "{\"nodejs\":1}"
+      }
+    },
+    {
+      "url": "ai-tech-blog-ngr4yq1j8-bosdima-7988.vercel.app",
+      "name": "ai-tech-blog",
+      "state": "READY",
+      "target": "production",
+      "createdAt": 1793616893011,
+      "buildingAt": 1793616893983,
+      "ready": 1793616903909,
+      "creator": {
+        "uid": "qE0DemYK18Qie682pUmfioYf",
+        "username": "bosdima-7988"
+      },
+      "meta": {
+        "gitCommitAuthorName": "bosdima",
+        "gitCommitAuthorEmail": "ftp174@ya.ru",
+        "gitCommitMessage": "Auto-update: 2026-11-02T09:46:50.070Z",
+        "gitCommitRef": "static-version",
+        "gitCommitSha": "e253fdc0cc35cdfbe6f34521bf1b07a4ee8a6847",
+        "gitDirty": "1",
+        "gitRootDirectory": "",
+        "actor": "hermes-agent",
+        "lambdaRuntimeStats": "{\"nodejs\":1}"
+      }
+    },
+    {
+      "url": "ai-tech-blog-kpt5fkynn-bosdima-7988.vercel.app",
+      "name": "ai-tech-blog",
+      "state": "READY",
+      "target": "production",
+      "createdAt": 1793616176407,
+      "buildingAt": 1793616177392,
+      "ready": 1793616189130,
+      "creator": {
+        "uid": "qE0DemYK18Qie682pUmfioYf",
+        "username": "bosdima-7988"
+      },
+      "meta": {
+        "gitCommitAuthorName": "bosdima",
+        "gitCommitAuthorEmail": "ftp174@ya.ru",
+        "gitCommitMessage": "Auto-update: 2026-11-02T09:46:50.070Z",
+        "gitCommitRef": "static-version",
+        "gitCommitSha": "e253fdc0cc35cdfbe6f34521bf1b07a4ee8a6847",
+        "gitDirty": "1",
+        "gitRootDirectory": "",
+        "actor": "hermes-agent",
+        "lambdaRuntimeStats": "{\"nodejs\":1}"
+      }
+    },
+    {
+      "url": "ai-tech-blog-fo5luy06x-bosdima-7988.vercel.app",
+      "name": "ai-tech-blog",
+      "state": "READY",
+      "target": "production",
+      "createdAt": 1793616091399,
+      "buildingAt": 1793616092470,
+      "ready": 1793616100989,
+      "creator": {
+        "uid": "qE0DemYK18Qie682pUmfioYf",
+        "username": "bosdima-7988"
+      },
+      "meta": {
+        "gitCommitAuthorName": "bosdima",
+        "gitCommitAuthorEmail": "ftp174@ya.ru",
+        "gitCommitMessage": "Auto-update: 2026-11-02T09:46:50.070Z",
+        "gitCommitRef": "static-version",
+        "gitCommitSha": "e253fdc0cc35cdfbe6f34521bf1b07a4ee8a6847",
+        "gitDirty": "1",
+        "gitRootDirectory": "",
+        "actor": "hermes-agent",
+        "lambdaRuntimeStats": "{\"nodejs\":1}"
+      }
+    },
+    {
+      "url": "ai-tech-blog-978hxnil1-bosdima-7988.vercel.app",
+      "name": "ai-tech-blog",
+      "state": "READY",
+      "target": "production",
+      "createdAt": 1793613055006,
+      "buildingAt": 1793613055931,
+      "ready": 1793613065846,
+      "creator": {
+        "uid": "qE0DemYK18Qie682pUmfioYf",
+        "username": "bosdima-7988"
+      },
+      "meta": {
+        "gitCommitAuthorName": "bosdima",
+        "gitCommitAuthorEmail": "ftp174@ya.ru",
+        "gitCommitMessage": "Auto-update: 2026-11-02T09:46:50.070Z",
+        "gitCommitRef": "static-version",
+        "gitCommitSha": "e253fdc0cc35cdfbe6f34521bf1b07a4ee8a6847",
+        "gitDirty": "1",
+        "gitRootDirectory": "",
+        "actor": "hermes-agent",
+        "lambdaRuntimeStats": "{\"nodejs\":1}"
+      }
+    },
+    {
+      "url": "ai-tech-blog-9gz98o81b-bosdima-7988.vercel.app",
+      "name": "ai-tech-blog",
+      "state": "READY",
+      "target": "production",
+      "createdAt": 1793612982474,
+      "buildingAt": 1793612983386,
+      "ready": 1793612993447,
+      "creator": {
+        "uid": "qE0DemYK18Qie682pUmfioYf",
+        "username": "bosdima-7988"
+      },
+      "meta": {
+        "gitCommitAuthorName": "bosdima",
+        "gitCommitAuthorEmail": "ftp174@ya.ru",
+        "gitCommitMessage": "Auto-update: 2026-11-02T09:46:50.070Z",
+        "gitCommitRef": "static-version",
+        "gitCommitSha": "e253fdc0cc35cdfbe6f34521bf1b07a4ee8a6847",
+        "gitDirty": "1",
+        "gitRootDirectory": "",
+        "actor": "hermes-agent",
+        "lambdaRuntimeStats": "{\"nodejs\":1}"
+      }
+    },
+    {
+      "url": "ai-tech-blog-po88o77vo-bosdima-7988.vercel.app",
+      "name": "ai-tech-blog",
+      "state": "READY",
+      "target": "production",
+      "createdAt": 1793612028143,
+      "buildingAt": 1793612029118,
+      "ready": 1793612038686,
+      "creator": {
+        "uid": "qE0DemYK18Qie682pUmfioYf",
+        "username": "bosdima-7988"
+      },
+      "meta": {
+        "gitCommitAuthorName": "bosdima",
+        "gitCommitAuthorEmail": "ftp174@ya.ru",
+        "gitCommitMessage": "Create static version for 24/7 operation",
+        "gitCommitRef": "static-version",
+        "gitCommitSha": "4ffc45d5abf62dc6275733eed2405b63dc343fa4",
+        "gitDirty": "1",
+        "gitRootDirectory": "",
+        "actor": "hermes-agent",
+        "lambdaRuntimeStats": "{\"nodejs\":1}"
+      }
+    },
+    {
+      "url": "ai-tech-blog-9n4xwt2ay-bosdima-7988.vercel.app",
+      "name": "ai-tech-blog",
+      "state": "READY",
+      "target": "production",
+      "createdAt": 1793612004719,
+      "buildingAt": 1793612006217,
+      "ready": 1793612008199,
+      "creator": {
+        "uid": "qE0DemYK18Qie682pUmfioYf",
+        "username": "bosdima-7988"
+      },
+      "meta": {
+        "gitCommitAuthorName": "bosdima",
+        "gitCommitAuthorEmail": "ftp174@ya.ru",
+        "gitCommitMessage": "Create static version for 24/7 operation",
+        "gitCommitRef": "static-version",
+        "gitCommitSha": "4ffc45d5abf62dc6275733eed2405b63dc343fa4",
+        "gitDirty": "1",
+        "gitRootDirectory": "",
+        "actor": "hermes-agent"
+      }
+    },
+    {
+      "url": "ai-tech-blog-qp7p76szr-bosdima-7988.vercel.app",
+      "name": "ai-tech-blog",
+      "state": "READY",
+      "target": "production",
+      "createdAt": 1793611902802,
+      "buildingAt": 1793611903825,
+      "ready": 1793611905667,
+      "creator": {
+        "uid": "qE0DemYK18Qie682pUmfioYf",
+        "username": "bosdima-7988"
+      },
+      "meta": {
+        "gitCommitAuthorName": "bosdima",
+        "gitCommitAuthorEmail": "ftp174@ya.ru",
+        "gitCommitMessage": "Create static version for 24/7 operation",
+        "gitCommitRef": "static-version",
+        "gitCommitSha": "4ffc45d5abf62dc6275733eed2405b63dc343fa4",
+        "gitDirty": "1",
+        "gitRootDirectory": "",
+        "actor": "hermes-agent"
+      }
+    },
+    {
+      "url": "ai-tech-blog-7pfnk9izh-bosdima-7988.vercel.app",
+      "name": "ai-tech-blog",
+      "state": "READY",
+      "target": "production",
+      "createdAt": 1793611804610,
+      "buildingAt": 1793611805492,
+      "ready": 1793611807368,
+      "creator": {
+        "uid": "qE0DemYK18Qie682pUmfioYf",
+        "username": "bosdima-7988"
+      },
+      "meta": {
+        "gitCommitAuthorName": "bosdima",
+        "gitCommitAuthorEmail": "ftp174@ya.ru",
+        "gitCommitMessage": "Create static version for 24/7 operation",
+        "gitCommitRef": "static-version",
+        "gitCommitSha": "4ffc45d5abf62dc6275733eed2405b63dc343fa4",
+        "gitDirty": "1",
+        "gitRootDirectory": "",
+        "actor": "hermes-agent"
+      }
+    },
+    {
+      "url": "ai-tech-blog-fn8q8gvnb-bosdima-7988.vercel.app",
+      "name": "ai-tech-blog",
+      "state": "READY",
+      "target": "production",
+      "createdAt": 1793611758247,
+      "buildingAt": 1793611759672,
+      "ready": 1793611767625,
+      "creator": {
+        "uid": "qE0DemYK18Qie682pUmfioYf",
+        "username": "bosdima-7988"
+      },
+      "meta": {
+        "gitCommitAuthorName": "bosdima",
+        "gitCommitAuthorEmail": "ftp174@ya.ru",
+        "gitCommitMessage": "Create static version for 24/7 operation",
+        "gitCommitRef": "static-version",
+        "gitCommitSha": "4ffc45d5abf62dc6275733eed2405b63dc343fa4",
+        "gitDirty": "1",
+        "gitRootDirectory": "",
+        "actor": "hermes-agent",
+        "lambdaRuntimeStats": "{\"nodejs\":1}"
+      }
+    },
+    {
+      "url": "ai-tech-blog-39t8y7ah7-bosdima-7988.vercel.app",
+      "name": "ai-tech-blog",
+      "state": "READY",
+      "target": "production",
+      "createdAt": 1793610641053,
+      "buildingAt": 1793610641960,
+      "ready": 1793610650887,
+      "creator": {
+        "uid": "qE0DemYK18Qie682pUmfioYf",
+        "username": "bosdima-7988"
+      },
+      "meta": {
+        "gitCommitAuthorName": "bosdima",
+        "gitCommitAuthorEmail": "ftp174@ya.ru",
+        "gitCommitMessage": "Create static version for 24/7 operation",
+        "gitCommitRef": "static-version",
+        "gitCommitSha": "4ffc45d5abf62dc6275733eed2405b63dc343fa4",
+        "gitRootDirectory": "",
+        "actor": "hermes-agent",
+        "lambdaRuntimeStats": "{\"nodejs\":1}"
+      }
+    },
+    {
+      "url": "ai-tech-blog-l9bdsto0m-bosdima-7988.vercel.app",
+      "name": "ai-tech-blog",
+      "state": "READY",
+      "target": "production",
+      "createdAt": 1793609137819,
+      "buildingAt": 1793609138938,
+      "ready": 1793609146112,
+      "creator": {
+        "uid": "qE0DemYK18Qie682pUmfioYf",
+        "username": "bosdima-7988"
+      },
+      "meta": {
+        "gitCommitAuthorName": "bosdima",
+        "gitCommitAuthorEmail": "ftp174@ya.ru",
+        "gitCommitMessage": "Simple ads.txt endpoint",
+        "gitCommitRef": "master",
+        "gitCommitSha": "b2a23e0c9df4000a2dde57f6270b549a1a94e82b",
+        "gitRootDirectory": "",
+        "actor": "hermes-agent",
+        "lambdaRuntimeStats": "{\"nodejs\":1}"
+      }
+    },
+    {
+      "url": "ai-tech-blog-lp3bo9h0o-bosdima-7988.vercel.app",
+      "name": "ai-tech-blog",
+      "state": "READY",
+      "target": "production",
+      "createdAt": 1793609053529,
+      "buildingAt": 1793609054574,
+      "ready": 1793609059652,
+      "creator": {
+        "uid": "qE0DemYK18Qie682pUmfioYf",
+        "username": "bosdima-7988"
+      },
+      "meta": {
+        "gitCommitAuthorName": "bosdima",
+        "gitCommitAuthorEmail": "ftp174@ya.ru",
+        "gitCommitMessage": "Create dedicated static server for ads.txt",
+        "gitCommitRef": "master",
+        "gitCommitSha": "c5d7ed09975a60ceb537fc1e22ba9aad5dd089f9",
+        "gitRootDirectory": "",
+        "actor": "hermes-agent",
+        "lambdaRuntimeStats": "{\"nodejs\":1}"
+      }
+    },
+    {
+      "url": "ai-tech-blog-7n6ok9bza-bosdima-7988.vercel.app",
+      "name": "ai-tech-blog",
+      "state": "READY",
+      "target": "production",
+      "createdAt": 1793608978226,
+      "buildingAt": 1793608979105,
+      "ready": 1793608986457,
+      "creator": {
+        "uid": "qE0DemYK18Qie682pUmfioYf",
+        "username": "bosdima-7988"
+      },
+      "meta": {
+        "gitCommitAuthorName": "bosdima",
+        "gitCommitAuthorEmail": "ftp174@ya.ru",
+        "gitCommitMessage": "Simplify ads.txt serving with express.static",
+        "gitCommitRef": "master",
+        "gitCommitSha": "d3ba2c70c5bc9639069d62eab38218f1daf42759",
+        "gitRootDirectory": "",
+        "actor": "hermes-agent",
+        "lambdaRuntimeStats": "{\"nodejs\":1}"
+      }
+    },
+    {
+      "url": "ai-tech-blog-9elqnpvy2-bosdima-7988.vercel.app",
+      "name": "ai-tech-blog",
+      "state": "READY",
+      "target": "production",
+      "createdAt": 1793608901460,
+      "buildingAt": 1793608902337,
+      "ready": 1793608909980,
+      "creator": {
+        "uid": "qE0DemYK18Qie682pUmfioYf",
+        "username": "bosdima-7988"
+      },
+      "meta": {
+        "gitCommitAuthorName": "bosdima",
+        "gitCommitAuthorEmail": "ftp174@ya.ru",
+        "gitCommitMessage": "Add static ads.txt file",
+        "gitCommitRef": "master",
+        "gitCommitSha": "3b288ce5fd307eefb8287d9339fce0b64ba33304",
+        "gitRootDirectory": "",
+        "actor": "hermes-agent",
+        "lambdaRuntimeStats": "{\"nodejs\":1}"
+      }
+    },
+    {
+      "url": "ai-tech-blog-8jxu40fht-bosdima-7988.vercel.app",
+      "name": "ai-tech-blog",
+      "state": "READY",
+      "target": "production",
+      "createdAt": 1793608852550,
+      "buildingAt": 1793608853634,
+      "ready": 1793608863431,
+      "creator": {
+        "uid": "qE0DemYK18Qie682pUmfioYf",
+        "username": "bosdima-7988"
+      },
+      "meta": {
+        "gitCommitAuthorName": "bosdima",
+        "gitCommitAuthorEmail": "ftp174@ya.ru",
+        "gitCommitMessage": "Add ads.txt endpoint to server",
+        "gitCommitRef": "master",
+        "gitCommitSha": "bd4c7a511e6eddf5fb69fc0fa1db62e0af3b4dcb",
+        "gitRootDirectory": "",
+        "actor": "hermes-agent",
+        "lambdaRuntimeStats": "{\"nodejs\":1}"
+      }
+    }
+  ],
+  "pagination": {
+    "count": 20,
+    "next": 1793608852550,
+    "prev": 1793983685402
+  }
+}
