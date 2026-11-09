@@ -212,5 +212,11 @@
     "status": "error",
     "message": "Ошибка обновления AI Tech Blog",
     "error": "Сайт не доступен"
+  },
+  {
+    "timestamp": "2026-11-09T09:43:58.652Z",
+    "status": "error",
+    "message": "Ошибка обновления AI Tech Blog",
+    "error": "Сайт не доступен"
   }
 ]
