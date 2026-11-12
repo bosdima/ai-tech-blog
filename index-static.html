@@ -3,182 +3,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Tech Блог - Новости и технологии искусственного интеллекта</title>
-    <meta name="description" content="Автоматический блог о технологиях ИИ, нейросетях и искусственном интеллекте. Последние новости, обзоры и практические руководства.">
-    <meta name="keywords" content="искусственный интеллект, нейросети, машинное обучение, ИИ технологии, нейронные сети, AI, tech, blog">
-    <meta name="author" content="AI Tech Team">
-    <meta name="robots" content="index, follow">
-    
-    <!-- AdSense Code -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3628466575286373"
-     crossorigin="anonymous"></script>
-    
+    <title>AI Tech Blog - Блог о искусственном интеллекте</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            line-height: 1.6; 
-            color: #333; 
-            background: #f8f9fa;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        .container { 
-            max-width: 1200px; 
-            margin: 0 auto; 
-            padding: 20px; 
-        }
-        header { 
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
-            color: white; 
-            padding: 2rem 0; 
-            margin-bottom: 2rem; 
-            text-align: center;
-        }
-        h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
-        .subtitle { font-size: 1.2rem; opacity: 0.9; }
         
-        /* Рекламный баннер */
-        .ad-banner {
-            background: #fff;
-            padding: 10px;
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 0;
+            color: white;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .stats {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
             margin: 20px 0;
-            border-radius: 8px;
+            text-align: center;
+            color: white;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .stat-item {
+            background: rgba(255,255,255,0.2);
+            padding: 20px;
+            border-radius: 10px;
             text-align: center;
         }
-        .ad-banner ins {
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
             display: block;
-            width: 100%;
-            height: 90px;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
         }
         
         .articles-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
+            gap: 30px;
+            margin: 40px 0;
         }
         
-        .article-card {
+        .article {
             background: white;
-            border-radius: 12px;
-            padding: 1.5rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         
-        .article-card:hover {
+        .article:hover {
             transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .article-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        
+        .article-title {
+            font-size: 1.3rem;
+            color: #2c3e50;
+            margin-bottom: 5px;
+            line-height: 1.4;
         }
         
         .article-date {
-            color: #666;
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .article-card h2 {
-            color: #333;
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
+            background: #3498db;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            white-space: nowrap;
         }
         
         .article-excerpt {
             color: #666;
-            margin-bottom: 1rem;
-            line-height: 1.6;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+        
+        .article-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .tag {
+            background: #ecf0f1;
+            color: #2c3e50;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
         }
         
         .read-more {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(45deg, #3498db, #2980b9);
             color: white;
             border: none;
-            padding: 0.8rem 1.5rem;
-            border-radius: 6px;
+            padding: 10px 20px;
+            border-radius: 25px;
             cursor: pointer;
-            font-size: 0.9rem;
-            transition: opacity 0.3s ease;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            width: 100%;
         }
         
         .read-more:hover {
-            opacity: 0.9;
+            background: linear-gradient(45deg, #2980b9, #1f618d);
+            transform: translateY(-2px);
         }
         
-        .sidebar {
-            background: white;
-            border-radius: 12px;
-            padding: 1.5rem;
-            margin-left: 2rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        
-        .sidebar h3 {
-            color: #333;
-            margin-bottom: 1rem;
-        }
-        
-        .sidebar ul {
-            list-style: none;
-            margin-bottom: 1.5rem;
-        }
-        
-        .sidebar li {
-            padding: 0.5rem 0;
-            color: #666;
-        }
-        
-        .monetization {
-            background: #f8f9fa;
-            padding: 1rem;
-            border-radius: 8px;
-            margin-bottom: 1rem;
-        }
-        
-        .monetization h4 {
-            color: #333;
-            margin-bottom: 0.5rem;
-        }
-        
-        .monetization p {
-            color: #666;
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .monetization a {
-            color: #1976d2;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        
-        .ad-block {
-            margin: 20px 0;
-            padding: 10px;
-            background: #f8f9fa;
-            border-radius: 8px;
-            text-align: center;
-        }
-        
-        .ad-block ins {
-            display: block;
-            width: 300px;
-            height: 250px;
-            margin: 0 auto;
-        }
-        
-        .main-content {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 2rem;
-        }
-        
-        footer {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-            margin-top: 3rem;
-        }
-        
-        /* Модальное окно для статьи */
         .modal {
             display: none;
             position: fixed;
@@ -188,585 +167,1200 @@
             width: 100%;
             height: 100%;
             background-color: rgba(0,0,0,0.5);
+            backdrop-filter: blur(5px);
         }
         
         .modal-content {
-            background: white;
-            border-radius: 15px;
+            background-color: white;
+            margin: 5% auto;
             padding: 30px;
+            border-radius: 15px;
+            width: 90%;
             max-width: 800px;
-            max-height: 90vh;
+            max-height: 80vh;
             overflow-y: auto;
             position: relative;
-            margin: 20px auto;
+            animation: modalSlideIn 0.3s ease;
+        }
+        
+        @keyframes modalSlideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
         
         .close {
             position: absolute;
-            top: 15px;
             right: 20px;
-            font-size: 2rem;
+            top: 15px;
+            font-size: 28px;
+            font-weight: bold;
             cursor: pointer;
-            color: #666;
+            color: #aaa;
         }
         
         .close:hover {
             color: #333;
         }
         
-        .article-content {
-            margin: 20px 0;
-            line-height: 1.8;
-            color: #444;
+        .modal-title {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.8rem;
+        }
+        
+        .modal-date {
+            color: #7f8c8d;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .modal-content-text {
+            line-height: 1.6;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        .modal-content-text h2 {
+            color: #2c3e50;
+            margin: 20px 0 10px 0;
+            font-size: 1.4rem;
+        }
+        
+        .modal-content-text h3 {
+            color: #2c3e50;
+            margin: 15px 0 8px 0;
+            font-size: 1.2rem;
+        }
+        
+        .modal-content-text p {
+            margin-bottom: 15px;
+        }
+        
+        .update-info {
+            text-align: center;
+            color: white;
+            margin-top: 40px;
+            padding: 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
         }
         
         @media (max-width: 768px) {
-            .main-content {
-                grid-template-columns: 1fr;
+            h1 {
+                font-size: 2rem;
             }
             
             .articles-grid {
                 grid-template-columns: 1fr;
             }
             
-            .sidebar {
-                margin-left: 0;
-                margin-top: 2rem;
+            .modal-content {
+                margin: 10% auto;
+                width: 95%;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>AI Tech Блог</h1>
-            <p class="subtitle">Автоматизированный источник новостей и технологий искусственного интеллекта</p>
-        </div>
-    </header>
-
     <div class="container">
-        <!-- Рекламный баннер 728x90 -->
-        <div class="ad-banner">
-            <ins class="adsbygoogle"
-                 style="display:block; width:100%; height:90px;"
-                 data-ad-client="ca-pub-3628466575286373"
-                 data-ad-slot="1234567890"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>
-                 (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-        </div>
-
-        <div class="main-content">
-            <div class="articles-grid">
-                
-        <article class="article-card">
-            <div class="article-date">08.11.2026</div>
-            <h2>Новые архитектуры нейросетей: последние достижения 2026</h2>
-            <p class="article-excerpt">Обзор последних разработок в области Новые архитектуры нейросетей. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
-            <button class="read-more" onclick="showArticle('1794150527896')">Читать далее →</button>
-        </article>
-    
-        <article class="article-card">
-            <div class="article-date">08.11.2026</div>
-            <h2>ИИ в медицине: последние достижения 2026</h2>
-            <p class="article-excerpt">Обзор последних разработок в области ИИ в медицине. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
-            <button class="read-more" onclick="showArticle('1794150527926')">Читать далее →</button>
-        </article>
-    
-        <article class="article-card">
-            <div class="article-date">08.11.2026</div>
-            <h2>Автономные системы: последние достижения 2026</h2>
-            <p class="article-excerpt">Обзор последних разработок в области Автономные системы. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
-            <button class="read-more" onclick="showArticle('1794150527927')">Читать далее →</button>
-        </article>
-    
-        <article class="article-card">
-            <div class="article-date">08.11.2026</div>
-            <h2>Компьютерное зрение: последние достижения 2026</h2>
-            <p class="article-excerpt">Обзор последних разработок в области Компьютерное зрение. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
-            <button class="read-more" onclick="showArticle('1794150527928')">Читать далее →</button>
-        </article>
-    
-        <article class="article-card">
-            <div class="article-date">08.11.2026</div>
-            <h2>Обработка естественного языка: последние достижения 2026</h2>
-            <p class="article-excerpt">Обзор последних разработок в области Обработка естественного языка. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
-            <button class="read-more" onclick="showArticle('1794150527929')">Читать далее →</button>
-        </article>
-    
-        <article class="article-card">
-            <div class="article-date">08.11.2026</div>
-            <h2>Робототехника: последние достижения 2026</h2>
-            <p class="article-excerpt">Обзор последних разработок в области Робототехника. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
-            <button class="read-more" onclick="showArticle('1794150527930')">Читать далее →</button>
-        </article>
-    
-        <article class="article-card">
-            <div class="article-date">08.11.2026</div>
-            <h2>Квантовые вычисления и ИИ: последние достижения 2026</h2>
-            <p class="article-excerpt">Обзор последних разработок в области Квантовые вычисления и ИИ. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
-            <button class="read-more" onclick="showArticle('1794150527931')">Читать далее →</button>
-        </article>
-    
-        <article class="article-card">
-            <div class="article-date">08.11.2026</div>
-            <h2>Этика искусственного интеллекта: последние достижения 2026</h2>
-            <p class="article-excerpt">Обзор последних разработок в области Этика искусственного интеллекта. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
-            <button class="read-more" onclick="showArticle('1794150527932')">Читать далее →</button>
-        </article>
-    
-        <article class="article-card">
-            <div class="article-date">08.11.2026</div>
-            <h2>Генеративный ИИ: последние достижения 2026</h2>
-            <p class="article-excerpt">Обзор последних разработок в области Генеративный ИИ. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
-            <button class="read-more" onclick="showArticle('1794150527933')">Читать далее →</button>
-        </article>
-    
-        <article class="article-card">
-            <div class="article-date">08.11.2026</div>
-            <h2>ИИ в бизнесе: последние достижения 2026</h2>
-            <p class="article-excerpt">Обзор последних разработок в области ИИ в бизнесе. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
-            <button class="read-more" onclick="showArticle('1794150527934')">Читать далее →</button>
-        </article>
-    
-        <article class="article-card">
-            <div class="article-date">08.11.2026</div>
-            <h2>Будущее машинного обучения: последние достижения 2026</h2>
-            <p class="article-excerpt">Обзор последних разработок в области Будущее машинного обучения. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
-            <button class="read-more" onclick="showArticle('1794150527935')">Читать далее →</button>
-        </article>
-    
-        <article class="article-card">
-            <div class="article-date">08.11.2026</div>
-            <h2>Нейросети для создания контента: последние достижения 2026</h2>
-            <p class="article-excerpt">Обзор последних разработок в области Нейросети для создания контента. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
-            <button class="read-more" onclick="showArticle('1794150527936')">Читать далее →</button>
-        </article>
-    
-        <article class="article-card">
-            <div class="article-date">08.11.2026</div>
-            <h2>Новые архитектуры нейросетей: последние достижения 2026</h2>
-            <p class="article-excerpt">Обзор последних разработок в области Новые архитектуры нейросетей. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
-            <button class="read-more" onclick="showArticle('1794157228727')">Читать далее →</button>
-        </article>
-    
-        <article class="article-card">
-            <div class="article-date">08.11.2026</div>
-            <h2>ИИ в медицине: последние достижения 2026</h2>
-            <p class="article-excerpt">Обзор последних разработок в области ИИ в медицине. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
-            <button class="read-more" onclick="showArticle('1794157228728')">Читать далее →</button>
-        </article>
-    
-        <article class="article-card">
-            <div class="article-date">08.11.2026</div>
-            <h2>Автономные системы: последние достижения 2026</h2>
-            <p class="article-excerpt">Обзор последних разработок в области Автономные системы. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
-            <button class="read-more" onclick="showArticle('1794157228729')">Читать далее →</button>
-        </article>
-    
-        <article class="article-card">
-            <div class="article-date">08.11.2026</div>
-            <h2>Компьютерное зрение: последние достижения 2026</h2>
-            <p class="article-excerpt">Обзор последних разработок в области Компьютерное зрение. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
-            <button class="read-more" onclick="showArticle('1794157228730')">Читать далее →</button>
-        </article>
-    
-        <article class="article-card">
-            <div class="article-date">08.11.2026</div>
-            <h2>Обработка естественного языка: последние достижения 2026</h2>
-            <p class="article-excerpt">Обзор последних разработок в области Обработка естественного языка. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
-            <button class="read-more" onclick="showArticle('1794157228731')">Читать далее →</button>
-        </article>
-    
-        <article class="article-card">
-            <div class="article-date">08.11.2026</div>
-            <h2>Робототехника: последние достижения 2026</h2>
-            <p class="article-excerpt">Обзор последних разработок в области Робототехника. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
-            <button class="read-more" onclick="showArticle('1794157228732')">Читать далее →</button>
-        </article>
-    
-        <article class="article-card">
-            <div class="article-date">08.11.2026</div>
-            <h2>Квантовые вычисления и ИИ: последние достижения 2026</h2>
-            <p class="article-excerpt">Обзор последних разработок в области Квантовые вычисления и ИИ. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
-            <button class="read-more" onclick="showArticle('1794157228733')">Читать далее →</button>
-        </article>
-    
-        <article class="article-card">
-            <div class="article-date">08.11.2026</div>
-            <h2>Этика искусственного интеллекта: последние достижения 2026</h2>
-            <p class="article-excerpt">Обзор последних разработок в области Этика искусственного интеллекта. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
-            <button class="read-more" onclick="showArticle('1794157228734')">Читать далее →</button>
-        </article>
-    
-        <article class="article-card">
-            <div class="article-date">08.11.2026</div>
-            <h2>Генеративный ИИ: последние достижения 2026</h2>
-            <p class="article-excerpt">Обзор последних разработок в области Генеративный ИИ. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
-            <button class="read-more" onclick="showArticle('1794157228735')">Читать далее →</button>
-        </article>
-    
-        <article class="article-card">
-            <div class="article-date">08.11.2026</div>
-            <h2>ИИ в бизнесе: последние достижения 2026</h2>
-            <p class="article-excerpt">Обзор последних разработок в области ИИ в бизнесе. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
-            <button class="read-more" onclick="showArticle('1794157228736')">Читать далее →</button>
-        </article>
-    
-        <article class="article-card">
-            <div class="article-date">08.11.2026</div>
-            <h2>Будущее машинного обучения: последние достижения 2026</h2>
-            <p class="article-excerpt">Обзор последних разработок в области Будущее машинного обучения. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
-            <button class="read-more" onclick="showArticle('1794157228737')">Читать далее →</button>
-        </article>
-    
-        <article class="article-card">
-            <div class="article-date">08.11.2026</div>
-            <h2>Нейросети для создания контента: последние достижения 2026</h2>
-            <p class="article-excerpt">Обзор последних разработок в области Нейросети для создания контента. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
-            <button class="read-more" onclick="showArticle('1794157228738')">Читать далее →</button>
-        </article>
-    
-        <article class="article-card">
-            <div class="article-date">08.11.2026</div>
-            <h2>Новые архитектуры нейросетей: последние достижения 2026</h2>
-            <p class="article-excerpt">Обзор последних разработок в области Новые архитектуры нейросетей. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
-            <button class="read-more" onclick="showArticle('1794164422236')">Читать далее →</button>
-        </article>
-    
-        <article class="article-card">
-            <div class="article-date">08.11.2026</div>
-            <h2>ИИ в медицине: последние достижения 2026</h2>
-            <p class="article-excerpt">Обзор последних разработок в области ИИ в медицине. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
-            <button class="read-more" onclick="showArticle('1794164422237')">Читать далее →</button>
-        </article>
-    
-        <article class="article-card">
-            <div class="article-date">08.11.2026</div>
-            <h2>Автономные системы: последние достижения 2026</h2>
-            <p class="article-excerpt">Обзор последних разработок в области Автономные системы. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
-            <button class="read-more" onclick="showArticle('1794164422238')">Читать далее →</button>
-        </article>
-    
-        <article class="article-card">
-            <div class="article-date">08.11.2026</div>
-            <h2>Компьютерное зрение: последние достижения 2026</h2>
-            <p class="article-excerpt">Обзор последних разработок в области Компьютерное зрение. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
-            <button class="read-more" onclick="showArticle('1794164422239')">Читать далее →</button>
-        </article>
-    
-        <article class="article-card">
-            <div class="article-date">08.11.2026</div>
-            <h2>Обработка естественного языка: последние достижения 2026</h2>
-            <p class="article-excerpt">Обзор последних разработок в области Обработка естественного языка. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
-            <button class="read-more" onclick="showArticle('1794164422240')">Читать далее →</button>
-        </article>
-    
-        <article class="article-card">
-            <div class="article-date">08.11.2026</div>
-            <h2>Робототехника: последние достижения 2026</h2>
-            <p class="article-excerpt">Обзор последних разработок в области Робототехника. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
-            <button class="read-more" onclick="showArticle('1794164422241')">Читать далее →</button>
-        </article>
-    
-        <article class="article-card">
-            <div class="article-date">08.11.2026</div>
-            <h2>Квантовые вычисления и ИИ: последние достижения 2026</h2>
-            <p class="article-excerpt">Обзор последних разработок в области Квантовые вычисления и ИИ. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
-            <button class="read-more" onclick="showArticle('1794164422242')">Читать далее →</button>
-        </article>
-    
-        <article class="article-card">
-            <div class="article-date">08.11.2026</div>
-            <h2>Этика искусственного интеллекта: последние достижения 2026</h2>
-            <p class="article-excerpt">Обзор последних разработок в области Этика искусственного интеллекта. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
-            <button class="read-more" onclick="showArticle('1794164422243')">Читать далее →</button>
-        </article>
-    
-        <article class="article-card">
-            <div class="article-date">08.11.2026</div>
-            <h2>Генеративный ИИ: последние достижения 2026</h2>
-            <p class="article-excerpt">Обзор последних разработок в области Генеративный ИИ. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
-            <button class="read-more" onclick="showArticle('1794164422244')">Читать далее →</button>
-        </article>
-    
-        <article class="article-card">
-            <div class="article-date">08.11.2026</div>
-            <h2>ИИ в бизнесе: последние достижения 2026</h2>
-            <p class="article-excerpt">Обзор последних разработок в области ИИ в бизнесе. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
-            <button class="read-more" onclick="showArticle('1794164422245')">Читать далее →</button>
-        </article>
-    
-        <article class="article-card">
-            <div class="article-date">08.11.2026</div>
-            <h2>Будущее машинного обучения: последние достижения 2026</h2>
-            <p class="article-excerpt">Обзор последних разработок в области Будущее машинного обучения. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
-            <button class="read-more" onclick="showArticle('1794164422246')">Читать далее →</button>
-        </article>
-    
-        <article class="article-card">
-            <div class="article-date">08.11.2026</div>
-            <h2>Нейросети для создания контента: последние достижения 2026</h2>
-            <p class="article-excerpt">Обзор последних разработок в области Нейросети для создания контента. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
-            <button class="read-more" onclick="showArticle('1794164422247')">Читать далее →</button>
-        </article>
-    
-        <article class="article-card">
-            <div class="article-date">08.11.2026</div>
-            <h2>Новые архитектуры нейросетей: последние достижения 2026</h2>
-            <p class="article-excerpt">Обзор последних разработок в области Новые архитектуры нейросетей. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
-            <button class="read-more" onclick="showArticle('1794165977423')">Читать далее →</button>
-        </article>
-    
-        <article class="article-card">
-            <div class="article-date">08.11.2026</div>
-            <h2>ИИ в медицине: последние достижения 2026</h2>
-            <p class="article-excerpt">Обзор последних разработок в области ИИ в медицине. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
-            <button class="read-more" onclick="showArticle('1794165977473')">Читать далее →</button>
-        </article>
-    
-        <article class="article-card">
-            <div class="article-date">08.11.2026</div>
-            <h2>Автonomousные системы: последние достижения 2026</h2>
-            <p class="article-excerpt">Обзор последних разработок в области Автonomousные системы. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
-            <button class="read-more" onclick="showArticle('1794165977474')">Читать далее →</button>
-        </article>
-    
-        <article class="article-card">
-            <div class="article-date">08.11.2026</div>
-            <h2>Компьютерное зрение: последние достижения 2026</h2>
-            <p class="article-excerpt">Обзор последних разработок в области Компьютерное зрение. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
-            <button class="read-more" onclick="showArticle('1794165977475')">Читать далее →</button>
-        </article>
-    
-        <article class="article-card">
-            <div class="article-date">08.11.2026</div>
-            <h2>Обработка естественного языка: последние достижения 2026</h2>
-            <p class="article-excerpt">Обзор последних разработок в области Обработка естественного языка. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
-            <button class="read-more" onclick="showArticle('1794165977476')">Читать далее →</button>
-        </article>
-    
-        <article class="article-card">
-            <div class="article-date">08.11.2026</div>
-            <h2>Робототехника: последние достижения 2026</h2>
-            <p class="article-excerpt">Обзор последних разработок в области Робототехника. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
-            <button class="read-more" onclick="showArticle('1794165977477')">Читать далее →</button>
-        </article>
-    
-        <article class="article-card">
-            <div class="article-date">08.11.2026</div>
-            <h2>Квантовые вычисления и ИИ: последние достижения 2026</h2>
-            <p class="article-excerpt">Обзор последних разработок в области Квантовые вычисления и ИИ. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
-            <button class="read-more" onclick="showArticle('1794165977478')">Читать далее →</button>
-        </article>
-    
-        <article class="article-card">
-            <div class="article-date">08.11.2026</div>
-            <h2>Этика искусственного интеллекта: последние достижения 2026</h2>
-            <p class="article-excerpt">Обзор последних разработок в области Этика искусственного интеллекта. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
-            <button class="read-more" onclick="showArticle('1794165977479')">Читать далее →</button>
-        </article>
-    
-        <article class="article-card">
-            <div class="article-date">08.11.2026</div>
-            <h2>Генеративный ИИ: последние достижения 2026</h2>
-            <p class="article-excerpt">Обзор последних разработок в области Генеративный ИИ. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
-            <button class="read-more" onclick="showArticle('1794165977480')">Читать далее →</button>
-        </article>
-    
-        <article class="article-card">
-            <div class="article-date">08.11.2026</div>
-            <h2>ИИ в бизнесе: последние достижения 2026</h2>
-            <p class="article-excerpt">Обзор последних разработок в области ИИ в бизнесе. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
-            <button class="read-more" onclick="showArticle('1794165977481')">Читать далее →</button>
-        </article>
-    
-        <article class="article-card">
-            <div class="article-date">08.11.2026</div>
-            <h2>Будущее машинного обучения: последние достижения 2026</h2>
-            <p class="article-excerpt">Обзор последних разработок в области Будущее машинного обучения. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
-            <button class="read-more" onclick="showArticle('1794165977482')">Читать далее →</button>
-        </article>
-    
-        <article class="article-card">
-            <div class="article-date">08.11.2026</div>
-            <h2>Нейросети для создания контента: последние достижения 2026</h2>
-            <p class="article-excerpt">Обзор последних разработок в области Нейросети для создания контента. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
-            <button class="read-more" onclick="showArticle('1794165977483')">Читать далее →</button>
-        </article>
-    
-        <article class="article-card">
-            <div class="article-date">09.11.2026</div>
-            <h2>Новые архитектуры нейросетей: последние достижения 2026</h2>
-            <p class="article-excerpt">Обзор последних разработок в области Новые архитектуры нейросетей. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
-            <button class="read-more" onclick="showArticle('1794217438348')">Читать далее →</button>
-        </article>
-    
-        <article class="article-card">
-            <div class="article-date">09.11.2026</div>
-            <h2>ИИ в медицине: последние достижения 2026</h2>
-            <p class="article-excerpt">Обзор последних разработок в области ИИ в медицине. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
-            <button class="read-more" onclick="showArticle('1794217438514')">Читать далее →</button>
-        </article>
-    
-        <article class="article-card">
-            <div class="article-date">09.11.2026</div>
-            <h2>Автonomousные системы: последние достижения 2026</h2>
-            <p class="article-excerpt">Обзор последних разработок в области Автonomousные системы. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
-            <button class="read-more" onclick="showArticle('1794217438515')">Читать далее →</button>
-        </article>
-    
-        <article class="article-card">
-            <div class="article-date">09.11.2026</div>
-            <h2>Компьютерное зрение: последние достижения 2026</h2>
-            <p class="article-excerpt">Обзор последних разработок в области Компьютерное зрение. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
-            <button class="read-more" onclick="showArticle('1794217438516')">Читать далее →</button>
-        </article>
-    
-        <article class="article-card">
-            <div class="article-date">09.11.2026</div>
-            <h2>Обработка естественного языка: последние достижения 2026</h2>
-            <p class="article-excerpt">Обзор последних разработок в области Обработка естественного языка. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
-            <button class="read-more" onclick="showArticle('1794217438517')">Читать далее →</button>
-        </article>
-    
-        <article class="article-card">
-            <div class="article-date">09.11.2026</div>
-            <h2>Робототехника: последние достижения 2026</h2>
-            <p class="article-excerpt">Обзор последних разработок в области Робототехника. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
-            <button class="read-more" onclick="showArticle('1794217438518')">Читать далее →</button>
-        </article>
-    
-        <article class="article-card">
-            <div class="article-date">09.11.2026</div>
-            <h2>Квантовые вычисления и ИИ: последние достижения 2026</h2>
-            <p class="article-excerpt">Обзор последних разработок в области Квантовые вычисления и ИИ. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
-            <button class="read-more" onclick="showArticle('1794217438519')">Читать далее →</button>
-        </article>
-    
-        <article class="article-card">
-            <div class="article-date">09.11.2026</div>
-            <h2>Этика искусственного интеллекта: последние достижения 2026</h2>
-            <p class="article-excerpt">Обзор последних разработок в области Этика искусственного интеллекта. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
-            <button class="read-more" onclick="showArticle('1794217438521')">Читать далее →</button>
-        </article>
-    
-        <article class="article-card">
-            <div class="article-date">09.11.2026</div>
-            <h2>Генеративный ИИ: последние достижения 2026</h2>
-            <p class="article-excerpt">Обзор последних разработок в области Генеративный ИИ. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
-            <button class="read-more" onclick="showArticle('1794217438522')">Читать далее →</button>
-        </article>
-    
-        <article class="article-card">
-            <div class="article-date">09.11.2026</div>
-            <h2>ИИ в бизнесе: последние достижения 2026</h2>
-            <p class="article-excerpt">Обзор последних разработок в области ИИ в бизнесе. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
-            <button class="read-more" onclick="showArticle('1794217438523')">Читать далее →</button>
-        </article>
-    
-        <article class="article-card">
-            <div class="article-date">09.11.2026</div>
-            <h2>Будущее машинного обучения: последние достижения 2026</h2>
-            <p class="article-excerpt">Обзор последних разработок в области Будущее машинного обучения. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
-            <button class="read-more" onclick="showArticle('1794217438524')">Читать далее →</button>
-        </article>
-    
-        <article class="article-card">
-            <div class="article-date">09.11.2026</div>
-            <h2>Нейросети для создания контента: последние достижения 2026</h2>
-            <p class="article-excerpt">Обзор последних разработок в области Нейросети для создания контента. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
-            <button class="read-more" onclick="showArticle('1794217438525')">Читать далее →</button>
-        </article>
-    
+        <header>
+            <h1>AI Tech Blog</h1>
+            <p class="subtitle">Блог о искусственном интеллекте и технологиях 2026</p>
+        </header>
+        
+        <div class="stats">
+            <h2>Статистика блога</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number">15</span>
+                    <span class="stat-label">Статей</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">13</span>
+                    <span class="stat-label">Тегов</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">0</span>
+                    <span class="stat-label">Монетизировано</span>
+                </div>
             </div>
+        </div>
+        
+        <div class="articles-grid">
             
-            <div class="sidebar">
-                <h3>Популярные темы</h3>
-                <ul>
-                    <li>Нейросети</li>
-                    <li>Глубокое обучение</li>
-                    <li>Computer Vision</li>
-                    <li>NLP</li>
-                    <li>Робототехника</li>
-                </ul>
+        <div class="article" data-id="1794504930563">
+            <div class="article-header">
+                <h3 class="article-title">Новые архитектуры нейросетей: последние достижения 2026</h3>
+                <span class="article-date">12.11.2026</span>
+            </div>
+            <p class="article-excerpt">Обзор последних разработок в области Новые архитектуры нейросетей. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
+            <div class="article-tags">
+                <span class="tag">новые архитектуры нейросетей</span>
+            </div>
+            <button class="read-more" onclick="showArticle(1794504930563)">Читать далее</button>
+        </div>
+    
+        <div class="article" data-id="1794504930699">
+            <div class="article-header">
+                <h3 class="article-title">ИИ в медицине: последние достижения 2026</h3>
+                <span class="article-date">12.11.2026</span>
+            </div>
+            <p class="article-excerpt">Обзор последних разработок в области ИИ в медицине. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
+            <div class="article-tags">
+                <span class="tag">ии в медицине</span>
+            </div>
+            <button class="read-more" onclick="showArticle(1794504930699)">Читать далее</button>
+        </div>
+    
+        <div class="article" data-id="1794504930700">
+            <div class="article-header">
+                <h3 class="article-title">Автономные системы: последние достижения 2026</h3>
+                <span class="article-date">12.11.2026</span>
+            </div>
+            <p class="article-excerpt">Обзор последних разработок в области Автономные системы. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
+            <div class="article-tags">
+                <span class="tag">автономные системы</span>
+            </div>
+            <button class="read-more" onclick="showArticle(1794504930700)">Читать далее</button>
+        </div>
+    
+        <div class="article" data-id="1794504930701">
+            <div class="article-header">
+                <h3 class="article-title">Компьютерное зрение: последние достижения 2026</h3>
+                <span class="article-date">12.11.2026</span>
+            </div>
+            <p class="article-excerpt">Обзор последних разработок в области Компьютерное зрение. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
+            <div class="article-tags">
+                <span class="tag">компьютерное зрение</span>
+            </div>
+            <button class="read-more" onclick="showArticle(1794504930701)">Читать далее</button>
+        </div>
+    
+        <div class="article" data-id="1794504930702">
+            <div class="article-header">
+                <h3 class="article-title">Обработка естественного языка: последние достижения 2026</h3>
+                <span class="article-date">12.11.2026</span>
+            </div>
+            <p class="article-excerpt">Обзор последних разработок в области Обработка естественного языка. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
+            <div class="article-tags">
+                <span class="tag">обработка естественного языка</span>
+            </div>
+            <button class="read-more" onclick="showArticle(1794504930702)">Читать далее</button>
+        </div>
+    
+        <div class="article" data-id="1794504930703">
+            <div class="article-header">
+                <h3 class="article-title">Робототехника: последние достижения 2026</h3>
+                <span class="article-date">12.11.2026</span>
+            </div>
+            <p class="article-excerpt">Обзор последних разработок в области Робототехника. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
+            <div class="article-tags">
+                <span class="tag">робототехника</span>
+            </div>
+            <button class="read-more" onclick="showArticle(1794504930703)">Читать далее</button>
+        </div>
+    
+        <div class="article" data-id="1794504930704">
+            <div class="article-header">
+                <h3 class="article-title">Квантовые вычисления и ИИ: последние достижения 2026</h3>
+                <span class="article-date">12.11.2026</span>
+            </div>
+            <p class="article-excerpt">Обзор последних разработок в области Квантовые вычисления и ИИ. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
+            <div class="article-tags">
+                <span class="tag">квантовые вычисления и ии</span>
+            </div>
+            <button class="read-more" onclick="showArticle(1794504930704)">Читать далее</button>
+        </div>
+    
+        <div class="article" data-id="1794504930705">
+            <div class="article-header">
+                <h3 class="article-title">Этика искусственного интеллекта: последние достижения 2026</h3>
+                <span class="article-date">12.11.2026</span>
+            </div>
+            <p class="article-excerpt">Обзор последних разработок в области Этика искусственного интеллекта. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
+            <div class="article-tags">
+                <span class="tag">этика искусственного интеллекта</span>
+            </div>
+            <button class="read-more" onclick="showArticle(1794504930705)">Читать далее</button>
+        </div>
+    
+        <div class="article" data-id="1794504930706">
+            <div class="article-header">
+                <h3 class="article-title">Генеративный ИИ: последние достижения 2026</h3>
+                <span class="article-date">12.11.2026</span>
+            </div>
+            <p class="article-excerpt">Обзор последних разработок в области Генеративный ИИ. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
+            <div class="article-tags">
+                <span class="tag">генеративный ии</span>
+            </div>
+            <button class="read-more" onclick="showArticle(1794504930706)">Читать далее</button>
+        </div>
+    
+        <div class="article" data-id="1794504930707">
+            <div class="article-header">
+                <h3 class="article-title">ИИ в бизнесе: последние достижения 2026</h3>
+                <span class="article-date">12.11.2026</span>
+            </div>
+            <p class="article-excerpt">Обзор последних разработок в области ИИ в бизнесе. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
+            <div class="article-tags">
+                <span class="tag">ии в бизнесе</span>
+            </div>
+            <button class="read-more" onclick="showArticle(1794504930707)">Читать далее</button>
+        </div>
+    
+        <div class="article" data-id="1794504930708">
+            <div class="article-header">
+                <h3 class="article-title">Будущее машинного обучения: последние достижения 2026</h3>
+                <span class="article-date">12.11.2026</span>
+            </div>
+            <p class="article-excerpt">Обзор последних разработок в области Будущее машинного обучения. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
+            <div class="article-tags">
+                <span class="tag">будущее машинного обучения</span>
+            </div>
+            <button class="read-more" onclick="showArticle(1794504930708)">Читать далее</button>
+        </div>
+    
+        <div class="article" data-id="1794504930709">
+            <div class="article-header">
+                <h3 class="article-title">Нейросети для создания контента: последние достижения 2026</h3>
+                <span class="article-date">12.11.2026</span>
+            </div>
+            <p class="article-excerpt">Обзор последних разработок в области Нейросети для создания контента. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы.</p>
+            <div class="article-tags">
+                <span class="tag">нейросети для создания контента</span>
+            </div>
+            <button class="read-more" onclick="showArticle(1794504930709)">Читать далее</button>
+        </div>
+    
+        <div class="article" data-id="1794506442864">
+            <div class="article-header">
+                <h3 class="article-title">обработка естественного языка в современном мире: тренды 2026</h3>
+                <span class="article-date">12.11.2026</span>
+            </div>
+            <p class="article-excerpt">Анализ влияния обработка естественного языка на различные отрасли экономики и общества....</p>
+            <div class="article-tags">
+                <span class="tag">обработка естественного языка</span>
+            </div>
+            <button class="read-more" onclick="showArticle(1794506442864)">Читать далее</button>
+        </div>
+    
+        <div class="article" data-id="1794506442865">
+            <div class="article-header">
+                <h3 class="article-title">искусственный интеллект в современном мире: тренды 2026</h3>
+                <span class="article-date">12.11.2026</span>
+            </div>
+            <p class="article-excerpt">Анализ влияния искусственный интеллект на различные отрасли экономики и общества....</p>
+            <div class="article-tags">
+                <span class="tag">искусственный интеллект</span>
+            </div>
+            <button class="read-more" onclick="showArticle(1794506442865)">Читать далее</button>
+        </div>
+    
+        <div class="article" data-id="1794506442866">
+            <div class="article-header">
+                <h3 class="article-title">компьютерное зрение в современном мире: тренды 2026</h3>
+                <span class="article-date">12.11.2026</span>
+            </div>
+            <p class="article-excerpt">Анализ влияния компьютерное зрение на различные отрасли экономики и общества....</p>
+            <div class="article-tags">
+                <span class="tag">компьютерное зрение</span>
+            </div>
+            <button class="read-more" onclick="showArticle(1794506442866)">Читать далее</button>
+        </div>
+    
+        </div>
+        
+        <div class="update-info">
+            <p>🤍 Последнее обновление: <span id="update-date">12.11.2026</span></p>
+            <p>🔄 Автоматическое обновление каждые 2 часа</p>
+        </div>
+    </div>
+    
+    
+        <div id="article-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 class="modal-title">Новые архитектуры нейросетей: последние достижения 2026</h2>
+                <p class="modal-date">12.11.2026</p>
+                <div class="modal-content-text">
+В этой статье мы рассмотрим последние достижения в области новых архитектур нейросетей. Современные технологии позволяют достигать невероятных результатов в обработке данных и машинном обучении.
 
-                <div class="monetization">
-                    <h4>🎯 Партнерские программы</h4>
-                    <p>Рекомендуемые сервисы и инструменты для работы с ИИ</p>
-                    <a href="#" style="color: #1976d2; text-decoration: none;">Смотреть предложения →</a>
-                </div>
+## Введение
+Нейронные сети прошли долгий путь от простых перцептронов до сложных трансформерных архитектур. В 2026 году мы наблюдаем революционный прорыв в области глубокого обучения.
 
-                <div class="monetization">
-                    <h4>📚 Книги и курсы</h4>
-                    <p>Образовательные материалы по ИИ и технологиям</p>
-                    <a href="#" style="color: #1976d2; text-decoration: none;">Каталог ресурсов →</a>
-                </div>
+## Основные архитектуры
+### 1. Трансформеры
+Трансформерные модели доминируют в обработке естественного языка. Их способность учитывать контекст и обрабатывать длинные последовательности делает их незаменимыми в современных ИИ-системах.
 
-                <!-- Рекламный блок 300x250 -->
-                <div class="ad-block">
-                    <ins class="adsbygoogle"
-                         style="display:block; width:300px; height:250px;"
-                         data-ad-client="ca-pub-3628466575286373"
-                         data-ad-slot="0987654321"
-                         data-ad-format="auto"
-                         data-full-width-responsive="true"></ins>
-                    <script>
-                         (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>
+### 2. ConvNeXT
+ConvNeXT объединяет преимущества сверточных нейронных сетей с архитектурой трансформеров, обеспечивая высокую точность в задачах компьютерного зрения.
+
+### 3. Vision Transformers
+Vision Transformers показывают впечатляющие результаты в классификации изображений, превосходя традиционные CNN в некоторых задачах.
+
+## Применение в реальном мире
+Эти архитектуры находят применение в:
+- Медицинской диагностике
+- Автономных системах
+- Финансовом анализе
+- Создании контента
+
+## Будущее развития
+Эксперты прогнозируют дальнейшую оптимизацию этих архитектур с упором на энергоэффективность и скорость обработки.
+
+## Заключение
+Новые архитектуры нейросетей открывают неограниченные возможности для развития искусственного интеллекта в ближайшие годы.
+        </div>
+                <div class="modal-tags">
+                    <span class="tag">новые архитектуры нейросетей</span>
                 </div>
             </div>
         </div>
-    </div>
+    
+        <div id="article-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 class="modal-title">ИИ в медицине: последние достижения 2026</h2>
+                <p class="modal-date">12.11.2026</p>
+                <div class="modal-content-text">
+В этой статье мы рассмотрим последние достижения в области искусственного интеллекта в медицине. Анализ трендов и прогнозы развития. Практические примеры и реальные кейсы внедрения.
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 AI Tech Блог. Автоматическая генерация контента.</p>
+## Введение
+Искусственный интеллектrevolutionize медицину, делая диагностику более точной, а лечение - более персонализированным. В 2026 году ИИ стал неотъемлемой частью современной медицинской практики.
+
+## Диагностика заболеваний
+### Ранняя диагностика рака
+ИИ-системы способны обнаруживать рак на ранних стадиях с точностью до 95%, что значительно улучшает прогнозы лечения.
+
+### Анализ медицинских изображений
+Нейронные сети анализируют КТ, МРТ и рентгеновские снимки с точностью, превышающей человеческие возможности.
+
+## Персонализированное лечение
+### Геномный анализ
+ИИ помогает анализировать генетические данные пациента для подбора индивидуальных схем лечения.
+
+### Прогнозирование развития заболеваний
+Машинное обучение предсказывает развитие хронических заболеваний на основе истории болезни пациента.
+
+## Хирургические роботы
+Хирургические системы на основе ИИ выполняют операции с микронной точностью, минимизируя риски для пациента.
+
+## Телемедицина
+ИИ-ассистированная телемедицина делает медицинскую помощь доступной для жителей отдаленных регионов.
+
+## Этические аспекты
+Использование ИИ в медицине raises важные вопросы о конфиденциальности данных и ответственности за ошибки.
+
+## Заключение
+ИИ в медицине открывает новые горизонты для улучшения качества медицинской помощи и спасения жизней.
         </div>
-    </footer>
-
-    <!-- Модальное окно для статей -->
-    <div id="articleModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <div id="modalArticleContent"></div>
+                <div class="modal-tags">
+                    <span class="tag">ии в медицине</span>
+                </div>
+            </div>
         </div>
-    </div>
+    
+        <div id="article-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 class="modal-title">Автономные системы: последние достижения 2026</h2>
+                <p class="modal-date">12.11.2026</p>
+                <div class="modal-content-text">
+В этой статье мы рассмотрим последние достижения в области автономных систем. Глубокое погружение в мир автономных систем. Практические примеры и реальные кейсы внедрения.
 
+## Введение
+Автonomousные системы становятся неотъемлемой части нашей повседневной жизни. В 2026 году они достигли нового уровня развития и надежности.
+
+## Автономные транспортные средства
+### Беспилотные автомобили
+Современные автомобили уровня L4/L5 могут безопасно передвигаться в городских условиях без участия человека.
+
+### Дрон-доставка
+Дроны доставляют товары и медикаменты в удаленные районы с точностью до метра.
+
+## Промышленная автоматизация
+### Умные фабрики
+Роботы на производстве работают в сотрудничестве с людьми, выполняя сложные задачи с высокой точностью.
+
+### Предиктивное обслуживание
+ИИ-системы прогнозируют поломки оборудования, предотвращая простои производства.
+
+## Домашние роботы
+### Умные помощники
+Роботы-помощники помогают пожилым людям и людям с ограниченными возможностями.
+
+### Безопасность
+Автономные системы безопасности круглосуточно защищают дома и офисы.
+
+## Сельское хозяйство
+### Умное земледелие
+Дроны и роботы оптимизируют использование ресурсов на фермах.
+
+### Мониторинг урожая
+ИИ-системы анализируют состояние растений и прогнозируют урожайность.
+
+## Вызовы и решения
+### Безопасность
+Разрабатываются новые стандарты безопасности для автономных систем.
+
+### Законодательство
+Создаются правовые нормы, регулирующие использование автономных технологий.
+
+## Заключение
+Автономные системы открывают новые возможности для повышения эффективности и безопасности во всех сферах жизни.
+        </div>
+                <div class="modal-tags">
+                    <span class="tag">автономные системы</span>
+                </div>
+            </div>
+        </div>
+    
+        <div id="article-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 class="modal-title">Компьютерное зрение: последние достижения 2026</h2>
+                <p class="modal-date">12.11.2026</p>
+                <div class="modal-content-text">
+В этой статье мы рассмотрим последние достижения в области компьютерного зрения. Анализируем тренды развития компьютерного зрения. Какие технологии будут доминировать в 2026 году?
+
+## Введение
+Компьютерное зрения достигло невероятных успехов в 2026 году. Современные системы могут видеть и понимать окружающий мир лучше человека.
+
+## Глубокое обучение в компьютерном зрении
+### Трансформеры для изображений
+Vision Transformers показывают впечатляющие результаты в классификации и сегментации изображений.
+
+### Самообучение системы
+Системы учатся на минимальном количестве данных, используя методы самоконтроля.
+
+## Реальное применение
+### Медицина
+Системы компьютерного зрения диагностируют заболевания по медицинским изображениям с точностью до 98%.
+
+### Автомобилестроение
+Беспилотные автомобили используют компьютерное зрение для навигации и обнаружения препятствий.
+
+### Производство
+Контроль качества на производстве с помощью систем компьютерного зрения.
+
+### Безопасность
+Системы распознавания лиц и обнаружения аномалий в режиме реального времени.
+
+## Технологии будущего
+### Нейроморфное компьютерное зрение
+Системы, имитирующие работу человеческого мозга для обработки визуальной информации.
+
+### Федеративное обучение
+Системы обучаются на распределенных данных без нарушения конфиденциальности.
+
+## Вызовы
+### Качество данных
+Нужны большие объемы размеченных данных для обучения.
+
+### Скорость обработки
+Реальное время обработки требует мощных вычислительных ресурсов.
+
+## Заключение
+Компьютерное зрение открывает новые возможности для автоматизации и улучшения качества жизни.
+        </div>
+                <div class="modal-tags">
+                    <span class="tag">компьютерное зрение</span>
+                </div>
+            </div>
+        </div>
+    
+        <div id="article-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 class="modal-title">Обработка естественного языка: последние достижения 2026</h2>
+                <p class="modal-date">12.11.2026</p>
+                <div class="modal-content-text">
+В этой статье мы рассмотрим последние достижения в области обработки естественного языка. Исследуем новые подходы к обработке естественного языка. Эксперты прогнозируют значительный прогресс в ближайшие годы.
+
+## Введение
+Обработка естественного языка достигла нового уровня развития в 2026 году. Современные системы понимают и генерируют текст практически безупречно.
+
+## Трансформерные модели
+### GPT-5 и его аналоги
+Модели уровня GPT-5 способны вести осмысленные диалоги, писать код и творческие тексты.
+
+### Мультимодальные модели
+Системы, работающие с текстом, изображениями и звуком одновременно.
+
+## Приложения
+### Чат-боты
+Умные ассистенты, способные понять контекст и дать релевантный ответ.
+
+### Автоматическая генерация контента
+Системы пишут статьи, сценарии и маркетинговые тексты.
+
+### Перевод
+Машинный перевод достиг уровня профессиональных переводчиков.
+
+### Анализ тональности
+Системы анализируют эмоциональную окраску текста с высокой точностью.
+
+## Технологии будущего
+### Эмоциональный ИИ
+Системы, понимающие и реагирующие на эмоции пользователя.
+
+### Контекстуальное понимание
+Модели, учитывающие контекст диалога и предыдущие взаимодействия.
+
+## Вызовы
+### Этика
+Проблемы предвзятости и дезинформации.
+
+### Конфиденциальность
+Защита персональных данных при обработке текста.
+
+## Заключение
+Обработка естественного языка открывает новые возможности для взаимодействия человека и машины.
+        </div>
+                <div class="modal-tags">
+                    <span class="tag">обработка естественного языка</span>
+                </div>
+            </div>
+        </div>
+    
+        <div id="article-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 class="modal-title">Робототехника: последние достижения 2026</h2>
+                <p class="modal-date">12.11.2026</p>
+                <div class="modal-content-text">
+В этой статье мы рассмотрим последние достижения в области робототехники. Исследуем новые подходы к робототехнике. Эксперты прогнозируют значительный прогресс в ближайшие годы.
+
+## Введение
+Робототехника в 2026 году достигла уровня, когда роботы становятся неотъемлемой частью нашей повседневной жизни и работы.
+
+## Современные роботы
+### Гуманоидные роботы
+Роботы, имитирующие движения человека, выполняют сложные задачи в промышленности и быту.
+
+### Коллаборативные роботы
+Роботы, работающие совместно с людьми в безопасном режиме.
+
+### Микророботы
+Миниатюрные роботы для медицинской и электронной промышленности.
+
+## Применение
+### Медицина
+Хирургические роботы выполняют операции с микронной точностью.
+
+### Логистика
+Роботы-сортировщики и доставщики оптимизируют логистические процессы.
+
+### Сельское хозяйство
+Роботы-агрегаты и дроны для точного земледелия.
+
+### Строительство
+Строительные роботы возводят здания с высокой точностью.
+
+## Технологии
+### Искусственный интеллект
+Роботы обучаются на реальных данных и адаптируются к новым условиям.
+
+### Компьютерное зрение
+Системы навигации и взаимодействия с окружающим миром.
+
+### Тактильное восприятие
+Роботы чувствуют объекты и взаимодействуют с ними безопасно.
+
+## Будущее
+### Социальные роботы
+Роботы-компаньоны для пожилых людей и детей.
+
+### Образовательные роботы
+Роботы-учителя помогают в обучении и развитии.
+
+## Заключение
+Робототехника открывает новые возможности для автоматизации и улучшения качества жизни.
+        </div>
+                <div class="modal-tags">
+                    <span class="tag">робототехника</span>
+                </div>
+            </div>
+        </div>
+    
+        <div id="article-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 class="modal-title">Квантовые вычисления и ИИ: последние достижения 2026</h2>
+                <p class="modal-date">12.11.2026</p>
+                <div class="modal-content-text">
+В этой статье мы рассмотрим последние достижения в области квантовых вычислений и ИИ. Исследуем новые подходы к квантовым вычислениям и ИИ. Эксперты прогнозируют значительный прогресс в ближайшие годы.
+
+## Введение
+Квантовые вычисления в 2026 году стали доступными для практического применения, открывая новые возможности для искусственного интеллекта.
+
+## Квантовые алгоритмы для ИИ
+### Квантовые нейронные сети
+Нейронные сети, использующие квантовые биты для ускорения обучения.
+
+### Квантовый машинный learning
+Алгоритмы, решающие задачи, недоступные классическим компьютерам.
+
+## Реальное применение
+### Оптимизация
+Квантовые алгоритмы решают задачи оптимизации в логистике и финансах.
+
+### Машинное обучение
+Ускорение обучения глубоких нейронных сетей в тысячи раз.
+
+### Криптография
+Квантовая безопасность для защиты данных ИИ-систем.
+
+## Технологии
+### Квантовые процессоры
+Современные квантовые процессоры с тысячей кубитов.
+
+### Квантовое машинное обучение
+Фреймворки для разработки квантовых ИИ-алгоритмов.
+
+### Квантовое моделирование
+Симуляция сложных систем для обучения ИИ.
+
+## Вызовы
+### Квантовое превосходство
+Достижение уровня, когда квантовые компьютеры превосходят классические.
+
+### Стабильность
+Квантовые биты требуют сверхнизких температур и изоляции.
+
+## Заключение
+Квантовые вычисления открывают новые горизонты для развития ИИ и решения глобальных задач.
+        </div>
+                <div class="modal-tags">
+                    <span class="tag">квантовые вычисления и ии</span>
+                </div>
+            </div>
+        </div>
+    
+        <div id="article-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 class="modal-title">Этика искусственного интеллекта: последние достижения 2026</h2>
+                <p class="modal-date">12.11.2026</p>
+                <div class="modal-content-text">
+В этой статье мы рассмотрим последние достижения в области этики искусственного интеллекта. Исследуем новые подходы к этике искусственного интеллекта. Практические примеры и реальные кейсы внедрения.
+
+## Введение
+Этика искусственного интеллекта стала одной из самых важных тем в 2026 году. По мере развития ИИ технологии возникают новые этические вызовы.
+
+## Основные этические принципы
+### Прозрачность
+ИИ-системы должны быть понятны и объяснимы для пользователей.
+
+### Справедливость
+Алгоритмы не должны дискриминировать группы населения.
+
+### Конфиденциальность
+Защита персональных данных и приватности пользователей.
+
+### Ответственность
+Четкое распределение ответственности за решения ИИ-систем.
+
+## Реальные кейсы
+### Медицинская диагностика
+ИИ-системы диагностируют заболевания, но ответственность остается за врачом.
+
+### Автономные транспортные средства
+Вопрос ответственности при авариях с участием беспилотных автомобилей.
+
+### Социальные сети
+Алгоритмы рекомендаций и их влияние на общество.
+
+## Регулирование
+### Международные стандарты
+Разработка глобальных стандартов для ИИ-этики.
+
+### Национальное законодательство
+Законы, регулирующие использование ИИ в разных странах.
+
+### Корпоративные этические кодексы
+Внутренние стандарты компаний для разработки ИИ.
+
+## Технологии этики ИИ
+### Explainable AI
+Системы, объясняющие свои решения.
+
+### Fairness algorithms
+Алгоритмы для обнаружения и устранения предвзятости.
+
+### Privacy-preserving ML
+Методы обучения без нарушения конфиденциальности.
+
+## Будущее этики ИИ
+### Автоэтические системы
+Системы, способные самостоятельно решать этические дилеммы.
+
+### Глобальное сотрудничество
+Международное сотрудничество в области ИИ-этики.
+
+## Заключение
+Этика ИИ - это не препятствие развитию, а основа для доверия и устойчивого внедрения технологий.
+        </div>
+                <div class="modal-tags">
+                    <span class="tag">этика искусственного интеллекта</span>
+                </div>
+            </div>
+        </div>
+    
+        <div id="article-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 class="modal-title">Генеративный ИИ: последние достижения 2026</h2>
+                <p class="modal-date">12.11.2026</p>
+                <div class="modal-content-text">
+В этой статье мы рассмотрим последние достижения в области генеративного ИИ. Как генеративные модели создают тексты, изображения и музыку. Технологии и возможности генеративного ИИ.
+
+## Введение
+Генеративный ИИ в 2026 году достиг уровня, когда он может создавать контент практически не отличимый от человеческого. Это открывает неограниченные возможности для творчества и бизнеса.
+
+## Текстовой генеративный ИИ
+### GPT-6 и аналоги
+Модели уровня GPT-6 пишут статьи, сценарии, код и стихи.
+
+### Копирайтинг и маркетинг
+ИИ-ассистенты создают рекламные тексты, посты для соцсетей и контент-планы.
+
+### Автоматическая генерация контента
+Системы пишут новости, аналитические отчеты и техническую документацию.
+
+## Визуальный генеративный ИИ
+### DALL-E 4 и Midjourney V6
+Генерация изображений по текстовому описанию с фотореалистичной точностью.
+
+### Видео-генерация
+Системы создают короткие видео и анимации на основе текста.
+
+### 3D-моделирование
+ИИ генерирует 3D-модели для игр и архитектуры.
+
+## Музыкальный генеративный ИИ
+### Музыкальные композиции
+Системы создают оригинальную музыку в любом жанре.
+
+### Звуковой дизайн
+ИИ создает звуковые эффекты и озвучку для видеоигр.
+
+### Аранжировка
+Системы перерабатывают существующие треки в новых стилях.
+
+## Применение в бизнесе
+### Автоматизация контента
+Компании используют ИИ для создания маркетинговых материалов.
+
+### Персонализация
+Системы генерируют контент под конкретного пользователя.
+
+### Тестирование и оптимизация
+ИИ тестирует разные варианты контента для лучшего результата.
+
+## Этические аспекты
+### Авторские права
+Вопросы собственности на сгенерированный контент.
+
+### Дезинформация
+Риски распространения фейковых новостей и deepfake.
+
+## Заключение
+Генеративный ИИ открывает новые возможности для творчества и бизнеса, но требует этического подхода.
+        </div>
+                <div class="modal-tags">
+                    <span class="tag">генеративный ии</span>
+                </div>
+            </div>
+        </div>
+    
+        <div id="article-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 class="modal-title">ИИ в бизнесе: последние достижения 2026</h2>
+                <p class="modal-date">12.11.2026</p>
+                <div class="modal-content-text">
+В этой статье мы рассмотрим последние достижения в области ИИ в бизнесе. Как компании внедряют ИИ для оптимизации процессов и повышения эффективности. Практические примеры и реальные кейсы внедрения.
+
+## Введение
+Искусственный интеллект стал ключевым драйвером бизнес-инноваций в 2026 году. Компании всех размеров внедряют ИИ для повышения конкурентоспособности и эффективности.
+
+## Оптимизация бизнес-процессов
+### Автоматизация рутинных задач
+ИИ обрабатывает документы, отвечает на запросы клиентов и выполняет repetitive задачи.
+
+### Умное планирование
+Системы оптимизируют логистику, производство и распределение ресурсов.
+
+### Прогнозирование спроса
+ИИ анализирует данные и предсказывает рыночные тенденции.
+
+## Клиентский сервис
+### Чат-боты и виртуальные ассистенты
+24/7 поддержка клиентов с использованием ИИ-ассистентов.
+
+### Персонализация предложений
+Системы анализируют поведение клиентов и предлагают индивидуальные решения.
+
+### Обратная связь
+ИИ анализирует отзывы клиентов и выявляет области для улучшения.
+
+## Финансовый сектор
+### Риск-менеджмент
+ИИ оценивает риски и прогнозирует финансовые показатели.
+
+### Фraud detection
+Системы обнаруживают мошенничество в режиме реального времени.
+
+### Автоматизированная отчетность
+ИИ генерирует финансовые отчеты и аналитику.
+
+## Производство
+### Предиктивное обслуживание
+Системы прогнозируют поломки оборудования и предотвращают простои.
+
+### Качество продукции
+ИИ контролирует качество продукции на всех этапах производства.
+
+### Оптимизация цепочек поставок
+Системы управляют логистикой и складскими запасами.
+
+## Маркетинг и продажи
+### Сегментация аудитории
+ИИ делит клиентов на группы для таргетированной рекламы.
+
+### Автоматизация продаж
+Системы ведут переговоры и закрывают сделки.
+
+### Анализ конкурентной среды
+ИИ отслеживает действия конкурентов и рыночные тренды.
+
+## Реальные кейсы внедрения
+### Розничная торговля
+Сети магазинов используют ИИ для управления запасами и персонализации предложений.
+
+### Банковский сектор
+Банки внедряют ИИ для кредитного скоринга и борьбы с мошенничеством.
+
+### Здравоохранение
+Медицинские учреждения используют ИИ для диагностики и планирования лечения.
+
+## Будущее ИИ в бизнесе
+### Автономные предприятия
+Компании, управляемые ИИ без человеческого вмешательства.
+
+### Глобальное сотрудничество
+ИИ-системы координируют работу компаний по всему миру.
+
+## Заключение
+ИИ в бизнесе - это не просто тренд, а необходимость для выживания и роста в современной экономике.
+        </div>
+                <div class="modal-tags">
+                    <span class="tag">ии в бизнесе</span>
+                </div>
+            </div>
+        </div>
+    
+        <div id="article-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 class="modal-title">Будущее машинного обучения: последние достижения 2026</h2>
+                <p class="modal-date">12.11.2026</p>
+                <div class="modal-content-text">
+В этой статье мы рассмотрим последние достижения в области будущего машинного обучения. Прогнозы развития ML технологий на ближайшие годы. Новые алгоритмы и подходы к обучению.
+
+## Введение
+Машинное обучение в 2026 году достигло уровня, когда оно становится неотъемлемой частью всех отраслей. Технологии развиваются экспоненциально, открывая новые возможности.
+
+## Новые подходы к обучению
+### Самообучение
+Системы учатся на минимальном количестве данных, используя методы самоконтроля.
+
+### Федеративное обучение
+Модели обучаются на распределенных данных без нарушения конфиденциальности.
+
+### Усиленное обучение
+Алгоритмы учатся через взаимодействие с окружающей средой и получение вознаграждения.
+
+## Технологии будущего
+### Нейроморфное computing
+Системы, имитирующие работу человеческого мозга для более эффективного обучения.
+
+### Квантовый машинный learning
+Алгоритмы, использующие квантовые вычисления для решения сложных задач.
+
+### Биоинспирированное обучение
+Методы, основанные на принципах работы биологических систем.
+
+## Применение в реальном мире
+### Медицина
+ML-системы диагностируют заболевания и предсказывают развитие болезней.
+
+### Финансы
+Алгоритмы прогнозируют рыночные тенденции и управляют рисками.
+
+### Транспорт
+Системы оптимизируют логистику и управляют автономными транспортными средствами.
+
+### Энергетика
+ML-алгоритмы оптимизируют потребление энергии и прогнозируют спрос.
+
+## Этические аспекты
+### Предвзятость алгоритмов
+Проблемы дискриминации в системах машинного обучения.
+
+### Конфиденциальность данных
+Защита персональных информации при обучении моделей.
+
+### Ответственность
+Вопросы ответственности за решения, принятые ML-системами.
+
+## Будущее развития
+### Общее искусственный интеллект
+Достижение уровня ИИ, сопоставимого с человеческим интеллектом.
+
+### Человеко-машинное сотрудничество
+Системы, работающие в тесном сотрудничестве с человеком.
+
+### Автономное обучение
+Системы, способные самостоятельно ставить цели и учиться.
+
+## Заключение
+Будущее машинного обучения открывает неограниченные возможности для развития цивилизации, но требует ответственного подхода.
+        </div>
+                <div class="modal-tags">
+                    <span class="tag">будущее машинного обучения</span>
+                </div>
+            </div>
+        </div>
+    
+        <div id="article-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 class="modal-title">Нейросети для создания контента: последние достижения 2026</h2>
+                <p class="modal-date">12.11.2026</p>
+                <div class="modal-content-text">
+В этой статье мы рассмотрим последние достижения в области нейросетей для создания контента. Как современные нейросети генерируют тексты, изображения и видео. Технологии и возможности.
+
+## Введение
+Нейросети для создания контента в 2026 году достигли уровня профессионального качества. Они могут создавать контент практически в любой области, от художественной литературы до технической документации.
+
+## Текстовые нейросети
+### GPT-7 и аналоги
+Модели уровня GPT-7 пишут книги, статьи, сценарии и код с человеческим качеством.
+
+### Специализированные модели
+Нейросети, обученные для конкретных задач: юридические документы, медицинские отчеты, техническая документация.
+
+### Мультимодальные системы
+Системы, работающие с текстом, изображениями и звуком одновременно.
+
+## Визуальные нейросети
+### Генерация изображений
+DALL-E 5, Midjourney V7 и другие системы создают фотореалистичные изображения.
+
+### Видеогенерация
+Нейросети создают короткие видео и анимации на основе текста.
+
+### 3D-моделирование
+Системы генерируют 3D-модели для игр, архитектуры и дизайна.
+
+## Музыкальные нейросети
+### Композиции
+Системы создают оригинальную музыку в любом жанре и стиле.
+
+### Аранжировка
+Нейросети перерабатывают существующие треки в новых стилях.
+
+### Саундтреки
+Системы создают музыку для фильмов, игр и рекламы.
+
+## Применение в бизнесе
+### Маркетинг
+Нейросети создают рекламные тексты, посты для соцсетей и контент-планы.
+
+### Образование
+Системы генерируют учебные материалы и тесты.
+
+### Развлечения
+Нейросети пишут сценарии, создают игры и музыку.
+
+## Технологии будущего
+### Эмоциональный интеллект
+Нейросети, понимающие и реагирующие на эмоции пользователя.
+
+### Креативное мышление
+Системы, способные к настоящему творчеству и инновациям.
+
+### Автономное творчество
+Нейросети, создающие контент без человеческого вмешательства.
+
+## Этические аспекты
+### Авторские права
+Вопросы собственности на сгенерированный контент.
+
+### Дезинформация
+Риски распространения фейковых новостей и deepfake.
+
+### Качество контента
+Проблемы контроля качества и достоверности информации.
+
+## Заключение
+Нейросети для создания контента открывают новые возможности для творчества и бизнеса, но требуют этического подхода и регулирования.
+        </div>
+                <div class="modal-tags">
+                    <span class="tag">нейросети для создания контента</span>
+                </div>
+            </div>
+        </div>
+    
+        <div id="article-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 class="modal-title">обработка естественного языка в современном мире: тренды 2026</h2>
+                <p class="modal-date">12.11.2026</p>
+                <div class="modal-content-text">В этой статье мы рассмотрим влияние обработка естественного языка на современный мир и экономику. Анализ трендов и прогнозы развития.
+
+## Введение
+обработка естественного языка становится неотъемлемой частью нашей повседневной жизни. В 2026 году мы наблюдаем массовую интеграцию ИИ во все сферы деятельности.
+
+## Отраслевое применение
+### 1. Медицина
+ИИ-системы помогают в диагностике, лечении и прогнозировании заболеваний.
+
+### 2. Финансы
+Алгоритмы машинного обучения анализируют рыночные тенденции и оптимизируют инвестиции.
+
+### 3. Образование
+Персонализированные образовательные платформы адаптируются под потребности каждого студента.
+
+### 4. Транспорт
+Автономные системы и умная логистика revolutionize транспортную отрасль.
+
+## Этические аспекты
+Развитие ИИ raises важные вопросы о конфиденциальности данных, безопасности и ответственности.
+
+## Заключение
+обработка естественного языка открывает новые горизонты для улучшения качества жизни и повышения эффективности во всех сферах.</div>
+                <div class="modal-tags">
+                    <span class="tag">обработка естественного языка</span>
+                </div>
+            </div>
+        </div>
+    
+        <div id="article-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 class="modal-title">искусственный интеллект в современном мире: тренды 2026</h2>
+                <p class="modal-date">12.11.2026</p>
+                <div class="modal-content-text">В этой статье мы рассмотрим влияние искусственный интеллект на современный мир и экономику. Анализ трендов и прогнозы развития.
+
+## Введение
+искусственный интеллект становится неотъемлемой частью нашей повседневной жизни. В 2026 году мы наблюдаем массовую интеграцию ИИ во все сферы деятельности.
+
+## Отраслевое применение
+### 1. Медицина
+ИИ-системы помогают в диагностике, лечении и прогнозировании заболеваний.
+
+### 2. Финансы
+Алгоритмы машинного обучения анализируют рыночные тенденции и оптимизируют инвестиции.
+
+### 3. Образование
+Персонализированные образовательные платформы адаптируются под потребности каждого студента.
+
+### 4. Транспорт
+Автономные системы и умная логистика revolutionize транспортную отрасль.
+
+## Этические аспекты
+Развитие ИИ raises важные вопросы о конфиденциальности данных, безопасности и ответственности.
+
+## Заключение
+искусственный интеллект открывает новые горизонты для улучшения качества жизни и повышения эффективности во всех сферах.</div>
+                <div class="modal-tags">
+                    <span class="tag">искусственный интеллект</span>
+                </div>
+            </div>
+        </div>
+    
+        <div id="article-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 class="modal-title">компьютерное зрение в современном мире: тренды 2026</h2>
+                <p class="modal-date">12.11.2026</p>
+                <div class="modal-content-text">В этой статье мы рассмотрим влияние компьютерное зрение на современный мир и экономику. Анализ трендов и прогнозы развития.
+
+## Введение
+компьютерное зрение становится неотъемлемой частью нашей повседневной жизни. В 2026 году мы наблюдаем массовую интеграцию ИИ во все сферы деятельности.
+
+## Отраслевое применение
+### 1. Медицина
+ИИ-системы помогают в диагностике, лечении и прогнозировании заболеваний.
+
+### 2. Финансы
+Алгоритмы машинного обучения анализируют рыночные тенденции и оптимизируют инвестиции.
+
+### 3. Образование
+Персонализированные образовательные платформы адаптируются под потребности каждого студента.
+
+### 4. Транспорт
+Автономные системы и умная логистика revolutionize транспортную отрасль.
+
+## Этические аспекты
+Развитие ИИ raises важные вопросы о конфиденциальности данных, безопасности и ответственности.
+
+## Заключение
+компьютерное зрение открывает новые горизонты для улучшения качества жизни и повышения эффективности во всех сферах.</div>
+                <div class="modal-tags">
+                    <span class="tag">компьютерное зрение</span>
+                </div>
+            </div>
+        </div>
+    
+    
     <script>
-        // Функция показа статьи
-        function showArticle(articleId) {
-            const article = articles.find(a => a.id == articleId);
-            if (article) {
-                document.getElementById('modalArticleContent').innerHTML = `
-                    <div class="article-date">${article.date}</div>
-                    <h2>${article.title}</h2>
-                    <div class="article-content">${article.content}</div>
-                    <div class="monetization">
-                        <h4>🎯 Партнерские программы</h4>
-                        ${article.monetization.map(link => `
-                            <p><a href="${link.url}" target="_blank">${link.name} (${link.commission})</a></p>
-                        `).join('')}
-                    </div>
-                `;
-                document.getElementById('articleModal').style.display = 'block';
+        // Display articles
+        function displayArticles() {
+            const articlesContainer = document.querySelector('.articles-grid');
+            if (articlesContainer) {
+                articlesContainer.innerHTML = document.querySelectorAll('.article').forEach(article => {
+                    articlesContainer.appendChild(article);
+                });
             }
         }
-
-        // Закрытие модального окна
-        document.querySelector('.close').onclick = function() {
-            document.getElementById('articleModal').style.display = 'none';
+        
+        // Show article modal
+        function showArticle(id) {
+            const modal = document.getElementById('article-modal');
+            const article = document.querySelector(`.article[data-id="${id}"]`);
+            if (modal && article) {
+                modal.style.display = 'block';
+            }
         }
-
-        // Закрытие по клику вне окна
+        
+        // Close modal
+        document.querySelector('.close').onclick = function() {
+            document.getElementById('article-modal').style.display = 'none';
+        }
+        
+        // Close modal on click outside
         window.onclick = function(event) {
-            const modal = document.getElementById('articleModal');
-            if (event.target == modal) {
+            const modal = document.getElementById('article-modal');
+            if (event.target === modal) {
                 modal.style.display = 'none';
             }
         }
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            displayArticles();
+            document.getElementById('update-date').textContent = new Date().toLocaleDateString('ru-RU');
+        });
     </script>
 </body>
 </html>

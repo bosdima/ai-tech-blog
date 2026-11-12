@@ -218,5 +218,69 @@
     "status": "error",
     "message": "Ошибка обновления AI Tech Blog",
     "error": "Сайт не доступен"
+  },
+  {
+    "timestamp": "2026-11-09T11:52:58.107Z",
+    "status": "error",
+    "message": "Ошибка обновления AI Tech Blog",
+    "error": "Сайт не доступен"
+  },
+  {
+    "timestamp": "2026-11-09T11:54:57.985Z",
+    "status": "error",
+    "message": "Ошибка обновления AI Tech Blog",
+    "error": "Сайт не доступен"
+  },
+  {
+    "timestamp": "2026-11-09T14:04:01.696Z",
+    "status": "error",
+    "message": "Ошибка обновления AI Tech Blog",
+    "error": "Сайт не доступен"
+  },
+  {
+    "timestamp": "2026-11-09T16:13:53.407Z",
+    "status": "error",
+    "message": "Ошибка обновления AI Tech Blog",
+    "error": "Сайт не доступен"
+  },
+  {
+    "timestamp": "2026-11-09T18:17:23.313Z",
+    "status": "error",
+    "message": "Ошибка обновления AI Tech Blog",
+    "error": "Сайт не доступен"
+  },
+  {
+    "timestamp": "2026-11-10T16:24:14.880Z",
+    "status": "success",
+    "message": "AI Tech Blog обновлен успешно"
+  },
+  {
+    "timestamp": "2026-11-10T16:25:03.558Z",
+    "status": "success",
+    "message": "AI Tech Blog обновлен успешно"
+  },
+  {
+    "timestamp": "2026-11-10T18:30:11.919Z",
+    "status": "error",
+    "message": "Ошибка обновления AI Tech Blog",
+    "error": "Сайт не доступен"
+  },
+  {
+    "timestamp": "2026-11-11T16:16:11.242Z",
+    "status": "error",
+    "message": "Ошибка обновления AI Tech Blog",
+    "error": "Сайт не доступен"
+  },
+  {
+    "timestamp": "2026-11-11T18:34:35.535Z",
+    "status": "error",
+    "message": "Ошибка обновления AI Tech Blog",
+    "error": null
+  },
+  {
+    "timestamp": "2026-11-12T15:27:53.959Z",
+    "status": "error",
+    "message": "Ошибка обновления AI Tech Blog",
+    "error": "Сайт не доступен"
   }
 ]

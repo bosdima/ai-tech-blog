@@ -1,7 +1,7 @@
 {
-  "adsTxt": true,
-  "adsense": true,
+  "adsTxt": false,
+  "adsense": false,
   "affiliates": true,
-  "overall": true,
-  "timestamp": "2026-11-02T11:04:25.947Z"
+  "overall": false,
+  "timestamp": "2026-11-09T09:48:50.402Z"
 }
